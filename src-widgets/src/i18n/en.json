@@ -1,0 +1,27 @@
+{
+  "vis_2_widgets_template": "Widgets template",
+  "vis_2_widgets_template_type": "Type",
+  "vis_2_widgets_template_private": "Private",
+  "vis_2_widgets_template_oid": "Object ID",
+  "My Demo widget: ": "My Demo widget: ",
+  "vis_2_rssfeed": "Demo Widget",
+  "vis_2_widgets_rssfeed_setlabel": "RSSFeed",
+  "vis_2_widgets_rssfeed_metahelper_oid": "RSS datapoint",
+  "vis_2_widgets_rssfeed_articlehelper_prefix": "RSS prefix",
+  "vis_2_widgets_rssfeed_marquee_count": "Number of feeds",
+  "vis_2_widgets_rssfeed_marquee_speed": "Speed",
+  "vis_2_widgets_rssfeed_marquee_divider": "Divider",
+  "vis_2_widgets_rssfeed_marquee_pauseonhover": "Pause on hover",
+  "vis_2_widgets_rssfeed_marquee_withlink": "with Link",
+  "vis_2_widgets_rssfeed_marquee_withtime": "with time",
+  "vis_2_widgets_rssfeed_marquee_withdate": "with date",
+  "vis_2_widgets_rssfeed_marquee_withyear": "with year",
+  "vis_2_widgets_rssfeed_marquee_withname": "with name",
+  "vis_2_widgets_rssfeed_marquee_feedsgroup": "Feeds",
+  "vis_2_widgets_rssfeed_marquee_oid": "Feed datapoint",
+  "vis_2_widgets_rssfeed_marquee_name": "Feed name",
+  "vis_2_widgets_rssfeed_marquee_maxarticles": "max articles",
+  "vis_2_widgets_rssfeed_marquee_filter": "Filter",
+ 
+  "":""
+}
