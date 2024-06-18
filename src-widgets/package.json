@@ -1,7 +1,7 @@
 {
     "name": "iobroker.vis-2-widgets-rssfeed",
     "private": true,
-    "version": "0.0.6",
+    "version": "0.0.7",
     "devDependencies": {
         "@iobroker/adapter-dev": "^1.2.0"
     },
