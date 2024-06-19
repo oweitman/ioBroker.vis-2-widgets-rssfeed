@@ -10,7 +10,7 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
         return {
             id: 'tplRSSArticleHelper',
-            visSet: 'vis_2_widgets_rssfeed_setlabel',
+            visSet: 'vis-2-widgets-rssfeed',
             visName: 'RSSFeed Article Helper',                 // Name of widget
             visAttrs: [
                 {

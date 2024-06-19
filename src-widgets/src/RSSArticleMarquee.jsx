@@ -10,7 +10,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
         return {
             id: 'tplRSSArticleMarquee',
-            visSet: 'vis_2_widgets_rssfeed_setlabel',
+            visSet: 'vis-2-widgets-rssfeed',
             visName: 'RSS Article Marquee',                 // Name of widget
             visAttrs: [
                 {

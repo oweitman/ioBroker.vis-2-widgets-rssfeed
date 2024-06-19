@@ -10,7 +10,7 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
         return {
             id: 'tplRSSMetaHelper',
-            visSet: 'vis_2_widgets_rssfeed_setlabel',
+            visSet: 'vis-2-widgets-rssfeed',
             visName: 'RSSFeed Meta Helper',                 // Name of widget
             visAttrs: [
                 {
