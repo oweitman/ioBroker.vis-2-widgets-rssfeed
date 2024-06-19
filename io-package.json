@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "news": {
       "0.2.1": {
         "en": "update packages",
@@ -145,8 +145,6 @@
     "connectionType": "cloud",
     "dataSource": "poll",
     "visWidgets": {
-      "ignoreInVersions": [
-      ],
       "vis2rssfeedWidgets": {
         "i18n": "component",
         "name": "vis2rssfeedWidgets",
