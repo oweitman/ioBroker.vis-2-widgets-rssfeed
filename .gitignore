@@ -7,3 +7,6 @@ src-widgets/build
 widgets
 *.tgz
 tmp/
+
+# ioBroker dev-server
+.dev-server/
