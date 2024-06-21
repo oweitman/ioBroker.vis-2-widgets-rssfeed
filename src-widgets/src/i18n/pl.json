@@ -1,7 +1,22 @@
 {
-  "My Demo widget: ": "Widżet Moje demo:",
-  "vis_2_widgets_template": "Szablon widżetów",
-  "vis_2_widgets_template_oid": "Identyfikator obiektu",
-  "vis_2_widgets_template_private": "Prywatny",
-  "vis_2_widgets_template_type": "Rodzaj"
+  "vis_2_rssfeed": "RSSFeed Vis- 2",
+  "vis_2_widgets_rssfeed_metahelper_oid": "Punkt danych RSS",
+  "vis_2_widgets_rssfeed_articlehelper_prefix": "Prefiks RSS",
+  "vis_2_widgets_rssfeed_marquee_count": "Liczba pasz",
+  "vis_2_widgets_rssfeed_marquee_speed": "Prędkość",
+  "vis_2_widgets_rssfeed_marquee_divider": "Dzielenie",
+  "vis_2_widgets_rssfeed_marquee_pauseonhover": "Pauza na huśtawce",
+  "vis_2_widgets_rssfeed_marquee_withlink": "z odnośnikiem",
+  "vis_2_widgets_rssfeed_marquee_withtime": "z czasem",
+  "vis_2_widgets_rssfeed_marquee_withdate": "z datą",
+  "vis_2_widgets_rssfeed_marquee_withyear": "rok",
+  "vis_2_widgets_rssfeed_marquee_withname": "z nazwą",
+  "vis_2_widgets_rssfeed_marquee_feedsgroup": "Pasze",
+  "vis_2_widgets_rssfeed_marquee_oid": "Punkt danych dotyczących pasz",
+  "vis_2_widgets_rssfeed_marquee_name": "Nazwa paszy",
+  "vis_2_widgets_rssfeed_marquee_maxarticles": "maks",
+  "vis_2_widgets_rssfeed_marquee_filter": "Filtr",
+  "vis_2_widgets_rssfeed_widget_template": "Szablon",
+  "vis_2_widgets_rssfeed_widget_maxarticles": "Maks. artykuły",
+  "vis_2_widgets_rssfeed_widget_filter": "Filtr"
 }

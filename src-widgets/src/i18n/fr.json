@@ -1,7 +1,22 @@
 {
-  "My Demo widget: ": "Widget Ma démo :",
-  "vis_2_widgets_template": "Modèle de widget",
-  "vis_2_widgets_template_oid": "ID d'objet",
-  "vis_2_widgets_template_private": "Privé",
-  "vis_2_widgets_template_type": "Taper"
+  "vis_2_rssfeed": "Fils RSS Vis- 2",
+  "vis_2_widgets_rssfeed_metahelper_oid": "Point de données RSS",
+  "vis_2_widgets_rssfeed_articlehelper_prefix": "Préfixe RSS",
+  "vis_2_widgets_rssfeed_marquee_count": "Nombre d'aliments pour animaux",
+  "vis_2_widgets_rssfeed_marquee_speed": "Vitesse",
+  "vis_2_widgets_rssfeed_marquee_divider": "Diviseur",
+  "vis_2_widgets_rssfeed_marquee_pauseonhover": "Pause en vol stationnaire",
+  "vis_2_widgets_rssfeed_marquee_withlink": "avec le lien",
+  "vis_2_widgets_rssfeed_marquee_withtime": "avec le temps",
+  "vis_2_widgets_rssfeed_marquee_withdate": "avec date",
+  "vis_2_widgets_rssfeed_marquee_withyear": "avec année",
+  "vis_2_widgets_rssfeed_marquee_withname": "avec nom",
+  "vis_2_widgets_rssfeed_marquee_feedsgroup": "Aliments pour animaux",
+  "vis_2_widgets_rssfeed_marquee_oid": "Point de données d'alimentation",
+  "vis_2_widgets_rssfeed_marquee_name": "Nom de l'aliment",
+  "vis_2_widgets_rssfeed_marquee_maxarticles": "max. d'articles",
+  "vis_2_widgets_rssfeed_marquee_filter": "Filtre",
+  "vis_2_widgets_rssfeed_widget_template": "Modèle",
+  "vis_2_widgets_rssfeed_widget_maxarticles": "Max. articles",
+  "vis_2_widgets_rssfeed_widget_filter": "Filtre"
 }

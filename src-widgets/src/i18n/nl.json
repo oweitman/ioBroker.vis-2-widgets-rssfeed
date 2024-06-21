@@ -1,7 +1,22 @@
 {
-  "My Demo widget: ": "Mijn demo-widget:",
-  "vis_2_widgets_template": "Widgetsjabloon",
-  "vis_2_widgets_template_oid": "Object-ID",
-  "vis_2_widgets_template_private": "Privaat",
-  "vis_2_widgets_template_type": "Type"
+  "vis_2_rssfeed": "RSSFeed Vis- 2",
+  "vis_2_widgets_rssfeed_metahelper_oid": "RSS-gegevenspunt",
+  "vis_2_widgets_rssfeed_articlehelper_prefix": "RSS-voorvoegsel",
+  "vis_2_widgets_rssfeed_marquee_count": "Aantal diervoeders",
+  "vis_2_widgets_rssfeed_marquee_speed": "Snelheid",
+  "vis_2_widgets_rssfeed_marquee_divider": "Divider",
+  "vis_2_widgets_rssfeed_marquee_pauseonhover": "Pauzeer bij zweven",
+  "vis_2_widgets_rssfeed_marquee_withlink": "met koppeling",
+  "vis_2_widgets_rssfeed_marquee_withtime": "met de tijd",
+  "vis_2_widgets_rssfeed_marquee_withdate": "met datum",
+  "vis_2_widgets_rssfeed_marquee_withyear": "met jaar",
+  "vis_2_widgets_rssfeed_marquee_withname": "met naam",
+  "vis_2_widgets_rssfeed_marquee_feedsgroup": "Feeds",
+  "vis_2_widgets_rssfeed_marquee_oid": "Feed datapoint",
+  "vis_2_widgets_rssfeed_marquee_name": "Feed naam",
+  "vis_2_widgets_rssfeed_marquee_maxarticles": "max. artikelen",
+  "vis_2_widgets_rssfeed_marquee_filter": "Filter",
+  "vis_2_widgets_rssfeed_widget_template": "Sjabloon",
+  "vis_2_widgets_rssfeed_widget_maxarticles": "Max. artikelen",
+  "vis_2_widgets_rssfeed_widget_filter": "Filter"
 }

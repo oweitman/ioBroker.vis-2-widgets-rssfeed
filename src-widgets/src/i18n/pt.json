@@ -1,7 +1,22 @@
 {
-  "My Demo widget: ": "Meu widget de demonstração:",
-  "vis_2_widgets_template": "Modelo de widgets",
-  "vis_2_widgets_template_oid": "ID do objeto",
-  "vis_2_widgets_template_private": "Privado",
-  "vis_2_widgets_template_type": "Modelo"
+  "vis_2_rssfeed": "RSSFeed Vis... 2",
+  "vis_2_widgets_rssfeed_metahelper_oid": "Datapoint RSS",
+  "vis_2_widgets_rssfeed_articlehelper_prefix": "RSS prefixo",
+  "vis_2_widgets_rssfeed_marquee_count": "Número de feeds",
+  "vis_2_widgets_rssfeed_marquee_speed": "Velocidade",
+  "vis_2_widgets_rssfeed_marquee_divider": "Divisor",
+  "vis_2_widgets_rssfeed_marquee_pauseonhover": "Pausa no rio",
+  "vis_2_widgets_rssfeed_marquee_withlink": "com Link",
+  "vis_2_widgets_rssfeed_marquee_withtime": "com tempo",
+  "vis_2_widgets_rssfeed_marquee_withdate": "com data",
+  "vis_2_widgets_rssfeed_marquee_withyear": "com ano",
+  "vis_2_widgets_rssfeed_marquee_withname": "com nome",
+  "vis_2_widgets_rssfeed_marquee_feedsgroup": "Alimentação",
+  "vis_2_widgets_rssfeed_marquee_oid": "Datapoint de alimentação",
+  "vis_2_widgets_rssfeed_marquee_name": "Nome de alimentação",
+  "vis_2_widgets_rssfeed_marquee_maxarticles": "artigos máximos",
+  "vis_2_widgets_rssfeed_marquee_filter": "Filtro",
+  "vis_2_widgets_rssfeed_widget_template": "Modelo",
+  "vis_2_widgets_rssfeed_widget_maxarticles": "Max. artigos",
+  "vis_2_widgets_rssfeed_widget_filter": "Filtro"
 }
