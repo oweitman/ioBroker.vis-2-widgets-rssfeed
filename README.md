@@ -16,6 +16,10 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+### __WORK IN PROGRESS__
+
+- move library to ace/ejs lib to dependency
+
 ### 0.1.1 (2024-06-22)
 
 - reverte timepout in tests
