@@ -31,7 +31,10 @@ gulp.task('widget-3-copy', () => Promise.all([
     ]).pipe(gulp.dest(`widgets/${adapterName}/static`)),
     gulp.src([
         ...gulpHelper.copyFiles(SRC),
-        ...[`!${SRC}build/static/js/*.map`, `!${SRC}build/static/js/*.txt`],
+        ...[
+            `${SRC}build/static/js/*ace*.*`,            
+        ],
+        ...[`!${SRC}build/static/js/*.xmap`, `!${SRC}build/static/js/*.txt`],
     ]).pipe(gulp.dest(`widgets/${adapterName}/static/js`)),
     gulp.src([`${SRC}src/i18n/*.json`]).pipe(gulp.dest(`widgets/${adapterName}/i18n`)),
     new Promise(resolve =>
