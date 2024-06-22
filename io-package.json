@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "news": {
+      "0.1.3": {
+        "en": "add ace build files to gulp",
+        "de": "fügen sie ace build dateien gulp hinzu",
+        "ru": "добавить файлы для gulp",
+        "pt": "adicionar arquivos de compilação de dados ao gulp",
+        "nl": "ace build-bestanden toevoegen aan gulp",
+        "fr": "ajouter des fichiers de compilation d'as à gulp",
+        "it": "aggiungere ace costruire file a gulp",
+        "es": "añadir ace archivos de construcción para gulp",
+        "pl": "dodaj ace build files do gulp",
+        "uk": "add ace build files to gulp",
+        "zh-cn": "将 ace 构建文件添加到 gulp"
+      },
       "0.1.2": {
         "en": "move library to ace/ejs lib to dependency",
         "de": "bibliothek zu ace/ejs lib nach abhängigkeit",

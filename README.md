@@ -16,7 +16,7 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 0.1.3 (2024-06-22)
 
 - add ace build files to gulp
 
