@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
+      "0.1.2": {
+        "en": "move library to ace/ejs lib to dependency",
+        "de": "bibliothek zu ace/ejs lib nach abhängigkeit",
+        "ru": "переместить библиотеку в ace/ejs lib к зависимым",
+        "pt": "mover biblioteca para ace/ejs lib para dependência",
+        "nl": "bibliotheek verplaatsen naar ace/ejs lib naar afhankelijkheid",
+        "fr": "déplacer la bibliothèque vers ace/ejs lib vers la dépendance",
+        "it": "spostare la libreria in ace/ejs lib in dipendenza",
+        "es": "mover la biblioteca a as/ejs lib a la dependencia",
+        "pl": "przenieść bibliotekę do ace / ejs lib do zależności",
+        "uk": "русский englishрусскийукраїнськаpolskiitalianoespañol汉语bahasa indonesiaहिन्दीportuguês日本語deutschfrançaisภาษาไทยελληνικά اللغة العربية",
+        "zh-cn": "将库移动到 a/ejs lib 到依赖"
+      },
       "0.1.1": {
         "en": "reverte timepout in tests",
         "de": "reverte timepout in tests",

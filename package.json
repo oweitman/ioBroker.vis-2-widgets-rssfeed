@@ -1,6 +1,6 @@
 {
   "name": "iobroker.vis-2-widgets-rssfeed",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ioBroker vis-2 widgets for adapter rssfeed",
   "author": "oweitman <oweitman@gmx.de>",
   "contributors": [
@@ -56,7 +56,5 @@
     "url": "https://github.com/ioBroker/ioBroker.vis-2-widgets-rssfeed/issues"
   },
   "readmeFilename": "README.md",
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
