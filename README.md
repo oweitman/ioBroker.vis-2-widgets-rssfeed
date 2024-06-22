@@ -16,6 +16,10 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+### __WORK IN PROGRESS__
+
+- add ace build files to gulp
+
 ### 0.1.2 (2024-06-22)
 
 - move library to ace/ejs lib to dependency
