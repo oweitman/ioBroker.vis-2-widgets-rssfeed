@@ -113,8 +113,8 @@
       "vis2rssfeedWidgets": {
         "i18n": "component",
         "name": "vis2rssfeedWidgets",
-        "urlxx": "vis-2-widgets-rssfeed/customWidgets.js",
-        "url": "http://localhost:4173/customWidgets.js",
+        "url": "vis-2-widgets-rssfeed/customWidgets.js",
+        "urlxx": "http://localhost:4173/customWidgets.js",
         "components": [
           "RSSArticleMarquee",
           "RSSMetaHelper",
