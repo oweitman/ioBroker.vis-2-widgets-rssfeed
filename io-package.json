@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "news": {
+      "0.1.0": {
+        "en": "Erstes Testrelease",
+        "de": "Erstes Testrelease",
+        "ru": "Erstes Testrelease",
+        "pt": "Erstes Testrelease",
+        "nl": "Erstes Testrelease",
+        "fr": "Erstes Testrelease",
+        "it": "Erstes Testrelease",
+        "es": "Erstes Testrelease",
+        "pl": "Erstes Testrelease",
+        "uk": "Тестування Erstes",
+        "zh-cn": "埃斯特斯试验释放"
+      },
       "0.0.9": {
         "en": "first test release",
         "de": "erste Testversion",
