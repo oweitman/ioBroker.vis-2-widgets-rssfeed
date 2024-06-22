@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "reverte timepout in tests",
+        "de": "reverte timepout in tests",
+        "ru": "ree timepout в тестах",
+        "pt": "reverte timepout em testes",
+        "nl": "terugzetten van timepout in tests",
+        "fr": "retourner le timepout dans les essais",
+        "it": "timepout riverito nei test",
+        "es": "reverte timepout en pruebas",
+        "pl": "czas reverte w badaniach",
+        "uk": "перевернути час",
+        "zh-cn": "在测试中返回超时"
+      },
       "0.1.0": {
         "en": "Erstes Testrelease",
         "de": "Erstes Testrelease",
