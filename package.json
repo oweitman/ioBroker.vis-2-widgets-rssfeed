@@ -28,7 +28,8 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.10.3",
     "gulp": "^4.0.2",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "@iobroker/dev-server": "^0.7.3"
   },
   "main": "widgets/vis-2-widgets-rssfeed/customWidgets.js",
   "files": [
@@ -56,6 +57,6 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "@iobroker/dev-server": "^0.7.3"
+
   }
 }
