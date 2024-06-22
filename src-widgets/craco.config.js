@@ -16,9 +16,14 @@ module.exports = {
                         },
                     ],
                 },
+                 resolve: {
+                    alias:{
+                        fs: false,
+                        path: false 
+                    }
+                }, 
                 ignoreWarnings: [/Failed to parse source map/],
             },
         },
     },
 };
-

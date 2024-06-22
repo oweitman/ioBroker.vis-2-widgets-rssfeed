@@ -10,3 +10,6 @@ tmp/
 
 # ioBroker dev-server
 .dev-server/
+.vscode/info.txt
+.gitignore
+.vscode/secrets.txt

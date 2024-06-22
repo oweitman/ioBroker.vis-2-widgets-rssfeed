@@ -73,15 +73,6 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
 
-        /*         <style>
-        #"+widgetID + " .rssfeed th {
-           white-space: nowrap;
-           text-align: left;
-           vertical-align: top;
-        }
-        </style>
- */
-
         if (!this.state.values[`${this.state.rxData.oid}.val`]) {
             return null;
         }

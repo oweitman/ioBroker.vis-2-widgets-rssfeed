@@ -11,7 +11,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
         return {
             id: 'tplRSSArticleMarquee',
             visSet: 'vis-2-widgets-rssfeed',
-            visName: 'RSS Article Marquee',                 // Name of widget
+            visName: 'RSSFeed Article Marquee',                 // Name of widget
             visAttrs: [
                 {
                     name: 'common', // group name
