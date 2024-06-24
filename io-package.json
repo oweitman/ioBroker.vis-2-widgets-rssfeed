@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "news": {
+      "0.2.1": {
+        "en": "set node to 20 in deploy task",
+        "de": "set node to 20 in deploy task",
+        "ru": "установить узел до 20 в задаче развертывания",
+        "pt": "set node to 20 in deploy task",
+        "nl": "knooppunt instellen op 20 in inzettaak",
+        "fr": "définir le noeud à 20 dans la tâche de déploiement",
+        "it": "impostare nodo a 20 in attività di distribuzione",
+        "es": "fijado nodo a 20 en la tarea de despliegue",
+        "pl": "ustawić węzeł do 20 w zadaniu rozmieszczania",
+        "uk": "встановити вузол до 20 у задачі розгортання",
+        "zh-cn": "部署任务时将节点设置为 20"
+      },
       "0.2.0": {
         "en": "fine tuning",
         "de": "feinabstimmung",
