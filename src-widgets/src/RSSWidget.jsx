@@ -3,14 +3,11 @@ import {
 
 } from '@mui/material';
 import PropTypes from 'prop-types';
-import { withStyles, withTheme } from '@mui/styles';
 
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 import VisEJSAttibuteField from './Components/VisEJSAttibuteField.tsx';
 
-const styles = () => ({
-});
 const ejs = require('ejs');
 const rssExample = require('./rss.json');
 
@@ -211,5 +208,4 @@ RSSWidget.propTypes = {
     data: PropTypes.object,
 };
 
-export default withStyles(styles)(withTheme(RSSWidget));
-// export default RSSWidget;
+export default RSSWidget;
