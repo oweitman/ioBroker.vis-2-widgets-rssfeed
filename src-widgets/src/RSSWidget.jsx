@@ -2,15 +2,51 @@ import React from 'react';
 import {
 
 } from '@mui/material';
+import PropTypes from 'prop-types';
+import { withStyles, withTheme } from '@mui/styles';
 
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 import VisEJSAttibuteField from './Components/VisEJSAttibuteField.tsx';
 
+const styles = () => ({
+});
 const ejs = require('ejs');
+const rssExample = require('./rss.json');
 
 class RSSWidget extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
+        const defaulttemplate = `
+<!--
+ available variables:
+ widgetid      ->  id of the widget 
+ rss.meta      ->  all meta informations of an feed, details see Meta Helper widget 
+ rss.articles  ->  all articles as array, details see Article Helper widget 
+ style         ->  all style settings for the widget
+ 
+ all variables are read only
+-->
+<style>
+#<%- widgetid %> img {
+    width: calc(<%- style.width %> - 15px);
+    height: auto;
+}
+#<%- widgetid %> img.rssfeed  {
+    width: auto;
+    height: auto;
+}
+
+</style>
+<p><%- rss.meta.title %> </p>
+<% rss.articles.forEach(function(item){ %>
+    <div class="article">
+    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>    
+    <h3><%- item.title %></h3>
+    <p><%- item.description %></p>
+    <div style="clear:both;"></div>
+</div>
+<% }); %> 
+        `;
         return {
             id: 'tplRSSWidget',
             visSet: 'vis-2-widgets-rssfeed',
@@ -29,7 +65,7 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                             name: 'template',     // name in data structure
                             type: 'custom',
                             label: 'vis_2_widgets_rssfeed_widget_template', // translated field label
-                            default: 'abc',
+                            default: defaulttemplate,
                             component: (     // important
                                 field,       // field properties: {name, label, type, set, singleName, component,...}
                                 data,        // widget data
@@ -50,7 +86,7 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'max',     // name in data structure
                             type: 'number',
-                            default: 1,
+                            default: 5,
                             min: 1,
                             max:9999,
                             step:1,
@@ -59,13 +95,17 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'filter',     // name in data structure
                             type: 'text',
-                            default: 'item',
+                            default: '',
                             label: 'vis_2_widgets_rssfeed_widget_filter', // translated field label
                         },
                     ],
                 },
                 // check here all possible types https://github.com/ioBroker/ioBroker.vis/blob/react/src/src/Attributes/Widget/SCHEMA.md
             ],
+            visDefaultStyle: { // default style
+                width: 300,
+                height: 300,
+            },
             visPrev: '',
         };
     }
@@ -132,30 +172,13 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
 
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
-        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || '{}');
+        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
         const data = props.widget.data;
-        const defaulttemplate = `
-            <style>
-            #<%- widgetid %> img {
-                width: calc(<%- style.width %> - 15px);
-                height: auto;
-            }
-            </style>
-            <p><%- rss.meta.title %> </p>
-            <% //img src="<x% rss.meta.image.url %x>"> %>
-            <% rss.articles.forEach(function(item){ %>
-                <div class="article">
-                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>    
-                <h3><%- item.title %></h3>
-                <p><%- item.description %></p>
-                <div style="clear:both;"></div>
-            </div>
-            <% }); %> 
-        `;
+
         const errortemplate = `
         No Object ID set
         `;
-        const template = data.template ? data.template : defaulttemplate;
+        const template = data.template;
         const filter = data.filter ? data.filter : '';
         let maxarticles = data.max ? data.max : 999;
         maxarticles = maxarticles > 0 ? maxarticles : 1;
@@ -180,4 +203,13 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
         return <div dangerouslySetInnerHTML={{ __html: text }} />;
     }
 }
-export default RSSWidget;
+RSSWidget.propTypes = {
+    systemConfig: PropTypes.object,
+    socket: PropTypes.object,
+    themeType: PropTypes.string,
+    style: PropTypes.object,
+    data: PropTypes.object,
+};
+
+export default withStyles(styles)(withTheme(RSSWidget));
+// export default RSSWidget;

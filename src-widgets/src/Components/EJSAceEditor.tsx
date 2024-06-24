@@ -7,26 +7,11 @@ import 'ace-builds/webpack-resolver';
 import 'ace-builds/src-noconflict/ext-language_tools'; // autocomplete
 import 'ace-builds/src-noconflict/theme-clouds_midnight';
 import 'ace-builds/src-noconflict/theme-chrome';
-
-import 'ace-builds/src-noconflict/worker-css';
-import 'ace-builds/src-noconflict/snippets/css';
-import 'ace-builds/src-noconflict/mode-css';
-
-import 'ace-builds/src-noconflict/worker-json';
-import 'ace-builds/src-noconflict/snippets/json';
-import 'ace-builds/src-noconflict/mode-json';
-
-import 'ace-builds/src-noconflict/worker-javascript';
-import 'ace-builds/src-noconflict/snippets/javascript';
-import 'ace-builds/src-noconflict/mode-javascript';
-
-import 'ace-builds/src-noconflict/worker-html';
-import 'ace-builds/src-noconflict/snippets/html';
-import 'ace-builds/src-noconflict/mode-html';
-
 import 'ace-builds/src-noconflict/mode-ejs';
 
 import { I18n } from '@iobroker/adapter-react-v5';
+
+/* globals themeType */
 
 Ace.config.set('basePath', './lib/js/ace');
 Ace.config.setModuleUrl('ace/ext/language_tools', './lib/js/ace/ext-language_tools.js');
@@ -34,29 +19,12 @@ Ace.config.setModuleUrl('ace/theme/clouds_midnight', './lib/js/ace/theme-clouds_
 Ace.config.setModuleUrl('ace/theme/chrome', './lib/js/ace/theme-chrome.js');
 Ace.config.setModuleUrl('ace/ext/searchbox', './lib/js/ace/ext-searchbox.js');
 
-Ace.config.setModuleUrl('ace/snippets/html', './lib/js/ace/snippets/html.js');
-Ace.config.setModuleUrl('ace/mode/html_worker', './lib/js/ace/worker-html.js');
-Ace.config.setModuleUrl('ace/mode/html', './lib/js/ace/mode-html.js');
-
-Ace.config.setModuleUrl('ace/snippets/css', './lib/js/ace/snippets/css.js');
-Ace.config.setModuleUrl('ace/mode/css_worker', './lib/js/ace/worker-css.js');
-Ace.config.setModuleUrl('ace/mode/css', './lib/js/ace/mode-css.js');
-
-Ace.config.setModuleUrl('ace/snippets/javascript', './lib/js/ace/snippets/javascript.js');
-Ace.config.setModuleUrl('ace/mode/javascript_worker', './lib/js/ace/worker-javascript.js');
-Ace.config.setModuleUrl('ace/mode/javascript', './lib/js/ace/mode-javascript.js');
-
-Ace.config.setModuleUrl('ace/snippets/html', './lib/js/ace/snippets/html.js');
-Ace.config.setModuleUrl('ace/mode/html_worker', './lib/js/ace/worker-html.js');
-Ace.config.setModuleUrl('ace/mode/html', './lib/js/ace/mode-html.js');
-
-Ace.config.setModuleUrl('ace/mode/html', './lib/js/ace/mode-ejs.js');
+Ace.config.setModuleUrl('ace/snippets/ejs', './lib/js/ace/snippets/ejs.js');
+Ace.config.setModuleUrl('ace/mode/ejs', './lib/js/ace/mode-ejs.js');
 
 interface EJSAceEditorProps {
     // eslint-disable-next-line no-unused-vars
     onChange?: (value: string) => void;
-    themeType?: string;
-    type: string;
     value: string;
     readOnly?: boolean;
     height?: number | string;
@@ -145,8 +113,9 @@ export const EJSAceEditor = (props: EJSAceEditorProps) => {
         ref={refEditor}
     >
         <AceEditor
-            mode={props.type === 'text' ? 'html' : props.type}
-            theme={props.themeType === 'dark' ? 'clouds_midnight' : 'chrome'}
+            mode="ejs"
+            // @ts-ignore
+            theme={themeType === 'dark' ? 'clouds_midnight' : 'chrome'}
             width="100%"
             height="100%"
             value={props.value}

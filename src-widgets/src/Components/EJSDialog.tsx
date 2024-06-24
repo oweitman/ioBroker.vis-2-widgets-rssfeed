@@ -1,6 +1,7 @@
 // TextDialog
 import React, { useEffect, useState } from 'react';
 
+import { I18n } from '@iobroker/adapter-react-v5';
 import RSSDialog from './RSSDialog.tsx';
 import EJSAceEditor from './EJSAceEditor.tsx';
 
@@ -9,8 +10,6 @@ interface EJSDialogProps {
     onChange: (value: string) => void;
     onClose: () => void;
     open: boolean;
-    themeType: string;
-    type: string;
     value: string;
 }
 
@@ -24,17 +23,15 @@ const EJSDialog = (props: EJSDialogProps) => {
 
     return props.open ? <RSSDialog
         keyboardDisabled
-        title={props.type === 'json' ? 'JSON edit' : (props.type === 'html' ? 'HTML edit' : 'Text edit')}
+        title={I18n.t('vis_2_widgets_rssfeed_widget_title')}
         open={!0}
-        actionTitle="Save"
+        actionTitle={I18n.t('vis_2_widgets_rssfeed_widget_save')}
         action={() => props.onChange(value)}
         onClose={props.onClose}
         minWidth={800}
         actionDisabled={value === props.value}
     >
         <EJSAceEditor
-            type={props.type}
-            themeType={props.themeType}
             value={value}
             focus
             height={400}

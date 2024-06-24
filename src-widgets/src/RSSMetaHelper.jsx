@@ -6,6 +6,8 @@ import {
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 
+const rssExample = require('./rss.json');
+
 class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
         return {
@@ -73,12 +75,8 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
 
-        if (!this.state.values[`${this.state.rxData.oid}.val`]) {
-            return null;
-        }
-
         const thStyle = { whiteSpace: 'nowrap', textAlign: 'left', verticalAlign: 'top' };
-        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`]) || {};
+        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
 
         return <table
             style={{ whiteSpace: 'nowrap' }}

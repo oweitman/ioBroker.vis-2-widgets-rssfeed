@@ -6,6 +6,8 @@ import {
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 
+const rssExample = require('./rss.json');
+
 class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
         return {
@@ -88,12 +90,12 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
 
-        if (!this.state.values[`${this.state.rxData.oid}.val`]) {
+        /*         if (!this.state.values[`${this.state.rxData.oid}.val`]) {
             return null;
-        }
+        } */
 
         const thStyle = { whiteSpace: 'nowrap', textAlign: 'left', verticalAlign: 'top' };
-        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`]) || {};
+        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
         const article = parseInt(this.state.rxData.article) || 1;
         const prefix = this.state.rxData.prefix || 'item';
         const item = rss.articles[article - 1];

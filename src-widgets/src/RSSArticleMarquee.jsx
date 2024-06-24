@@ -3,6 +3,9 @@ import React from 'react';
 
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
+import { I18n } from '@iobroker/adapter-react-v5';
+
+const rssExample = require('./rss.json');
 
 /* globals vis */
 
@@ -122,6 +125,10 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                 },
                 // check here all possible types https://github.com/ioBroker/ioBroker.vis/blob/react/src/src/Attributes/Widget/SCHEMA.md
             ],
+            visDefaultStyle: { // default style
+                width: 300,
+                height: 26,
+            },
             visPrev: '',
         };
     }
@@ -193,7 +200,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
         const keys = Object.keys(this.state.data).filter(key => /g_feeds-(\d+)/gm.test(key));
         const articles = keys.reduce((acc, key) => {
             const id = /g_feeds-(\d+)/gm.exec(key)[1];
-            const rss = JSON.parse(this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || '{}');
+            const rss = JSON.parse(this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample));
             if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) return acc;
             const maxarticles = this.state.values[`feed-maxarticles${id}.val`] || 5;
             const filter = this.state.data[`feed-filter${id}`];
@@ -216,7 +223,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
         }, []);
         articles.sort((aEl, bEl) => new Date(bEl.date) - new Date(aEl.date));
 
-        let titles = '';
+        let titles = I18n.t('vis_2_widgets_rssfeed_marquee_empty');
         if (articles && articles.length > 0) {
             titles = articles.reduce((t, item) => {
                 let time = [];
