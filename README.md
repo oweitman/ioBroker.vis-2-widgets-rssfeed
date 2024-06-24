@@ -16,7 +16,7 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 0.2.0 (2024-06-24)
 
 - fine tuning
 

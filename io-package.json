@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "news": {
+      "0.2.0": {
+        "en": "fine tuning",
+        "de": "feinabstimmung",
+        "ru": "тонкая настройка",
+        "pt": "ajuste fino",
+        "nl": "finetuning",
+        "fr": "réglage fin",
+        "it": "tuning",
+        "es": "ajuste fino",
+        "pl": "dostrajanie",
+        "uk": "тонкий тюнінг",
+        "zh-cn": "微调"
+      },
       "0.1.3": {
         "en": "add ace build files to gulp",
         "de": "fügen sie ace build dateien gulp hinzu",
