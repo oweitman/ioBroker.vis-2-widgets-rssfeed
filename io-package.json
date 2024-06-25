@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "news": {
+      "0.2.3": {
+        "en": "switch nodeversion in github actions\nchange upload to v4\nupgrade github commands to non deprecated\nadjust copy commands in gulpfile",
+        "de": "switch nodeversion in github aktionen\nupload auf v4 ändern\ngithub-befehle auf nicht deprecated\nkopierbefehle in gulpfile anpassen",
+        "ru": "переключатель nodeversion в действиях github\nперегрузка на v4\nобновление команд github до нераспределенных\nнастроить команды копий в gulpfile",
+        "pt": "nodeversão do interruptor em ações do github\nalterar o upload para v4\natualizar comandos github para non deprecated\najustar comandos de cópia no gulpfile",
+        "nl": "schakel nodeversion in github acties\nwijzigen upload naar v4\ngithub commando's upgraden naar niet verouderd\nkopieer commando's in gulpbestand aanpassen",
+        "fr": "switch nodeversion dans les actions github\nchanger le téléchargement en v4\nmise à niveau des commandes github à non dépréciées\najuster les commandes de copie dans gulpfile",
+        "it": "commutare la nodeversione nelle azioni github\ncambiare upload a v4\naggiornare i comandi github a non deprecato\nregolare i comandi di copia in gulpfile",
+        "es": "cambio de nodeversión en acciones github\ncambiar de carga a v4\nactualización de comandos github a no deprecated\najustar comandos de copia en gulpfile",
+        "pl": "przełączanie nodeversion w działania github\nzmiana wysyłania do v4\nupgrade github commands to non deprecated\ndostosować polecenia kopiowania w pliku gulpfile",
+        "uk": "переключення вузла в дії github\nзавантажити v4\nоновлення команд github до не депресованих\nналаштування команд копіювання в gulpfile",
+        "zh-cn": "在 github 动作中切换节点\n将上传到 v4\n将 github 命令升级为未贬值的命令\n调整 gulpfile 中的复制命令"
+      },
       "0.2.2": {
         "en": "remove withstyles\ntranslate some missing keys",
         "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
@@ -80,19 +93,6 @@
         "pl": "czas reverte w badaniach",
         "uk": "перевернути час",
         "zh-cn": "在测试中返回超时"
-      },
-      "0.1.0": {
-        "en": "Erstes Testrelease",
-        "de": "Erstes Testrelease",
-        "ru": "Erstes Testrelease",
-        "pt": "Erstes Testrelease",
-        "nl": "Erstes Testrelease",
-        "fr": "Erstes Testrelease",
-        "it": "Erstes Testrelease",
-        "es": "Erstes Testrelease",
-        "pl": "Erstes Testrelease",
-        "uk": "Тестування Erstes",
-        "zh-cn": "埃斯特斯试验释放"
       }
     },
     "title": "vis-2-widgets-rssfeed",
