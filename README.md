@@ -16,6 +16,13 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+### __WORK IN PROGRESS__
+
+- switch nodeversion in github actions
+- change upload to v4
+- upgrade github commands to non deprecated
+- adjust copy commands in gulpfile
+
 ### 0.2.2 (2024-06-25)
 
 - remove withstyles
