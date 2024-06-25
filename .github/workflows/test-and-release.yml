@@ -81,14 +81,16 @@ jobs:
         # The body may be multiline, therefore we need to escape some characters
         run: |
           VERSION="${{ github.ref }}"
-          VERSION=${VERSION##*/}
-          VERSION=${VERSION##*v}
-          echo "VERSION::$VERSION" >> $GITHUB_OUTPUT
+          VERSION=${VERSION##*/v}
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          EOF=$(od -An -N6 -x /dev/urandom | tr -d ' ')
           BODY=$(git show -s --format=%b)
-          BODY="${BODY//'%'/'%25'}"
-          BODY="${BODY//$'\n'/'%0A'}"
-          BODY="${BODY//$'\r'/'%0D'}"
-          echo "BODY::$BODY" >> $GITHUB_OUTPUT
+          echo "BODY<<$EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+          if [[ $VERSION == *"-"* ]] ; then
+            echo "TAG=--tag next" >> $GITHUB_OUTPUT
+          fi
 
       #      - name: Create a clean build
       #        run: npm run build
