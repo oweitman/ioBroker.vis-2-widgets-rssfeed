@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "news": {
+      "0.2.2": {
+        "en": "remove withstyles\ntranslate some missing keys",
+        "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
+        "ru": "удалить стили\nпереводить отсутствующие ключи",
+        "pt": "remover com estilos\ntraduzir algumas chaves em falta",
+        "nl": "verwijderen withstyles\nenkele ontbrekende sleutels vertalen",
+        "fr": "enlever avec les styles\ntraduire quelques clés manquantes",
+        "it": "rimuovere con stili\ntradurre alcune chiavi mancanti",
+        "es": "quitar con estilos\ntraducir algunas teclas perdidas",
+        "pl": "usunąć ze stylów\nprzetłumaczyć brakujące klucze",
+        "uk": "видалити зачіски\nперевести деякі відсутні ключі",
+        "zh-cn": "以样式删除\n翻译一些缺失的密钥"
+      },
       "0.2.1": {
         "en": "set node to 20 in deploy task",
         "de": "set node to 20 in deploy task",
@@ -80,19 +93,6 @@
         "pl": "Erstes Testrelease",
         "uk": "Тестування Erstes",
         "zh-cn": "埃斯特斯试验释放"
-      },
-      "0.0.9": {
-        "en": "first test release",
-        "de": "erste Testversion",
-        "ru": "первый тестовый выпуск",
-        "pt": "primeiro lançamento de teste",
-        "nl": "eerste testuitgave",
-        "fr": "première version test",
-        "it": "prima versione di prova",
-        "es": "primera versión de prueba",
-        "pl": "pierwsza wersja testowa",
-        "uk": "перший тестовий випуск",
-        "zh-cn": "第一次测试版本"
       }
     },
     "title": "vis-2-widgets-rssfeed",
