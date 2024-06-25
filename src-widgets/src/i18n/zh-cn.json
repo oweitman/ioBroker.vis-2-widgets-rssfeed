@@ -18,5 +18,8 @@
   "vis_2_widgets_rssfeed_marquee_filter": "过滤器",
   "vis_2_widgets_rssfeed_widget_template": "模板",
   "vis_2_widgets_rssfeed_widget_maxarticles": "最多的文章",
-  "vis_2_widgets_rssfeed_widget_filter": "过滤器"
+  "vis_2_widgets_rssfeed_widget_filter": "过滤器",
+  "vis_2_widgets_rssfeed_marquee_empty": "未找到文章 。 请输入鼠标",
+  "vis_2_widgets_rssfeed_widget_title": "模板编辑",
+  "vis_2_widgets_rssfeed_widget_save": "保存"
 }

@@ -18,5 +18,8 @@
   "vis_2_widgets_rssfeed_marquee_filter": "Filtro",
   "vis_2_widgets_rssfeed_widget_template": "Template",
   "vis_2_widgets_rssfeed_widget_maxarticles": "Max. articoli",
-  "vis_2_widgets_rssfeed_widget_filter": "Filtro"
+  "vis_2_widgets_rssfeed_widget_filter": "Filtro",
+  "vis_2_widgets_rssfeed_marquee_empty": "Nessun articolo trovato. Si prega di inserire datpoint a un rsfeed",
+  "vis_2_widgets_rssfeed_widget_title": "Modifica modello",
+  "vis_2_widgets_rssfeed_widget_save": "Salva"
 }

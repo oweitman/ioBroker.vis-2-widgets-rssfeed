@@ -18,5 +18,8 @@
   "vis_2_widgets_rssfeed_marquee_filter": "Фильтр",
   "vis_2_widgets_rssfeed_widget_template": "Шаблон",
   "vis_2_widgets_rssfeed_widget_maxarticles": "Макс. статьи",
-  "vis_2_widgets_rssfeed_widget_filter": "Фильтр"
+  "vis_2_widgets_rssfeed_widget_filter": "Фильтр",
+  "vis_2_widgets_rssfeed_marquee_empty": "Никаких статей. Пожалуйста, введите точку в rssfeed",
+  "vis_2_widgets_rssfeed_widget_title": "Редактирование шаблона",
+  "vis_2_widgets_rssfeed_widget_save": "Сохранить"
 }
