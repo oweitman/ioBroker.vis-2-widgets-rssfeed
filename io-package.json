@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "news": {
+      "0.2.4": {
+        "en": "fix github commands to non deprecated",
+        "de": "github-befehle nicht deprecated",
+        "ru": "починить команды github для не обесцененных",
+        "pt": "corrigir comandos github para non deprecated",
+        "nl": "fix github-opdrachten op niet verouderd",
+        "fr": "fixer les commandes github à non dépréciées",
+        "it": "correggere i comandi github a non deprecato",
+        "es": "fijar comandos github a no deprecated",
+        "pl": "naprawić komendy github do nie zdepregatowane",
+        "uk": "фіксувати команди github для не депресованих",
+        "zh-cn": "将 github 命令固定为未贬值"
+      },
       "0.2.3": {
         "en": "switch nodeversion in github actions\nchange upload to v4\nupgrade github commands to non deprecated\nadjust copy commands in gulpfile",
         "de": "switch nodeversion in github aktionen\nupload auf v4 ändern\ngithub-befehle auf nicht deprecated\nkopierbefehle in gulpfile anpassen",
@@ -80,19 +93,6 @@
         "pl": "przenieść bibliotekę do ace / ejs lib do zależności",
         "uk": "русский englishрусскийукраїнськаpolskiitalianoespañol汉语bahasa indonesiaहिन्दीportuguês日本語deutschfrançaisภาษาไทยελληνικά اللغة العربية",
         "zh-cn": "将库移动到 a/ejs lib 到依赖"
-      },
-      "0.1.1": {
-        "en": "reverte timepout in tests",
-        "de": "reverte timepout in tests",
-        "ru": "ree timepout в тестах",
-        "pt": "reverte timepout em testes",
-        "nl": "terugzetten van timepout in tests",
-        "fr": "retourner le timepout dans les essais",
-        "it": "timepout riverito nei test",
-        "es": "reverte timepout en pruebas",
-        "pl": "czas reverte w badaniach",
-        "uk": "перевернути час",
-        "zh-cn": "在测试中返回超时"
       }
     },
     "title": "vis-2-widgets-rssfeed",
