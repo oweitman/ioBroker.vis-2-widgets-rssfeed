@@ -129,6 +129,10 @@
       "widgets",
       "vis-2-widgets-rssfeed"
     ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+  },
     "tier": 3,
     "platform": "Javascript/Node.js",
     "icon": "vis-2-widgets-rssfeed.png",

@@ -56,6 +56,8 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 
 - Erstes Testrelease
 
+## License
+
 The MIT License (MIT)
 
 Copyright (c) 2024 oweitman <oweitman@gmx.de>
