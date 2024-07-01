@@ -144,7 +144,6 @@
     "nogit": true,
     "singleton": true,
     "onlyWWW": true,
-    "noConfig": true,
     "adminUI": {
       "config": "none"
     },
