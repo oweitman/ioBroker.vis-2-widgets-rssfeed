@@ -95,7 +95,6 @@
         "zh-cn": "将库移动到 a/ejs lib 到依赖"
       }
     },
-    "title": "vis-2-widgets-rssfeed",
     "titleLang": {
       "en": "Vis-2 widget rssfeed",
       "de": "Vis-2-Widget-RSSFeed",
@@ -130,14 +129,14 @@
       "widgets",
       "vis-2-widgets-rssfeed"
     ],
-    "license": "MIT",
+    "tier": 3,
     "platform": "Javascript/Node.js",
     "icon": "vis-2-widgets-rssfeed.png",
     "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.vis-2-widgets-rssfeed/main/admin/vis-2-widgets-rssfeed.png",
     "enabled": true,
     "readme": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed/blob/main/README.md",
     "loglevel": "info",
-    "mode": "once",
+    "mode": "none",
     "nogit": true,
     "singleton": true,
     "onlyWWW": true,
