@@ -9,27 +9,31 @@
 
 this adapter contains only the vis-2 widgets for the adapter rssfeed.
 
-For a detailed description of the widgets and functionality  see Adapter rssfeed.
+For a detailed description of the widgets and functionality, see Adapter rssfeed.
 
 ## Changelog
 <!--
 	Placeholder for next versions:
-	### __WORK IN PROGRESS__
+	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- Removed styles libraries as they are not compatible with vis 2.0
+
 ### 0.2.4 (2024-06-25)
 
-- fix github commands to non deprecated
+- fix GitHub commands to non deprecated
 
 ### 0.2.3 (2024-06-25)
 
-- switch nodeversion in github actions
+- switch nodeversion in GitHub actions
 - change upload to v4
-- upgrade github commands to non deprecated
+- upgrade GitHub commands to non deprecated
 - adjust copy commands in gulpfile
 
 ### 0.2.2 (2024-06-25)
 
-- remove withstyles
+- remove `withStyles`
 - translate some missing keys
 
 ### 0.2.1 (2024-06-24)
@@ -50,7 +54,7 @@ For a detailed description of the widgets and functionality  see Adapter rssfeed
 
 ### 0.1.1 (2024-06-22)
 
-- reverte timepout in tests
+- revert timeout in tests
 
 ### 0.1.0 (2024-06-22)
 
