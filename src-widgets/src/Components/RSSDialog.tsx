@@ -1,13 +1,12 @@
 // IODialog
 import React from 'react';
 import {
-    Button, Dialog, DialogActions, DialogContent, DialogTitle,
+    Button, Dialog, DialogActions,
+    DialogContent, DialogTitle,
 } from '@mui/material';
-import type { Breakpoint } from '@mui/system';
 
 import { Close as CloseIcon } from '@mui/icons-material';
-
-import { I18n } from '@iobroker/adapter-react-v5';
+import { type Translate } from '@iobroker/adapter-react-v5';
 
 interface RSSDialogProps {
     ActionIcon?: any;
@@ -22,22 +21,24 @@ interface RSSDialogProps {
     dialogActions?: any;
     keyboardDisabled?: boolean;
     onClose: () => void;
-    open: boolean;
     title: string;
     fullScreen?: boolean;
-    maxWidth?: Breakpoint;
+    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     minWidth?: number | string;
     noTranslation?: boolean;
+    t: Translate;
 }
 
-const RSSDialog = (props: RSSDialogProps) => (props.open ? <Dialog
-    // @ts-ignore
+const RSSDialog = (props: RSSDialogProps) => <Dialog
     onClose={props.closeDisabled ? null : props.onClose}
     open={!0}
     fullScreen={!!props.fullScreen}
     maxWidth={props.maxWidth || 'md'}
+    fullWidth
 >
-    <DialogTitle>{props.noTranslation ? props.title : I18n.t(props.title)}</DialogTitle>
+    <DialogTitle>
+        {props.noTranslation ? props.title : props.t(props.title)}
+    </DialogTitle>
     <DialogContent
         style={{ minWidth: props.minWidth || undefined }}
         onKeyUp={e => {
@@ -57,21 +58,20 @@ const RSSDialog = (props: RSSDialogProps) => (props.open ? <Dialog
     </DialogContent>
     <DialogActions>
         {props.dialogActions || null}
-        {props.actionTitle
-            ? <Button
-                variant="contained"
-                onClick={() => {
-                    props.action && props.action();
-                    if (!props.actionNoClose) {
-                        props.onClose();
-                    }
-                }}
-                color={props.actionColor || 'primary'}
-                disabled={props.actionDisabled}
-                startIcon={props.ActionIcon ? <props.ActionIcon /> : undefined}
-            >
-                {props.noTranslation ? props.actionTitle : I18n.t(props.actionTitle)}
-            </Button> : null}
+        {props.actionTitle ? <Button
+            variant="contained"
+            onClick={() => {
+                props.action && props.action();
+                if (!props.actionNoClose) {
+                    props.onClose();
+                }
+            }}
+            color={props.actionColor || 'primary'}
+            disabled={props.actionDisabled}
+            startIcon={props.ActionIcon ? <props.ActionIcon /> : undefined}
+        >
+            {props.noTranslation ? props.actionTitle : props.t(props.actionTitle)}
+        </Button> : null}
         <Button
             variant="contained"
             color="grey"
@@ -79,9 +79,9 @@ const RSSDialog = (props: RSSDialogProps) => (props.open ? <Dialog
             disabled={props.closeDisabled}
             startIcon={<CloseIcon />}
         >
-            {props.noTranslation && props.closeTitle ? props.closeTitle : I18n.t(props.closeTitle || 'Cancel')}
+            {props.noTranslation && props.closeTitle ? props.closeTitle : props.t(props.closeTitle || 'Cancel')}
         </Button>
     </DialogActions>
-</Dialog> : null);
+</Dialog>;
 
 export default RSSDialog;

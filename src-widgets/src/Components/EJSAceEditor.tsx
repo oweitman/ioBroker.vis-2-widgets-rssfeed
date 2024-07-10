@@ -9,9 +9,7 @@ import 'ace-builds/src-noconflict/theme-clouds_midnight';
 import 'ace-builds/src-noconflict/theme-chrome';
 import 'ace-builds/src-noconflict/mode-ejs';
 
-import { I18n } from '@iobroker/adapter-react-v5';
-
-/* globals themeType */
+import { I18n, type ThemeType } from '@iobroker/adapter-react-v5';
 
 Ace.config.set('basePath', './lib/js/ace');
 Ace.config.setModuleUrl('ace/ext/language_tools', './lib/js/ace/ext-language_tools.js');
@@ -33,10 +31,11 @@ interface EJSAceEditorProps {
     refEditor?: (editor: AceEditor) => void;
     error?: boolean;
     focus?: boolean;
+    themeType: ThemeType;
 }
 
 export const EJSAceEditor = (props: EJSAceEditorProps) => {
-    const refEditor = useRef();
+    const refEditor = useRef<HTMLDivElement>();
     useEffect(() => {
         let content: HTMLInputElement | null = null;
         let timer: ReturnType<typeof setTimeout>;
@@ -105,21 +104,18 @@ export const EJSAceEditor = (props: EJSAceEditorProps) => {
 
     return <div
         style={{
-            width: props.width || '100%',
+            width: props.width || 'calc(100% - 8px)',
             height: props.height || '100%',
             border: props.error ? '1px solid #800' : '1px solid transparent',
         }}
-        // @ts-ignore
         ref={refEditor}
     >
         <AceEditor
             mode="ejs"
-            // @ts-ignore
-            theme={themeType === 'dark' ? 'clouds_midnight' : 'chrome'}
+            theme={props.themeType === 'dark' ? 'clouds_midnight' : 'chrome'}
             width="100%"
             height="100%"
             value={props.value}
-            // @ts-ignore
             onChange={newValue => props.onChange(newValue)}
             readOnly={props.readOnly || false}
             focus={props.focus}

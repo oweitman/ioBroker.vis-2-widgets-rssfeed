@@ -1,27 +1,25 @@
 import React from 'react';
-import {
-
-} from '@mui/material';
 import PropTypes from 'prop-types';
+import ejs from 'ejs';
 
-// import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-import VisEJSAttibuteField from './Components/VisEJSAttibuteField.tsx';
 
-const ejs = require('ejs');
-const rssExample = require('./rss.json');
+import VisEJSAttributeField from './Components/VisEJSAttributeField.tsx';
+
+import rssExample from './rss.json';
+import translations from './translations';
 
 class RSSWidget extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
-        const defaulttemplate = `
+        const defaultTemplate = `
 <!--
  available variables:
- widgetid      ->  id of the widget 
- rss.meta      ->  all meta informations of an feed, details see Meta Helper widget 
+ widgetId      ->  id of the widget 
+ rss.meta      ->  all meta information of a feed, details see Meta Helper widget 
  rss.articles  ->  all articles as array, details see Article Helper widget 
  style         ->  all style settings for the widget
  
- all variables are read only
+ all variables are read-only
 -->
 <style>
 #<%- widgetid %> img {
@@ -43,7 +41,7 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
     <div style="clear:both;"></div>
 </div>
 <% }); %> 
-        `;
+`;
         return {
             id: 'tplRSSWidget',
             visSet: 'vis-2-widgets-rssfeed',
@@ -56,29 +54,29 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'oid',     // name in data structure
                             type: 'id',
-                            label: 'vis_2_widgets_rssfeed_metahelper_oid', // translated field label
+                            label: 'metahelper_oid', // translated field label
                         },
                         {
                             name: 'template',     // name in data structure
                             type: 'custom',
-                            label: 'vis_2_widgets_rssfeed_widget_template', // translated field label
-                            default: defaulttemplate,
+                            label: 'widget_template', // translated field label
+                            default: defaultTemplate,
                             component: (     // important
                                 field,       // field properties: {name, label, type, set, singleName, component,...}
                                 data,        // widget data
-                                onDataChange, // function to call, when data changed
-                                props,       // additional properties : {socket, projectName, instance, adapterName, selectedView, selectedWidgets, project, widgetID}
+                                onDataChange, // function to call when data changed
+                                props,       // additional properties: {socket, projectName, instance, adapterName, selectedView, selectedWidgets, project, widgetID}
                                 // socket,      // socket object
-                                // widgetID,    // widget ID or widgets IDs. If selecteld more than one widget, it is array of IDs
+                                // widgetID,    // widget ID or widget IDs. If selected more than one widget, it is array of IDs
                                 // view,        // view name
                                 // project,      // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
-                            ) => (<VisEJSAttibuteField
-                                visSocket={props.context.socket}
+                            ) => <VisEJSAttributeField
                                 field={field}
                                 data={data}
                                 onDataChange={onDataChange}
-                                props
-                            />),
+                                themeType={props.context.theme.palette.mode}
+                                t={RSSWidget.t}
+                            />,
                         },
                         {
                             name: 'max',     // name in data structure
@@ -87,13 +85,13 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max:9999,
                             step:1,
-                            label: 'vis_2_widgets_rssfeed_widget_maxarticles', // translated field label
+                            label: 'widget_maxarticles', // translated field label
                         },
                         {
                             name: 'filter',     // name in data structure
                             type: 'text',
                             default: '',
-                            label: 'vis_2_widgets_rssfeed_widget_filter', // translated field label
+                            label: 'widget_filter', // translated field label
                         },
                     ],
                 },
@@ -102,27 +100,20 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
             visDefaultStyle: { // default style
                 width: 300,
                 height: 300,
+                'overflow-x': 'hidden',
+                'overflow-y': 'auto',
             },
             visPrev: '',
         };
     }
 
     // eslint-disable-next-line class-methods-use-this
-    propertiesUpdate() {
-        // Widget has 3 important states
-        // 1. this.state.values - contains all state values, that are used in widget (automatically collected from widget info).
-        //                        So you can use `this.state.values[this.state.rxData.oid + '.val']` to get value of state with id this.state.rxData.oid
-        // 2. this.state.rxData - contains all widget data with replaced bindings. E.g. if this.state.data.type is `{system.adapter.admin.0.alive}`,
-        //                        then this.state.rxData.type will have state value of `system.adapter.admin.0.alive`
-        // 3. this.state.rxStyle - contains all widget styles with replaced bindings. E.g. if this.state.styles.width is `{javascript.0.width}px`,
-        //                        then this.state.rxData.type will have state value of `javascript.0.width` + 'px
+    getI18nPrefix() {
+        return 'vis_2_widgets_rssfeed_';
     }
 
-    componentDidMount() {
-        super.componentDidMount();
-
-        // Update data
-        this.propertiesUpdate();
+    static t(word) {
+        return super.t(`vis_2_widgets_rssfeed_${word}`);
     }
 
     // Do not delete this method. It is used by vis to read the widget configuration.
@@ -131,30 +122,13 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
         return RSSWidget.getWidgetInfo();
     }
 
-    // This function is called every time when rxData is changed
-    onRxDataChanged() {
-        this.propertiesUpdate();
-    }
-
-    // This function is called every time when rxStyle is changed
     // eslint-disable-next-line class-methods-use-this
-    onRxStyleChanged() {
-
-    }
-
-    // This function is called every time when some Object State updated, but all changes lands into this.state.values too
-    // eslint-disable-next-line class-methods-use-this, no-unused-vars
-    onStateUpdated(id, state) {
-
-    }
-
-    // eslint-disable-next-line class-methods-use-this
-    checkHighlite(value, highlights, sep) {
+    static checkHighlight(value, highlights, sep) {
         sep = typeof sep !== 'undefined' ? sep : ';';
         const highlight = highlights.split(sep);
         return highlight.reduce((acc, cur) => {
             if (cur === '') return acc;
-            return acc || value.toLowerCase().indexOf(cur.toLowerCase()) >= 0;
+            return acc || value.toLowerCase().includes(cur.toLowerCase());
         }, false);
     }
 
@@ -171,35 +145,45 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
         super.renderWidgetBody(props);
         const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
         const data = props.widget.data;
+        const overflowX = props.style.overflowX;
+        const overflowY = props.style.overflowY;
+        props.style.overflowX = 'hidden';
+        props.style.overflowY = 'hidden';
 
-        const errortemplate = `
-        No Object ID set
-        `;
         const template = data.template;
         const filter = data.filter ? data.filter : '';
-        let maxarticles = data.max ? data.max : 999;
-        maxarticles = maxarticles > 0 ? maxarticles : 1;
-        if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0, maxarticles);
+        let maxArticles = data.max ? data.max : 999;
+        maxArticles = maxArticles > 0 ? maxArticles : 1;
+        if (rss && rss.articles && rss.articles.length > maxArticles) rss.articles = rss.articles.slice(0, maxArticles);
 
         if (filter !== '') {
-            rss.articles = rss.articles.filter(item => this.checkHighlite(item.title + item.description + item.categories.toString(), filter));
+            rss.articles = rss.articles.filter(item => RSSWidget.checkHighlight(item.title + item.description + item.categories.toString(), filter));
         }
         let text = '';
         try {
             if (typeof rss.meta === 'undefined') {
-                text = ejs.render(errortemplate, {});
-            } else {
-                text = ejs.render(template, { rss, widgetid:props.id, style:props.style });
+                return <div>{RSSWidget.t('No Object ID set')}</div>;
             }
+            text = ejs.render(template, {
+                rss,
+                widgetid: props.id,
+                widgetId: props.id,
+                style: props.style,
+            });
         } catch (e) {
             text = this.escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
             text = text.replace(/ /gm, '&nbsp;');
-            text = `<code style="color:red;">${text}</code>`;
+            text = `<code style="color: red;">${text}</code>`;
         }
-        // eslint-disable-next-line react/no-danger
-        return <div dangerouslySetInnerHTML={{ __html: text }} />;
+
+        return <div
+            style={{ overflowX, overflowY, width: '100%', height: '100%' }}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: text }}
+        />;
     }
 }
+
 RSSWidget.propTypes = {
     systemConfig: PropTypes.object,
     socket: PropTypes.object,
