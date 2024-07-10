@@ -6,7 +6,7 @@ import { I18n } from '@iobroker/adapter-react-v5';
 import RSSMetaHelper from './RSSMetaHelper';
 import RSSArticleMarquee from './RSSArticleMarquee';
 import RSSArticleHelper from './RSSArticleHelper';
-import translations from './translations';
+import translations from './translations.tsx';
 
 class App extends WidgetDemoApp {
     constructor(props) {

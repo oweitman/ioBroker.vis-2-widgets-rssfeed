@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "прихований",
   "widget_overflow_visible": "видно",
   "widget_overflow_auto": "авто",
-  "Cancel": "Скасувати"
+  "Cancel": "Скасувати",
+  "No Object ID set": "Ідентифікатор об’єкта не встановлено"
 }

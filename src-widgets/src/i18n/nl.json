@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "verborgen",
   "widget_overflow_visible": "zichtbaar",
   "widget_overflow_auto": "auto",
-  "Cancel": "Annuleren"
+  "Cancel": "Annuleren",
+  "No Object ID set": "Geen object-ID ingesteld"
 }

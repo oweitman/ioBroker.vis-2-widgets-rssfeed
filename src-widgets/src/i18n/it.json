@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "nascosto",
   "widget_overflow_visible": "visibile",
   "widget_overflow_auto": "auto",
-  "Cancel": "Annulla"
+  "Cancel": "Annulla",
+  "No Object ID set": "Nessun ID oggetto impostato"
 }

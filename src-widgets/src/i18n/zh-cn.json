@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "隐",
   "widget_overflow_visible": "可见的",
   "widget_overflow_auto": "汽车",
-  "Cancel": "取消"
+  "Cancel": "取消",
+  "No Object ID set": "未设置对象 ID"
 }

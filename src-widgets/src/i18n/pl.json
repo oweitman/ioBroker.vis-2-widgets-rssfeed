@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "ukryty",
   "widget_overflow_visible": "widoczny",
   "widget_overflow_auto": "automatyczny",
-  "Cancel": "Anulować"
+  "Cancel": "Anulować",
+  "No Object ID set": "Nie ustawiono identyfikatora obiektu"
 }

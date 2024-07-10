@@ -8,17 +8,16 @@ import {
 import {
     Edit as EditIcon,
 } from '@mui/icons-material';
-import {
-    type ThemeType, type Translate,
-} from '@iobroker/adapter-react-v5';
+import type { ThemeType, Translate } from '@iobroker/adapter-react-v5';
+import type { RxWidgetInfoAttributesField, WidgetData } from '@iobroker/types-vis-2';
 
 import EJSDialog from './EJSDialog.tsx';
 
 interface VisEJSAttributeFieldProps {
-    field: any;
-    data: Record<string, any>;
+    field: RxWidgetInfoAttributesField;
+    data: WidgetData;
     // eslint-disable-next-line no-unused-vars
-    onDataChange: (data: Record<string, any>) => void;
+    onDataChange: (data: WidgetData) => void;
     themeType: ThemeType;
     t: Translate;
 }

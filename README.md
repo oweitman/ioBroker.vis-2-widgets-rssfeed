@@ -19,6 +19,7 @@ For a detailed description of the widgets and functionality, see Adapter rssfeed
 ### **WORK IN PROGRESS**
 
 - Removed styles libraries as they are not compatible with vis 2.0
+- Rewritten with TypeScript
 
 ### 0.2.4 (2024-06-25)
 

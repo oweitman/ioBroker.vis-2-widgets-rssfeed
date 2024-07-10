@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "escondido",
   "widget_overflow_visible": "visível",
   "widget_overflow_auto": "auto",
-  "Cancel": "Cancelar"
+  "Cancel": "Cancelar",
+  "No Object ID set": "Nenhum ID de objeto definido"
 }

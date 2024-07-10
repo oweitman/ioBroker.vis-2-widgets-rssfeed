@@ -26,5 +26,6 @@
   "widget_overflow_hidden": "скрытый",
   "widget_overflow_visible": "видимый",
   "widget_overflow_auto": "авто",
-  "Cancel": "Отмена"
+  "Cancel": "Отмена",
+  "No Object ID set": "Идентификатор объекта не установлен"
 }
