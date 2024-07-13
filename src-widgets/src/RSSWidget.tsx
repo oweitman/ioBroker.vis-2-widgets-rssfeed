@@ -6,7 +6,7 @@ import type {
     RxRenderWidgetProps,
     RxWidgetInfoAttributesField,
     RxWidgetInfoCustomComponentProperties,
-    WidgetData
+    WidgetData,
 } from '@iobroker/types-vis-2';
 
 import type { RSSFeed } from './types';
@@ -22,6 +22,8 @@ type RxData = {
 };
 
 class RSSWidget extends (window.visRxWidget || VisRxWidget<RxData>) {
+    state: any;
+
     static getWidgetInfo() {
         const defaultTemplate = `
 <!--
@@ -145,7 +147,7 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget<RxData>) {
     }
 
     static escapeHTML(html: string): string {
-        let escapeEl = document.createElement('textarea');
+        let escapeEl: HTMLTextAreaElement|null = document.createElement('textarea');
         escapeEl.textContent = html;
         const ret = escapeEl.innerHTML;
         escapeEl = null;
@@ -156,8 +158,8 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget<RxData>) {
         super.renderWidgetBody(props);
         const rss: RSSFeed = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample)) as RSSFeed;
         const data = props.widget.data;
-        const overflowX: React.CSSProperties.overflowX = props.style.overflowX;
-        const overflowY: React.CSSProperties.overflowX = props.style.overflowY;
+        const overflowX: React.CSSProperties['overflowX'] = props.style.overflowX;
+        const overflowY: React.CSSProperties['overflowY'] = props.style.overflowY;
         props.style.overflowX = 'hidden';
         props.style.overflowY = 'hidden';
 

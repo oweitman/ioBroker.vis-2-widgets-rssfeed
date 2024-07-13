@@ -30,7 +30,7 @@ interface RSSDialogProps {
 }
 
 const RSSDialog = (props: RSSDialogProps) => <Dialog
-    onClose={props.closeDisabled ? null : props.onClose}
+    onClose={props.closeDisabled ? undefined : props.onClose}
     open={!0}
     fullScreen={!!props.fullScreen}
     maxWidth={props.maxWidth || 'md'}

@@ -11,6 +11,8 @@ type RxData = {
 };
 
 class RSSMetaHelper extends (window.visRxWidget || VisRxWidget<RxData>) {
+    state: any;
+
     static getWidgetInfo() {
         return {
             id: 'tplRSSMetaHelper',

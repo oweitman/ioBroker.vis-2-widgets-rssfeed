@@ -12,6 +12,8 @@ type RxData = {
 };
 
 class RSSArticleHelper extends (window.visRxWidget || VisRxWidget<RxData>) {
+    state: any;
+
     static getWidgetInfo() {
         return {
             id: 'tplRSSArticleHelper',
@@ -158,14 +160,14 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget<RxData>) {
                             {prefix}
                         .image.url
                         </th>
-                        <td>{item.image.url}</td>
+                        <td>{item.image?.url}</td>
                     </tr>
                     <tr>
                         <th style={thStyle}>
                             {prefix}
                         .image.title
                         </th>
-                        <td>{item.image.title}</td>
+                        <td>{item.image?.title}</td>
                     </tr>
                     <tr>
                         <th style={thStyle}>

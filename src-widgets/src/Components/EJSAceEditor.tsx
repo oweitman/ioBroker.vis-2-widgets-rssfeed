@@ -35,7 +35,7 @@ interface EJSAceEditorProps {
 }
 
 export const EJSAceEditor = (props: EJSAceEditorProps) => {
-    const refEditor = useRef<HTMLDivElement>();
+    const refEditor = useRef<HTMLDivElement | null>(null);
     useEffect(() => {
         let content: HTMLInputElement | null = null;
         let timer: ReturnType<typeof setTimeout>;
@@ -116,7 +116,7 @@ export const EJSAceEditor = (props: EJSAceEditorProps) => {
             width="100%"
             height="100%"
             value={props.value}
-            onChange={newValue => props.onChange(newValue)}
+            onChange={newValue => props.onChange && props.onChange(newValue)}
             readOnly={props.readOnly || false}
             focus={props.focus}
             ref={props.refEditor}

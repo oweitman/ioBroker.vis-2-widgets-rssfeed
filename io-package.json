@@ -166,6 +166,7 @@
       }
     },
     "restartAdapters": [
+      "vis",
       "vis-2"
     ],
     "dependencies": [

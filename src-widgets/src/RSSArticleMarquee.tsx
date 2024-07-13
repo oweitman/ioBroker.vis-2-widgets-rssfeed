@@ -2,7 +2,8 @@ import React from 'react';
 
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-import { RxRenderWidgetProps } from '@iobroker/types-vis-2';
+import { RxWidgetProps } from '@iobroker/types-vis-2';
+
 import type { RSSFeed, RSSArticle } from './types';
 
 import rssExample from './rss.json';
@@ -24,6 +25,8 @@ type RxData = {
 };
 
 class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
+    state: any;
+
     static getWidgetInfo() {
         return {
             id: 'tplRSSArticleMarquee',
@@ -159,7 +162,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
         }, false);
     }
 
-    renderWidgetBody(props: RxRenderWidgetProps): React.JSX.Element {
+    renderWidgetBody(props: RxWidgetProps): React.JSX.Element {
         super.renderWidgetBody(props);
 
         const speed: number = this.state.rxData.speed || 200;
@@ -174,9 +177,10 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
         const withName: boolean = this.state.rxData.withname || false;
 
         const keys = Object.keys(this.state.data).filter(key => /g_feeds-(\d+)/gm.test(key));
-
-        const articles = keys.reduce((acc, key) => {
-            const id = /g_feeds-(\d+)/gm.exec(key)[1];
+        const articles = keys.reduce((acc:RSSArticle[], key) => {
+            const test = /g_feeds-(\d+)/gm.exec(key);
+            if (!test) return acc;
+            const id = test[1];
             const rss: RSSFeed = JSON.parse(this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample)) as RSSFeed;
             if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) {
                 return acc;
@@ -205,21 +209,20 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
 
             return acc.concat(rss.articles);
         }, []);
-        articles.sort((aEl, bEl) => (new Date(bEl.date)).getTime() - (new Date(aEl.date)).getTime());
-
+        articles.sort((aEl:RSSArticle, bEl:RSSArticle) => (new Date(bEl.date)).getTime() - (new Date(aEl.date)).getTime());
         let titles = RSSArticleMarquee.t('marquee_empty');
         if (articles && articles.length > 0) {
-            titles = articles.reduce((t, item) => {
-                let time = [];
+            titles = articles.reduce((t, item: RSSArticle) => {
+                let time:String[] = [];
                 if (withDate) {
-                    time.push(this.props.context.formatUtils.formatDate(item.date, 'DD.MM.'));
+                    time.push(props.context.formatUtils.formatDate(item.date, 'DD.MM.'));
                 }
                 if (withYear) {
-                    time.push(this.props.context.formatUtils.formatDate(item.date, 'YY'));
+                    time.push(props.context.formatUtils.formatDate(item.date, 'YY'));
                 }
                 time = [time.join('')];
                 if (withTime) {
-                    time.push(this.props.context.formatUtils.formatDate(item.date, 'hh:mm'));
+                    time.push(props.context.formatUtils.formatDate(item.date, 'hh:mm'));
                 }
                 if (withLink) {
                     t += ` ${divider} ${time.join(' ')} ${withName ? `${item.meta_name || item.meta_title}: ` : ''}<a href="${item.link}" target="rssarticle">${time} ${item.title}</a>`;

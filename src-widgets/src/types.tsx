@@ -22,6 +22,9 @@ export interface RSSArticle {
     image?: Record<string, string>;
     source?: Record<string, string>;
     enclosures?: string[];
+    meta_name?: string;
+    meta_description?: string;
+    meta_title?: string;
 }
 
 export interface RSSFeed {
