@@ -21,7 +21,7 @@ type RxData = {
     filter?: string;
 };
 
-class RSSWidget extends (window.visRxWidget || VisRxWidget<RxData>) {
+class RSSWidget extends (window.visRxWidget || VisRxWidget)<RxData> {
     state: any;
 
     static getWidgetInfo() {

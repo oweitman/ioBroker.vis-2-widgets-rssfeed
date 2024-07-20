@@ -10,7 +10,7 @@ type RxData = {
     oid: string;
 };
 
-class RSSMetaHelper extends (window.visRxWidget || VisRxWidget<RxData>) {
+class RSSMetaHelper extends (window.visRxWidget || VisRxWidget)<RxData> {
     state: any;
 
     static getWidgetInfo() {
@@ -32,7 +32,7 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget<RxData>) {
                 // check here all possible types https://github.com/ioBroker/ioBroker.vis/blob/react/src/src/Attributes/Widget/SCHEMA.md
             ],
             visPrev: '',
-        };
+        } as const;
     }
 
     // Do not delete this method. It is used by vis to read the widget configuration.

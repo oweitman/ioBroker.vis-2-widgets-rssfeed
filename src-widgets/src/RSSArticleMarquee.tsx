@@ -2,7 +2,7 @@ import React from 'react';
 
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-import { RxWidgetProps } from '@iobroker/types-vis-2';
+import type { RxRenderWidgetProps } from '@iobroker/types-vis-2';
 
 import type { RSSFeed, RSSArticle } from './types';
 
@@ -24,7 +24,7 @@ type RxData = {
     [key: `feed-filter${number}`]: string;
 };
 
-class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
+class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget)<RxData> {
     state: any;
 
     static getWidgetInfo() {
@@ -142,7 +142,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
                 height: 26,
             },
             visPrev: '',
-        };
+        } as const;
     }
 
     // Do not delete this method. It is used by vis to read the widget configuration.
@@ -162,7 +162,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
         }, false);
     }
 
-    renderWidgetBody(props: RxWidgetProps): React.JSX.Element {
+    renderWidgetBody(props: RxRenderWidgetProps): React.JSX.Element {
         super.renderWidgetBody(props);
 
         const speed: number = this.state.rxData.speed || 200;
@@ -209,20 +209,20 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
 
             return acc.concat(rss.articles);
         }, []);
-        articles.sort((aEl:RSSArticle, bEl:RSSArticle) => (new Date(bEl.date)).getTime() - (new Date(aEl.date)).getTime());
+        articles.sort((aEl: RSSArticle, bEl: RSSArticle) => (new Date(bEl.date)).getTime() - (new Date(aEl.date)).getTime());
         let titles = RSSArticleMarquee.t('marquee_empty');
         if (articles && articles.length > 0) {
             titles = articles.reduce((t, item: RSSArticle) => {
                 let time:String[] = [];
                 if (withDate) {
-                    time.push(props.context.formatUtils.formatDate(item.date, 'DD.MM.'));
+                    time.push(this.props.context.formatUtils.formatDate(item.date, 'DD.MM.'));
                 }
                 if (withYear) {
-                    time.push(props.context.formatUtils.formatDate(item.date, 'YY'));
+                    time.push(this.props.context.formatUtils.formatDate(item.date, 'YY'));
                 }
                 time = [time.join('')];
                 if (withTime) {
-                    time.push(props.context.formatUtils.formatDate(item.date, 'hh:mm'));
+                    time.push(this.props.context.formatUtils.formatDate(item.date, 'hh:mm'));
                 }
                 if (withLink) {
                     t += ` ${divider} ${time.join(' ')} ${withName ? `${item.meta_name || item.meta_title}: ` : ''}<a href="${item.link}" target="rssarticle">${time} ${item.title}</a>`;
