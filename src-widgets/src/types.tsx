@@ -22,11 +22,13 @@ export interface RSSArticle {
     image?: Record<string, string>;
     source?: Record<string, string>;
     enclosures?: string[];
+}
+
+export interface RSSArticleMulti extends RSSArticle {
     meta_name?: string;
     meta_description?: string;
     meta_title?: string;
 }
-
 export interface RSSFeed {
     meta: {
         title: string;
@@ -43,5 +45,5 @@ export interface RSSFeed {
         generator: string;
         categories: string[];
     },
-    articles: RSSArticle[];
+    articles: RSSArticle[]|RSSArticleMulti[];
 }

@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 import { RxWidgetProps } from '@iobroker/types-vis-2';
 
-import type { RSSFeed, RSSArticle } from './types';
+import type { RSSFeed, RSSArticle, RSSArticleMulti } from './types';
 
 import rssExample from './rss.json';
 
@@ -212,7 +212,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget<RxData>) {
         articles.sort((aEl:RSSArticle, bEl:RSSArticle) => (new Date(bEl.date)).getTime() - (new Date(aEl.date)).getTime());
         let titles = RSSArticleMarquee.t('marquee_empty');
         if (articles && articles.length > 0) {
-            titles = articles.reduce((t, item: RSSArticle) => {
+            titles = articles.reduce((t, item: RSSArticleMulti) => {
                 let time:String[] = [];
                 if (withDate) {
                     time.push(props.context.formatUtils.formatDate(item.date, 'DD.MM.'));
