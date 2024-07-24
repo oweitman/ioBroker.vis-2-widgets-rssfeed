@@ -33,7 +33,7 @@ function exporti18nKeys(i18n) {
     const dir = path.resolve(__dirname, i18npath);
     for (const lang in i18n) {
         const json = JSON.stringify(i18n[lang], null, 4);
-        const filePath = `${dir}x/${lang}.json`;
+        const filePath = `${dir}/${lang}.json`;
         fs.writeFileSync(filePath, json);
     }
 }
@@ -91,11 +91,31 @@ async function fetchTranslations(word) {
 function deleteKeys(i18n, keys) {
     keys.forEach((key) => {
         for (const lang in i18n) {
+            if (lang === "en") continue;
             if (i18n[lang][key] !== undefined) {
                 delete i18n[lang][key];
             }
         }
     });
+    return i18n;
+}
+function emptyKeys(i18n, keys) {
+    keys.forEach((key) => {
+        for (const lang in i18n) {
+            if (lang === "en") continue;
+            if (i18n[lang][key] !== undefined) {
+                i18n[lang][key] = "";
+            }
+        }
+    });
+    return i18n;
+}
+function emptyLang(i18n, lang) {
+    for (const key in i18n[lang]) {
+        if (i18n[lang][key] !== undefined) {
+            i18n[lang][key] = "";
+        }
+    }
     return i18n;
 }
 async function main() {
@@ -108,6 +128,44 @@ async function main() {
         args.shift();
         doDeleteKeys(args);
     }
+    if (args[0] === "emptykey") {
+        args.shift();
+        doEmptyKeys(args);
+    }
+    if (args[0] === "emptylang") {
+        args.shift();
+        doEmptyLang(args);
+    }
+}
+function doEmptyLang(args) {
+    console.log("start empty lang");
+    if (args.length !== 1) {
+        console.log("Only one language is supported");
+        return;
+    }
+    if (args.length > 0) {
+        let lang = args[0].trim();
+        if (lang === "en") {
+            console.log("empty of en not allowed");
+            return;
+        }
+        let i18n = importi18nKeys();
+        i18n = emptyLang(i18n, lang);
+        exporti18nKeys(i18n);
+    }
+    console.log("end empty lang");
+}
+function doEmptyKeys(args) {
+    console.log("start empty keys");
+    if (args.length > 1) args[0] = args.join(",");
+    if (args.length > 0) {
+        let keys = args[0].split(",");
+        keys = keys.map(k => k.trim());
+        let i18n = importi18nKeys();
+        i18n = emptyKeys(i18n, keys);
+        exporti18nKeys(i18n);
+    }
+    console.log("end empty keys");
 }
 function doDeleteKeys(args) {
     console.log("start delete keys");
