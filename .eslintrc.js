@@ -23,7 +23,7 @@ module.exports = {
     ],
     rules: {
         'import/prefer-default-export': 'off',
-        'arrow-parens': [1, 'as-needed'],
+        // 'arrow-parens': [1, 'as-needed'],
         'react/jsx-indent': 'off',
         'react/jsx-indent-props': 'off',
         'react/no-access-state-in-setstate': 'off',
@@ -73,5 +73,10 @@ module.exports = {
         indent: ['error', 4, { SwitchCase: 1 }],
         'no-alert': 'off',
         'react/function-component-definition': 'off',
+        'nonblock-statement-body-position': 'any',
+        "array-element-newline": ["error", {
+            "ArrayExpression": "consistent",
+            "ArrayPattern": { "minItems": 3 },
+        }]
     },
 };
