@@ -1,167 +1,181 @@
 {
-    "common": {
-        "name": "vis-2-widgets-rssfeed",
-        "version": "0.3.0",
-        "news": {
-            "0.3.0": {
-                "en": "intoroduction of the rss multi feed widget\nupdate icons for light and dark theme\nimproved translation",
-                "de": "inroduktion des rss multi feed widget\nicons für helles und dunkles thema aktualisieren\nverbesserte übersetzung",
-                "ru": "инродукция rss мульти кормовой виджет\nобновление иконок для светлой и темной темы\nулучшенный перевод",
-                "pt": "inrodução do widget de alimentação múltipla rss\nícones de atualização para o tema claro e escuro\ntradução melhorada",
-                "nl": "introductie van de rss multifeed widget\nupdate pictogrammen voor licht en donker thema\nverbeterde vertaling",
-                "fr": "introduction du widget multi-feed rss\nmettre à jour les icônes pour le thème clair et sombre\namélioration de la traduction",
-                "it": "introduzione del widget di feed multi rss\nicone di aggiornamento per tema chiaro e scuro\ntraduzione migliorata",
-                "es": "inroducción del widget de alimentación multi rss\nactualizar iconos para tema ligero y oscuro\nmejora de la traducción",
-                "pl": "interoduction widget rss multi feed\naktualizacja ikon dla motywu światła i ciemności\nulepszone tłumaczenie",
-                "uk": "інтродукція багатоканального віджету\nоновлення іконок для світла і темної теми\nпокращений переклад",
-                "zh-cn": "导入 rss 多种子部件\n更新亮暗主题的图标\n改进翻译"
-            },
-            "0.2.4": {
-                "en": "fix github commands to non deprecated",
-                "de": "github-befehle nicht deprecated",
-                "ru": "починить команды github для не обесцененных",
-                "pt": "corrigir comandos github para non deprecated",
-                "nl": "fix github-opdrachten op niet verouderd",
-                "fr": "fixer les commandes github à non dépréciées",
-                "it": "correggere i comandi github a non deprecato",
-                "es": "fijar comandos github a no deprecated",
-                "pl": "naprawić komendy github do nie zdepregatowane",
-                "uk": "фіксувати команди github для не депресованих",
-                "zh-cn": "将 github 命令固定为未贬值"
-            },
-            "0.2.3": {
-                "en": "switch nodeversion in github actions\nchange upload to v4\nupgrade github commands to non deprecated\nadjust copy commands in gulpfile",
-                "de": "switch nodeversion in github aktionen\nupload auf v4 ändern\ngithub-befehle auf nicht deprecated\nkopierbefehle in gulpfile anpassen",
-                "ru": "переключатель nodeversion в действиях github\nперегрузка на v4\nобновление команд github до нераспределенных\nнастроить команды копий в gulpfile",
-                "pt": "nodeversão do interruptor em ações do github\nalterar o upload para v4\natualizar comandos github para non deprecated\najustar comandos de cópia no gulpfile",
-                "nl": "schakel nodeversion in github acties\nwijzigen upload naar v4\ngithub commando's upgraden naar niet verouderd\nkopieer commando's in gulpbestand aanpassen",
-                "fr": "switch nodeversion dans les actions github\nchanger le téléchargement en v4\nmise à niveau des commandes github à non dépréciées\najuster les commandes de copie dans gulpfile",
-                "it": "commutare la nodeversione nelle azioni github\ncambiare upload a v4\naggiornare i comandi github a non deprecato\nregolare i comandi di copia in gulpfile",
-                "es": "cambio de nodeversión en acciones github\ncambiar de carga a v4\nactualización de comandos github a no deprecated\najustar comandos de copia en gulpfile",
-                "pl": "przełączanie nodeversion w działania github\nzmiana wysyłania do v4\nupgrade github commands to non deprecated\ndostosować polecenia kopiowania w pliku gulpfile",
-                "uk": "переключення вузла в дії github\nзавантажити v4\nоновлення команд github до не депресованих\nналаштування команд копіювання в gulpfile",
-                "zh-cn": "在 github 动作中切换节点\n将上传到 v4\n将 github 命令升级为未贬值的命令\n调整 gulpfile 中的复制命令"
-            },
-            "0.2.2": {
-                "en": "remove withstyles\ntranslate some missing keys",
-                "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
-                "ru": "удалить стили\nпереводить отсутствующие ключи",
-                "pt": "remover com estilos\ntraduzir algumas chaves em falta",
-                "nl": "verwijderen withstyles\nenkele ontbrekende sleutels vertalen",
-                "fr": "enlever avec les styles\ntraduire quelques clés manquantes",
-                "it": "rimuovere con stili\ntradurre alcune chiavi mancanti",
-                "es": "quitar con estilos\ntraducir algunas teclas perdidas",
-                "pl": "usunąć ze stylów\nprzetłumaczyć brakujące klucze",
-                "uk": "видалити зачіски\nперевести деякі відсутні ключі",
-                "zh-cn": "以样式删除\n翻译一些缺失的密钥"
-            },
-            "0.2.1": {
-                "en": "set node to 20 in deploy task",
-                "de": "set node to 20 in deploy task",
-                "ru": "установить узел до 20 в задаче развертывания",
-                "pt": "set node to 20 in deploy task",
-                "nl": "knooppunt instellen op 20 in inzettaak",
-                "fr": "définir le noeud à 20 dans la tâche de déploiement",
-                "it": "impostare nodo a 20 in attività di distribuzione",
-                "es": "fijado nodo a 20 en la tarea de despliegue",
-                "pl": "ustawić węzeł do 20 w zadaniu rozmieszczania",
-                "uk": "встановити вузол до 20 у задачі розгортання",
-                "zh-cn": "部署任务时将节点设置为 20"
-            },
-            "0.2.0": {
-                "en": "fine tuning",
-                "de": "feinabstimmung",
-                "ru": "тонкая настройка",
-                "pt": "ajuste fino",
-                "nl": "finetuning",
-                "fr": "réglage fin",
-                "it": "tuning",
-                "es": "ajuste fino",
-                "pl": "dostrajanie",
-                "uk": "тонкий тюнінг",
-                "zh-cn": "微调"
-            },
-            "0.1.3": {
-                "en": "add ace build files to gulp",
-                "de": "fügen sie ace build dateien gulp hinzu",
-                "ru": "добавить файлы для gulp",
-                "pt": "adicionar arquivos de compilação de dados ao gulp",
-                "nl": "ace build-bestanden toevoegen aan gulp",
-                "fr": "ajouter des fichiers de compilation d'as à gulp",
-                "it": "aggiungere ace costruire file a gulp",
-                "es": "añadir ace archivos de construcción para gulp",
-                "pl": "dodaj ace build files do gulp",
-                "uk": "add ace build files to gulp",
-                "zh-cn": "将 ace 构建文件添加到 gulp"
-            }
-        },
-        "titleLang": {
-            "en": "Vis-2 widget rssfeed",
-            "de": "Vis-2-Widget-RSSFeed",
-            "ru": "RSS-канал виджета Vis-2",
-            "pt": "Widget Vis-2 feed RSS",
-            "nl": "Vis-2 widget rssfeed",
-            "fr": "Flux RSS du widget Vis-2",
-            "it": "Widget Vis-2 RSSfeed",
-            "es": "rssfeed del widget Vis-2",
-            "pl": "Kanał RSS widżetu Vis-2",
-            "uk": "Vis-2 віджет rssfeed",
-            "zh-cn": "Vis-2 小部件 rssfeed"
-        },
-        "desc": {
-            "en": "Vis-2 widget rssfeed",
-            "de": "Vis-2-Widget-RSSFeed",
-            "ru": "RSS-канал виджета Vis-2",
-            "pt": "Widget Vis-2 feed RSS",
-            "nl": "Vis-2 widget rssfeed",
-            "fr": "Flux RSS du widget Vis-2",
-            "it": "Widget Vis-2 RSSfeed",
-            "es": "rssfeed del widget Vis-2",
-            "pl": "Kanał RSS widżetu Vis-2",
-            "uk": "Vis-2 віджет rssfeed",
-            "zh-cn": "Vis-2 小部件 rssfeed"
-        },
-        "authors": ["oweitman <oweitman@gmx.de>"],
-        "keywords": ["vis-2", "widgets", "vis-2-widgets-rssfeed"],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "tier": 3,
-        "platform": "Javascript/Node.js",
-        "icon": "vis-2-widgets-rssfeed.png",
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.vis-2-widgets-rssfeed/main/admin/vis-2-widgets-rssfeed.png",
-        "enabled": true,
-        "readme": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed/blob/main/README.md",
-        "loglevel": "info",
-        "mode": "none",
-        "nogit": true,
-        "singleton": true,
-        "onlyWWW": true,
-        "noConfig": true,
-        "adminUI": {
-            "config": "none"
-        },
-        "type": "visualization-widgets",
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "visWidgets": {
-            "vis2rssfeedWidgets": {
-                "i18n": "component",
-                "name": "vis2rssfeedWidgets",
-                "url": "vis-2-widgets-rssfeed/customWidgets.js",
-                "urlxx": "http://localhost:4173/customWidgets.js",
-                "components": ["RSSArticleMarquee", "RSSMetaHelper", "RSSArticleHelper", "RSSWidget", "RSSMultiWidget"]
-            }
-        },
-        "restartAdapters": ["vis-2"],
-        "dependencies": [
-            {
-                "js-controller": ">=5.0.17"
-            }
-        ]
+  "common": {
+    "name": "vis-2-widgets-rssfeed",
+    "version": "0.3.1",
+    "news": {
+      "0.3.1": {
+        "en": "fix widget access url",
+        "de": "widget access url",
+        "ru": "исправить виджет доступа url",
+        "pt": "corrigir o acesso do widget url",
+        "nl": "fix widget access url",
+        "fr": "réparer widget accès url",
+        "it": "correzione widget accesso url",
+        "es": "fijar acceso widget url",
+        "pl": "fix widget access url",
+        "uk": "виправити доступ до віджету url",
+        "zh-cn": "修复部件访问url"
+      },
+      "0.3.0": {
+        "en": "intoroduction of the rss multi feed widget\nupdate icons for light and dark theme\nimproved translation",
+        "de": "inroduktion des rss multi feed widget\nicons für helles und dunkles thema aktualisieren\nverbesserte übersetzung",
+        "ru": "инродукция rss мульти кормовой виджет\nобновление иконок для светлой и темной темы\nулучшенный перевод",
+        "pt": "inrodução do widget de alimentação múltipla rss\nícones de atualização para o tema claro e escuro\ntradução melhorada",
+        "nl": "introductie van de rss multifeed widget\nupdate pictogrammen voor licht en donker thema\nverbeterde vertaling",
+        "fr": "introduction du widget multi-feed rss\nmettre à jour les icônes pour le thème clair et sombre\namélioration de la traduction",
+        "it": "introduzione del widget di feed multi rss\nicone di aggiornamento per tema chiaro e scuro\ntraduzione migliorata",
+        "es": "inroducción del widget de alimentación multi rss\nactualizar iconos para tema ligero y oscuro\nmejora de la traducción",
+        "pl": "interoduction widget rss multi feed\naktualizacja ikon dla motywu światła i ciemności\nulepszone tłumaczenie",
+        "uk": "інтродукція багатоканального віджету\nоновлення іконок для світла і темної теми\nпокращений переклад",
+        "zh-cn": "导入 rss 多种子部件\n更新亮暗主题的图标\n改进翻译"
+      },
+      "0.2.4": {
+        "en": "fix github commands to non deprecated",
+        "de": "github-befehle nicht deprecated",
+        "ru": "починить команды github для не обесцененных",
+        "pt": "corrigir comandos github para non deprecated",
+        "nl": "fix github-opdrachten op niet verouderd",
+        "fr": "fixer les commandes github à non dépréciées",
+        "it": "correggere i comandi github a non deprecato",
+        "es": "fijar comandos github a no deprecated",
+        "pl": "naprawić komendy github do nie zdepregatowane",
+        "uk": "фіксувати команди github для не депресованих",
+        "zh-cn": "将 github 命令固定为未贬值"
+      },
+      "0.2.3": {
+        "en": "switch nodeversion in github actions\nchange upload to v4\nupgrade github commands to non deprecated\nadjust copy commands in gulpfile",
+        "de": "switch nodeversion in github aktionen\nupload auf v4 ändern\ngithub-befehle auf nicht deprecated\nkopierbefehle in gulpfile anpassen",
+        "ru": "переключатель nodeversion в действиях github\nперегрузка на v4\nобновление команд github до нераспределенных\nнастроить команды копий в gulpfile",
+        "pt": "nodeversão do interruptor em ações do github\nalterar o upload para v4\natualizar comandos github para non deprecated\najustar comandos de cópia no gulpfile",
+        "nl": "schakel nodeversion in github acties\nwijzigen upload naar v4\ngithub commando's upgraden naar niet verouderd\nkopieer commando's in gulpbestand aanpassen",
+        "fr": "switch nodeversion dans les actions github\nchanger le téléchargement en v4\nmise à niveau des commandes github à non dépréciées\najuster les commandes de copie dans gulpfile",
+        "it": "commutare la nodeversione nelle azioni github\ncambiare upload a v4\naggiornare i comandi github a non deprecato\nregolare i comandi di copia in gulpfile",
+        "es": "cambio de nodeversión en acciones github\ncambiar de carga a v4\nactualización de comandos github a no deprecated\najustar comandos de copia en gulpfile",
+        "pl": "przełączanie nodeversion w działania github\nzmiana wysyłania do v4\nupgrade github commands to non deprecated\ndostosować polecenia kopiowania w pliku gulpfile",
+        "uk": "переключення вузла в дії github\nзавантажити v4\nоновлення команд github до не депресованих\nналаштування команд копіювання в gulpfile",
+        "zh-cn": "在 github 动作中切换节点\n将上传到 v4\n将 github 命令升级为未贬值的命令\n调整 gulpfile 中的复制命令"
+      },
+      "0.2.2": {
+        "en": "remove withstyles\ntranslate some missing keys",
+        "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
+        "ru": "удалить стили\nпереводить отсутствующие ключи",
+        "pt": "remover com estilos\ntraduzir algumas chaves em falta",
+        "nl": "verwijderen withstyles\nenkele ontbrekende sleutels vertalen",
+        "fr": "enlever avec les styles\ntraduire quelques clés manquantes",
+        "it": "rimuovere con stili\ntradurre alcune chiavi mancanti",
+        "es": "quitar con estilos\ntraducir algunas teclas perdidas",
+        "pl": "usunąć ze stylów\nprzetłumaczyć brakujące klucze",
+        "uk": "видалити зачіски\nперевести деякі відсутні ключі",
+        "zh-cn": "以样式删除\n翻译一些缺失的密钥"
+      },
+      "0.2.1": {
+        "en": "set node to 20 in deploy task",
+        "de": "set node to 20 in deploy task",
+        "ru": "установить узел до 20 в задаче развертывания",
+        "pt": "set node to 20 in deploy task",
+        "nl": "knooppunt instellen op 20 in inzettaak",
+        "fr": "définir le noeud à 20 dans la tâche de déploiement",
+        "it": "impostare nodo a 20 in attività di distribuzione",
+        "es": "fijado nodo a 20 en la tarea de despliegue",
+        "pl": "ustawić węzeł do 20 w zadaniu rozmieszczania",
+        "uk": "встановити вузол до 20 у задачі розгортання",
+        "zh-cn": "部署任务时将节点设置为 20"
+      },
+      "0.2.0": {
+        "en": "fine tuning",
+        "de": "feinabstimmung",
+        "ru": "тонкая настройка",
+        "pt": "ajuste fino",
+        "nl": "finetuning",
+        "fr": "réglage fin",
+        "it": "tuning",
+        "es": "ajuste fino",
+        "pl": "dostrajanie",
+        "uk": "тонкий тюнінг",
+        "zh-cn": "微调"
+      }
     },
-    "native": {},
-    "objects": [],
-    "instanceObjects": []
+    "titleLang": {
+      "en": "Vis-2 widget rssfeed",
+      "de": "Vis-2-Widget-RSSFeed",
+      "ru": "RSS-канал виджета Vis-2",
+      "pt": "Widget Vis-2 feed RSS",
+      "nl": "Vis-2 widget rssfeed",
+      "fr": "Flux RSS du widget Vis-2",
+      "it": "Widget Vis-2 RSSfeed",
+      "es": "rssfeed del widget Vis-2",
+      "pl": "Kanał RSS widżetu Vis-2",
+      "uk": "Vis-2 віджет rssfeed",
+      "zh-cn": "Vis-2 小部件 rssfeed"
+    },
+    "desc": {
+      "en": "Vis-2 widget rssfeed",
+      "de": "Vis-2-Widget-RSSFeed",
+      "ru": "RSS-канал виджета Vis-2",
+      "pt": "Widget Vis-2 feed RSS",
+      "nl": "Vis-2 widget rssfeed",
+      "fr": "Flux RSS du widget Vis-2",
+      "it": "Widget Vis-2 RSSfeed",
+      "es": "rssfeed del widget Vis-2",
+      "pl": "Kanał RSS widżetu Vis-2",
+      "uk": "Vis-2 віджет rssfeed",
+      "zh-cn": "Vis-2 小部件 rssfeed"
+    },
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "keywords": [
+      "vis-2",
+      "widgets",
+      "vis-2-widgets-rssfeed"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "tier": 3,
+    "platform": "Javascript/Node.js",
+    "icon": "vis-2-widgets-rssfeed.png",
+    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.vis-2-widgets-rssfeed/main/admin/vis-2-widgets-rssfeed.png",
+    "enabled": true,
+    "readme": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "none",
+    "nogit": true,
+    "singleton": true,
+    "onlyWWW": true,
+    "noConfig": true,
+    "adminUI": {
+      "config": "none"
+    },
+    "type": "visualization-widgets",
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "visWidgets": {
+      "vis2rssfeedWidgets": {
+        "i18n": "component",
+        "name": "vis2rssfeedWidgets",
+        "url": "vis-2-widgets-rssfeed/customWidgets.js",
+        "urlxx": "http://localhost:4173/customWidgets.js",
+        "components": [
+          "RSSArticleMarquee",
+          "RSSMetaHelper",
+          "RSSArticleHelper",
+          "RSSWidget",
+          "RSSMultiWidget"
+        ]
+      }
+    },
+    "restartAdapters": [
+      "vis-2"
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.17"
+      }
+    ]
+  },
+  "native": {},
+  "objects": [],
+  "instanceObjects": []
 }
