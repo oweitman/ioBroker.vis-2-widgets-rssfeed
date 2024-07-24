@@ -25,13 +25,18 @@
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
             "stopOnEntry": true,
-            "args": [
-              "./test/*.test.js"
-            ],
-            "skipFiles": [
-              "<node_internals>/**"
-            ]
-          }
+            "args": ["./test/*.test.js"],
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "Debug translate",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src-widgets/devutil/translate.js",
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "stopOnEntry": true,
+            "args": [],
+            "skipFiles": ["<node_internals>/**"]
+        }
     ]
 }
-
