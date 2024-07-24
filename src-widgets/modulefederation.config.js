@@ -7,6 +7,7 @@ module.exports = makeFederation(
         './RSSMetaHelper': './src/RSSMetaHelper', // List of all widgets in this package
         './RSSArticleHelper': './src/RSSArticleHelper', // List of all widgets in this package
         './RSSWidget': './src/RSSWidget', // List of all widgets in this package
+        './RSSMultiWidget': './src/RSSMultiWidget', // List of all widgets in this package
         './translations': './src/translations',
     },
 );
