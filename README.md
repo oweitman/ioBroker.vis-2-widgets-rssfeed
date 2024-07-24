@@ -17,8 +17,7 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 0.3.0 (2024-07-24)
 
 - intoroduction of the rss multi feed widget
 - update icons for light and dark theme
