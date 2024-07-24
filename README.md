@@ -9,13 +9,21 @@
 
 this adapter contains only the vis-2 widgets for the adapter rssfeed.
 
-For a detailed description of the widgets and functionality  see Adapter rssfeed.
+For a detailed description of the widgets and functionality see Adapter rssfeed.
 
 ## Changelog
+
 <!--
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+
+- intoroduction of the rss multi feed widget
+- update icons for light and dark theme
+- improved translation
+
 ### 0.2.4 (2024-06-25)
 
 - fix github commands to non deprecated
