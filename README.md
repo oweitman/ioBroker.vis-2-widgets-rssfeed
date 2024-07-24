@@ -17,6 +17,11 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+
+- fix widget access url
+
 ### 0.3.0 (2024-07-24)
 
 - intoroduction of the rss multi feed widget
