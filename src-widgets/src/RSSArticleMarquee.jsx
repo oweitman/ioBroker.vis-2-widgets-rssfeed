@@ -1,9 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
-
+import { Link } from '@mui/material';
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-import { I18n } from '@iobroker/adapter-react-v5';
+//import { I18n } from '@iobroker/adapter-react-v5';
 
 const rssExample = require('./rss.json');
 
@@ -180,19 +180,29 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
         }, false);
     }
 
+    renderTitle(data, item) {
+        let time = [];
+        if (data.withDate) time.push(vis.formatDate(item.date, 'DD.MM.'));
+        if (data.withYear) time.push(vis.formatDate(item.date, 'YY'));
+        time = [time.join('')];
+        if (data.withTime) time.push(vis.formatDate(item.date, 'hh:mm'));
+
+        return ` ${data.divider} ${time.join(' ')} ${data.withName ? `${item.meta_name || item.meta_title}: ` : ''} ${
+            item.title
+        } `;
+    }
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
-
-        const speed = this.state.rxData.speed || 200;
-        const divider = this.state.rxData.divider || '';
-
-        const pauseonhover = this.state.rxData.pauseonhover ? true : this.state.rxData.pauseonhover;
-
-        const withLink = this.state.rxData.withlink;
-        const withTime = this.state.rxData.withtime ? this.state.rxData.withtime : false;
-        const withDate = this.state.rxData.withdate ? this.state.rxData.withdate : false;
-        const withYear = this.state.rxData.withyear ? this.state.rxData.withyear : false;
-        const withName = this.state.rxData.withname ? this.state.rxData.withname : false;
+        let data = {
+            speed: this.state.rxData.speed || 200,
+            divider: this.state.rxData.divider || '',
+            pauseonhover: this.state.rxData.pauseonhover ? true : this.state.rxData.pauseonhover,
+            withLink: this.state.rxData.withlink,
+            withTime: this.state.rxData.withtime ? this.state.rxData.withtime : false,
+            withDate: this.state.rxData.withdate ? this.state.rxData.withdate : false,
+            withYear: this.state.rxData.withyear ? this.state.rxData.withyear : false,
+            withName: this.state.rxData.withname ? this.state.rxData.withname : false,
+        };
 
         const keys = Object.keys(this.state.data).filter((key) => /g_feeds-(\d+)/gm.test(key));
         const articles = keys.reduce((acc, key) => {
@@ -225,8 +235,8 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
         }, []);
         articles.sort((aEl, bEl) => new Date(bEl.date) - new Date(aEl.date));
 
-        let titles = I18n.t('vis_2_widgets_rssfeed_marquee_empty');
-        if (articles && articles.length > 0) {
+        // let titles = I18n.t('vis_2_widgets_rssfeed_marquee_empty');
+        /*         if (articles && articles.length > 0) {
             titles =
                 articles.reduce((t, item) => {
                     let time = [];
@@ -245,13 +255,46 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                     }
                     return t;
                 }, '') + ' ';
+        } */
+        if (data.withLink) {
+            return (
+                <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
+                    <div>
+                        {articles.map((item) => {
+                            return (
+                                <Link key={item.title} href={item.link} target="_blank">
+                                    {this.renderTitle(data, item)}
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </Marquee>
+            );
+        } else {
+            return (
+                <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
+                    <div>
+                        {articles.map((item) => {
+                            return <span key={item.title}>{this.renderTitle(data, item)}</span>;
+                        })}
+                    </div>
+                </Marquee>
+            );
         }
-        return (
-            <Marquee pauseOnHover={pauseonhover} speed={speed}>
-                <div>{titles}</div>
-            </Marquee>
-        );
     }
 }
 
 export default RSSArticleMarquee;
+
+/*
+container
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: hidden;
+slide.active
+    display: contents;
+slide
+    position: absolute;
+    display: none;
+
+*/

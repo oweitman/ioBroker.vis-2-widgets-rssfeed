@@ -1,12 +1,11 @@
 import React from 'react';
-import {
-
-} from '@mui/material';
+import {} from '@mui/material';
 import PropTypes from 'prop-types';
 
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 import VisEJSAttibuteField from './Components/VisEJSAttibuteField.tsx';
+import InnerHtml from './Components/InnerHTML.jsx';
 
 const ejs = require('ejs');
 const rssExample = require('./rss.json');
@@ -48,49 +47,52 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
             id: 'tplRSSWidget',
             visSet: 'vis-2-widgets-rssfeed',
             visSetLabel: 'vis_2_rssfeed',
-            visName: 'RSSFeed Widget',                 // Name of widget
+            visName: 'RSSFeed Widget', // Name of widget
             visAttrs: [
                 {
                     name: 'common', // group name
                     fields: [
                         {
-                            name: 'oid',     // name in data structure
+                            name: 'oid', // name in data structure
                             type: 'id',
                             label: 'vis_2_widgets_rssfeed_metahelper_oid', // translated field label
                         },
                         {
-                            name: 'template',     // name in data structure
+                            name: 'template', // name in data structure
                             type: 'custom',
                             label: 'vis_2_widgets_rssfeed_widget_template', // translated field label
                             default: defaulttemplate,
-                            component: (     // important
-                                field,       // field properties: {name, label, type, set, singleName, component,...}
-                                data,        // widget data
+                            component: (
+                                // important
+                                field, // field properties: {name, label, type, set, singleName, component,...}
+                                data, // widget data
                                 onDataChange, // function to call, when data changed
-                                props,       // additional properties : {socket, projectName, instance, adapterName, selectedView, selectedWidgets, project, widgetID}
+                                props, // additional properties : {socket, projectName, instance, adapterName, selectedView, selectedWidgets, project, widgetID}
                                 // socket,      // socket object
                                 // widgetID,    // widget ID or widgets IDs. If selecteld more than one widget, it is array of IDs
                                 // view,        // view name
                                 // project,      // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
-                            ) => (<VisEJSAttibuteField
-                                visSocket={props.context.socket}
-                                field={field}
-                                data={data}
-                                onDataChange={onDataChange}
-                                props
-                            />),
+                            ) => (
+                                <VisEJSAttibuteField
+                                    visSocket={props.context.socket}
+                                    field={field}
+                                    data={data}
+                                    onDataChange={onDataChange}
+                                    props
+                                />
+                            ),
                         },
                         {
-                            name: 'max',     // name in data structure
+                            name: 'max', // name in data structure
                             type: 'number',
                             default: 5,
                             min: 1,
-                            max:9999,
-                            step:1,
+                            max: 9999,
+                            step: 1,
                             label: 'vis_2_widgets_rssfeed_widget_maxarticles', // translated field label
                         },
                         {
-                            name: 'filter',     // name in data structure
+                            name: 'filter', // name in data structure
                             type: 'text',
                             default: '',
                             label: 'vis_2_widgets_rssfeed_widget_filter', // translated field label
@@ -99,7 +101,8 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                 },
                 // check here all possible types https://github.com/ioBroker/ioBroker.vis/blob/react/src/src/Attributes/Widget/SCHEMA.md
             ],
-            visDefaultStyle: { // default style
+            visDefaultStyle: {
+                // default style
                 width: 300,
                 height: 300,
             },
@@ -138,15 +141,11 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
 
     // This function is called every time when rxStyle is changed
     // eslint-disable-next-line class-methods-use-this
-    onRxStyleChanged() {
-
-    }
+    onRxStyleChanged() {}
 
     // This function is called every time when some Object State updated, but all changes lands into this.state.values too
     // eslint-disable-next-line class-methods-use-this, no-unused-vars
-    onStateUpdated(id, state) {
-
-    }
+    onStateUpdated(id, state) {}
 
     // eslint-disable-next-line class-methods-use-this
     checkHighlite(value, highlights, sep) {
@@ -182,22 +181,23 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
         if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0, maxarticles);
 
         if (filter !== '') {
-            rss.articles = rss.articles.filter(item => this.checkHighlite(item.title + item.description + item.categories.toString(), filter));
+            rss.articles = rss.articles.filter((item) =>
+                this.checkHighlite(item.title + item.description + item.categories.toString(), filter),
+            );
         }
         let text = '';
         try {
             if (typeof rss.meta === 'undefined') {
                 text = ejs.render(errortemplate, {});
             } else {
-                text = ejs.render(template, { rss, widgetid:props.id, style:props.style });
+                text = ejs.render(template, { rss, widgetid: props.id, style: props.style });
             }
         } catch (e) {
             text = this.escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
             text = text.replace(/ /gm, '&nbsp;');
             text = `<code style="color:red;">${text}</code>`;
         }
-        // eslint-disable-next-line react/no-danger
-        return <div dangerouslySetInnerHTML={{ __html: text }} />;
+        return <InnerHtml html={text} />;
     }
 }
 RSSWidget.propTypes = {
