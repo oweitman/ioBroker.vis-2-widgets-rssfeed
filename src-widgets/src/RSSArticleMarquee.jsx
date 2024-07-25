@@ -262,7 +262,13 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                     <div>
                         {articles.map((item) => {
                             return (
-                                <Link key={item.title} href={item.link} target="_blank">
+                                <Link
+                                    key={item.title}
+                                    href={item.link}
+                                    underline="hover"
+                                    color="inherit"
+                                    target="_blank"
+                                >
                                     {this.renderTitle(data, item)}
                                 </Link>
                             );
