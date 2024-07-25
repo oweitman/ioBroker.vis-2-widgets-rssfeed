@@ -17,8 +17,7 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 0.3.2 (2024-07-25)
 
 - introduce innerhtml component that is capable to execute raw javascript and improve links for the marquee widget
 - fix translation
