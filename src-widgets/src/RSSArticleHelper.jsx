@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-
-} from '@mui/material';
+import {} from '@mui/material';
 
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
@@ -13,30 +11,30 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
         return {
             id: 'tplRSSArticleHelper',
             visSet: 'vis-2-widgets-rssfeed',
-            visName: 'RSSFeed Article Helper',                 // Name of widget
+            visName: 'RSSFeed Article Helper', // Name of widget
             visAttrs: [
                 {
                     name: 'common', // group name
                     fields: [
                         {
-                            name: 'oid',     // name in data structure
+                            name: 'oid', // name in data structure
                             type: 'id',
-                            label: 'vis_2_widgets_rssfeed_metahelper_oid', // translated field label
+                            label: 'vis_2_widgets_rssfeed_helper_oid', // translated field label
                         },
                         {
-                            name: 'prefix',     // name in data structure
+                            name: 'prefix', // name in data structure
                             type: 'text',
                             default: 'item',
-                            label: 'vis_2_widgets_rssfeed_articlehelper_prefix', // translated field label
+                            label: 'vis_2_widgets_rssfeed_helper_prefix', // translated field label
                         },
                         {
-                            name: 'article',     // name in data structure
+                            name: 'article', // name in data structure
                             type: 'number',
                             default: 1,
                             min: 1,
-                            max:9999,
-                            step:1,
-                            label: 'vis_2_widgets_rssfeed_metahelper_oid', // translated field label
+                            max: 9999,
+                            step: 1,
+                            label: 'vis_2_widgets_rssfeed_helper_number', // translated field label
                         },
                     ],
                 },
@@ -77,15 +75,11 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
 
     // This function is called every time when rxStyle is changed
     // eslint-disable-next-line class-methods-use-this
-    onRxStyleChanged() {
-
-    }
+    onRxStyleChanged() {}
 
     // This function is called every time when some Object State updated, but all changes lands into this.state.values too
     // eslint-disable-next-line class-methods-use-this, no-unused-vars
-    onStateUpdated(id, state) {
-
-    }
+    onStateUpdated(id, state) {}
 
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
@@ -102,139 +96,133 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
         let result;
 
         if (item) {
-            result = <table>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .title
-                    </th>
-                    <td>
-                        {item.title}
-                    </td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                        .description
-                    </th>
-                    <td>
-                        { /* eslint-disable-next-line react/no-danger */ }
-                        <div dangerouslySetInnerHTML={{ __html:item.description }}></div>
-                    </td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .summary
-                    </th>
-                    <td>{item.summary}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .link
-                    </th>
-                    <td>{item.link}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .origlink
-                    </th>
-                    <td>{item.origlink}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .permalink
-                    </th>
-                    <td>{item.permalink}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .date
-                    </th>
-                    <td>{item.date}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .pubdate
-                    </th>
-                    <td>{item.pubdate}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .author
-                    </th>
-                    <td>{item.author}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .guid
-                    </th>
-                    <td>{item.guid}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .comments
-                    </th>
-                    <td>{item.comments}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .image.url
-                    </th>
-                    <td>{item.image.url}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .image.title
-                    </th>
-                    <td>{item.image.title}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .categories
-                    </th>
-                    <td>{item.categories}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .source
-                    </th>
-                    <td>{JSON.stringify(item.source)}</td>
-                </tr>
-                <tr>
-                    <th style={thStyle}>
-                        {prefix}
-                    .enclosures
-                    </th>
-                    <td>{JSON.stringify(item.enclosures)}</td>
-                </tr>
-            </table>;
+            result = (
+                <table>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .title
+                        </th>
+                        <td>{item.title}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .description
+                        </th>
+                        <td>
+                            {/* eslint-disable-next-line react/no-danger */}
+                            <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .summary
+                        </th>
+                        <td>{item.summary}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .link
+                        </th>
+                        <td>{item.link}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .origlink
+                        </th>
+                        <td>{item.origlink}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .permalink
+                        </th>
+                        <td>{item.permalink}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .date
+                        </th>
+                        <td>{item.date}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .pubdate
+                        </th>
+                        <td>{item.pubdate}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .author
+                        </th>
+                        <td>{item.author}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .guid
+                        </th>
+                        <td>{item.guid}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .comments
+                        </th>
+                        <td>{item.comments}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .image.url
+                        </th>
+                        <td>{item.image.url}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .image.title
+                        </th>
+                        <td>{item.image.title}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .categories
+                        </th>
+                        <td>{item.categories}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .source
+                        </th>
+                        <td>{JSON.stringify(item.source)}</td>
+                    </tr>
+                    <tr>
+                        <th style={thStyle}>
+                            {prefix}
+                            .enclosures
+                        </th>
+                        <td>{JSON.stringify(item.enclosures)}</td>
+                    </tr>
+                </table>
+            );
         } else {
-            result = <table
-                className="rssfeed attributes"
-            >
-                <tr>
-                    <th>
-                        No Data. End of List of
-                        {' '}
-                        {rss.articles.length }
-                        {' '}
-                        Articles
-                    </th>
-                </tr>
-            </table>;
+            result = (
+                <table className="rssfeed attributes">
+                    <tr>
+                        <th>No Data. End of List of {rss.articles.length} Articles</th>
+                    </tr>
+                </table>
+            );
         }
         return result;
     }
