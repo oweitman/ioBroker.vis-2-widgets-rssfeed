@@ -124,7 +124,7 @@ async function main() {
         doTranslate();
         return;
     }
-    if (args[0] === "delete") {
+    if (args[0] === "deletekey") {
         args.shift();
         doDeleteKeys(args);
     }
@@ -170,7 +170,7 @@ function doEmptyKeys(args) {
 function doDeleteKeys(args) {
     console.log("start delete keys");
     if (args.length > 1) args[0] = args.join(",");
-    if (args.lang > 0) {
+    if (args.length > 0) {
         let keys = args[0].split(",");
         keys = keys.map(k => k.trim());
         let i18n = importi18nKeys();
