@@ -1,7 +1,8 @@
 {
     "vis_2_rssfeed": "RSS-Feed",
-    "vis_2_widgets_rssfeed_metahelper_oid": "Punto de datos alimentado por RSS",
-    "vis_2_widgets_rssfeed_articlehelper_prefix": "Prefijo alimentado por RSS",
+    "vis_2_widgets_rssfeed_helper_oid": "Punto de datos alimentado por RSS",
+    "vis_2_widgets_rssfeed_helper_prefix": "Prefijo alimentado por RSS",
+    "vis_2_widgets_rssfeed_helper_number": "Número de artículo alimentado por RSS",
     "vis_2_widgets_rssfeed_multi_feedcount": "Número de fuentes RSS",
     "vis_2_widgets_rssfeed_multi_dpcount": "Número de puntos de datos",
     "vis_2_widgets_rssfeed_multi_datapoints_oid": "ID de punto de datos",

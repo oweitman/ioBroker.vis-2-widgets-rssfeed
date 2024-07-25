@@ -1,7 +1,8 @@
 {
     "vis_2_rssfeed": "Fils RSS",
-    "vis_2_widgets_rssfeed_metahelper_oid": "Point de données RSS",
-    "vis_2_widgets_rssfeed_articlehelper_prefix": "Préfixe de flux RSS",
+    "vis_2_widgets_rssfeed_helper_oid": "Point de données RSS",
+    "vis_2_widgets_rssfeed_helper_prefix": "Préfixe de flux RSS",
+    "vis_2_widgets_rssfeed_helper_number": "Numéro d'article du flux RSS",
     "vis_2_widgets_rssfeed_multi_feedcount": "Nombre de flux RSS",
     "vis_2_widgets_rssfeed_multi_dpcount": "Nombre de points de données",
     "vis_2_widgets_rssfeed_multi_datapoints_oid": "ID du point de données",
