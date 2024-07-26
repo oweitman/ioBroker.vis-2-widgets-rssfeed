@@ -233,35 +233,42 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
         `;
         const template = data.template;
         const keys = Object.keys(this.state.data).filter((key) => /g_feeds-(\d+)/gm.test(key));
-        const articles = keys.reduce((acc, key) => {
-            const id = /g_feeds-(\d+)/gm.exec(key)[1];
-            const rss = JSON.parse(
-                this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample),
-            );
-            if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) return acc;
-            const maxarticles = this.state.data[`feed-maxarticles${id}`] || 999;
-            const filter = this.state.data[`feed-filter${id}`];
-            const name = this.state.data[`feed-name${id}`];
-            if (filter) {
-                rss.articles = rss.articles.filter((item) =>
-                    this.checkFilter(item.title + item.description + item.categories.toString(), filter),
+        let articles = [];
+        if (keys.length > 0) {
+            articles = keys.reduce((acc, key) => {
+                if (key === 'g_feeds-0') return acc;
+                const id = /g_feeds-(\d+)/gm.exec(key)[1];
+                const rss = JSON.parse(
+                    this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample),
                 );
-            }
-            if (rss && rss.articles && rss.articles.length > maxarticles)
-                rss.articles = rss.articles.slice(0, maxarticles);
-            rss.articles = rss.articles.map((item) => ({
-                title: item.title,
-                description: item.description,
-                categories: item.categories,
-                date: item.date,
-                link: item.link,
-                meta_description: rss.meta.description,
-                meta_name: name,
-                meta_title: rss.meta.title,
-            }));
+                if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) return acc;
+                const maxarticles = this.state.data[`feed-maxarticles${id}`] || 999;
+                const filter = this.state.data[`feed-filter${id}`];
+                const name = this.state.data[`feed-name${id}`];
+                if (filter) {
+                    rss.articles = rss.articles.filter((item) =>
+                        this.checkFilter(item.title + item.description + item.categories.toString(), filter),
+                    );
+                }
+                if (rss && rss.articles && rss.articles.length > maxarticles)
+                    rss.articles = rss.articles.slice(0, maxarticles);
+                rss.articles = rss.articles.map((item) => ({
+                    title: item.title,
+                    description: item.description,
+                    categories: item.categories,
+                    date: item.date,
+                    link: item.link,
+                    meta_description: rss.meta.description,
+                    meta_name: name,
+                    meta_title: rss.meta.title,
+                }));
 
-            return acc.concat(rss.articles);
-        }, []);
+                return acc.concat(rss.articles);
+            }, []);
+        } else {
+            const rss = JSON.parse(JSON.stringify(rssExample));
+            articles = rss.articles;
+        }
         articles.sort((aEl, bEl) => new Date(bEl.date) - new Date(aEl.date));
         let text = '';
         try {

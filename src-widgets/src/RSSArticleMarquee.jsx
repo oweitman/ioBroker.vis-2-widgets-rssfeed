@@ -206,6 +206,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
 
         const keys = Object.keys(this.state.data).filter((key) => /g_feeds-(\d+)/gm.test(key));
         const articles = keys.reduce((acc, key) => {
+            if (key === 'g_feeds-0') return acc;
             const id = /g_feeds-(\d+)/gm.exec(key)[1];
             const rss = JSON.parse(
                 this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample),
@@ -225,6 +226,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                 meta_description: rss.meta.description,
                 meta_name: name,
                 meta_title: rss.meta.title,
+                key: key + item.title,
             }));
             if (filter) {
                 rss.articles = rss.articles.filter((item) =>
@@ -281,7 +283,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                 <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
                     <div>
                         {articles.map((item) => {
-                            return <span key={item.title}>{this.renderTitle(data, item)}</span>;
+                            return <span key={item.key}>{this.renderTitle(data, item)}</span>;
                         })}
                     </div>
                 </Marquee>
