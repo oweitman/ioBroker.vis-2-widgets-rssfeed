@@ -17,6 +17,12 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+### 0.3.4 (2024-08-09)
+
+- improve link styling in the marquee widget
+- fix key and group handling
+- fix issues from adapter checker
+
 ### 0.3.3 (2024-07-25)
 
 - fix widgeturl from debug to productive
