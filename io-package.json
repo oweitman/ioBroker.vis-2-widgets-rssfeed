@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "news": {
+      "0.3.5": {
+        "en": "improve link styling in the marquee widget\nfix key and group handling\nfix issues from adapter checker",
+        "de": "verbesserung der verbindung styling im marquee widget\nfixschlüssel und gruppenhandling\nprobleme von adapter checker beheben",
+        "ru": "улучшить укладку ссылок в widget\nфиксация ключа и групповая обработка\nпроблемы с адаптером",
+        "pt": "melhorar o estilo link no widget de marquee\ncorrigir o manuseio de chaves e grupos\ncorrigir problemas do verificador do adaptador",
+        "nl": "link styling verbeteren in de maquee widget\nfix sleutel en groep behandeling\nproblemen oplossen van adaptercontrole",
+        "fr": "améliorer le style des liens dans le widget marquee\ncorrection de la clé et manipulation de groupe\ncorrection des problèmes de l'adaptateur checker",
+        "it": "migliorare lo styling link nel widget di marquee\nfix chiave e gestione di gruppo\nrisolvere problemi da adattatore checker",
+        "es": "mejorar el estilo de enlace en el widget de la marquee\narreglar llave y manejo de grupo\nsolucionar problemas desde el control de adaptador",
+        "pl": "poprawić stylizację łącza w widżecie marquee\nnaprawić obsługę klucza i grupy\nnaprawianie problemów z sprawdzaczem adaptera",
+        "uk": "поліпшення укладання посилань в марке віджет\nфіксувати ключ і групове обслуговування\nвиправити проблеми з перевіркою адаптера",
+        "zh-cn": "改进 marquee 部件中的链接样式\n固定密钥和分组处理\n从适配器检查器中校正问题"
+      },
       "0.3.4": {
         "en": "improve link styling in the marquee widget\nfix key and group handling\nfix issues from adapter checker",
         "de": "verbesserung der verbindung styling im marquee widget\nfixschlüssel und gruppenhandling\nprobleme von adapter checker beheben",
@@ -129,8 +142,8 @@
       "vis2rssfeedWidgets": {
         "i18n": "component",
         "name": "vis2rssfeedWidgets",
-        "urlxx": "vis-2-widgets-rssfeed/customWidgets.js",
-        "url": "http://localhost:4173/customWidgets.js",
+        "url": "vis-2-widgets-rssfeed/customWidgets.js",
+        "urlxx": "http://localhost:4173/customWidgets.js",
         "components": [
           "RSSArticleMarquee",
           "RSSMetaHelper",
