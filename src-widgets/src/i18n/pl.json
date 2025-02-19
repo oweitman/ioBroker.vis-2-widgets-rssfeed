@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "Filtr",
     "vis_2_widgets_rssfeed_marquee_empty": "Nie znaleziono żadnych artykułów. Proszę wprowadzić punkt danych do kanału RSS",
     "vis_2_widgets_rssfeed_widget_title": "Edycja szablonu",
-    "vis_2_widgets_rssfeed_widget_save": "Zapisz"
+    "vis_2_widgets_rssfeed_widget_save": "Zapisz",
+    "vis_2_widgets_rssfeed_marquee_opentype": "Typ otwarty"
 }

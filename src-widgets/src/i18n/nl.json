@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "Filter",
     "vis_2_widgets_rssfeed_marquee_empty": "Geen artikelen gevonden. Voer een datapoint in voor een RSS-feed",
     "vis_2_widgets_rssfeed_widget_title": "Sjabloon bewerken",
-    "vis_2_widgets_rssfeed_widget_save": "Opslaan"
+    "vis_2_widgets_rssfeed_widget_save": "Opslaan",
+    "vis_2_widgets_rssfeed_marquee_opentype": "Type openen"
 }

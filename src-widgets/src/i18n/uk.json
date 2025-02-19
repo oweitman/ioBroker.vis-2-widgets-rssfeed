@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "Фільтри",
     "vis_2_widgets_rssfeed_marquee_empty": "Не знайдено статті. Введіть номер мобільного, який Ви вказали при укладаннi договору з банком",
     "vis_2_widgets_rssfeed_widget_title": "Налаштування шаблонів",
-    "vis_2_widgets_rssfeed_widget_save": "Зберегти"
+    "vis_2_widgets_rssfeed_widget_save": "Зберегти",
+    "vis_2_widgets_rssfeed_marquee_opentype": "Відкритий тип"
 }

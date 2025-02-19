@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "Filtro",
     "vis_2_widgets_rssfeed_marquee_empty": "No hay artículos encontrados. Introduzca un punto de datos a un feed RSS",
     "vis_2_widgets_rssfeed_widget_title": "Edición de plantilla",
-    "vis_2_widgets_rssfeed_widget_save": "Guardar"
+    "vis_2_widgets_rssfeed_widget_save": "Guardar",
+    "vis_2_widgets_rssfeed_marquee_opentype": "Tipo abierto"
 }

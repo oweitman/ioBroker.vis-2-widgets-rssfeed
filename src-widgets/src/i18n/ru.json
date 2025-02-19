@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "Фильтр",
     "vis_2_widgets_rssfeed_marquee_empty": "Никаких статей. Пожалуйста, введите точку данных в RSS-канал",
     "vis_2_widgets_rssfeed_widget_title": "Редактирование шаблона",
-    "vis_2_widgets_rssfeed_widget_save": "Сохранить"
+    "vis_2_widgets_rssfeed_widget_save": "Сохранить",
+    "vis_2_widgets_rssfeed_marquee_opentype": "Открытый тип"
 }

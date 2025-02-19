@@ -1,153 +1,181 @@
 {
-    "common": {
-        "name": "vis-2-widgets-rssfeed",
-        "version": "0.3.6",
-        "news": {
-            "0.3.6": {
-                "en": "remove 0.3.4 from io-package.json",
-                "de": "0,3.4 aus io-package entfernen. json",
-                "ru": "удалить 0.3.4 из io-package. json",
-                "pt": "remover 0.3.4 do io-package. o que foi",
-                "nl": "0.3.4 uit de verpakking verwijderen. json",
-                "fr": "retirer 0.3.4 de l'emballage. json",
-                "it": "rimuovere 0.3.4 da io-package. j",
-                "es": "retirar 0.3.4 de io-paquete. json",
-                "pl": "usunąć 0.3.4 z opakowania jo-. json",
-                "uk": "видалити 0.3.4 з io-package. свінгери",
-                "zh-cn": "从io包装中删除0.3.4。 贾森"
-            },
-            "0.3.5": {
-                "en": "improve link styling in the marquee widget\nfix key and group handling\nfix issues from adapter checker",
-                "de": "verbesserung der verbindung styling im marquee widget\nfixschlüssel und gruppenhandling\nprobleme von adapter checker beheben",
-                "ru": "улучшить укладку ссылок в widget\nфиксация ключа и групповая обработка\nпроблемы с адаптером",
-                "pt": "melhorar o estilo link no widget de marquee\ncorrigir o manuseio de chaves e grupos\ncorrigir problemas do verificador do adaptador",
-                "nl": "link styling verbeteren in de maquee widget\nfix sleutel en groep behandeling\nproblemen oplossen van adaptercontrole",
-                "fr": "améliorer le style des liens dans le widget marquee\ncorrection de la clé et manipulation de groupe\ncorrection des problèmes de l'adaptateur checker",
-                "it": "migliorare lo styling link nel widget di marquee\nfix chiave e gestione di gruppo\nrisolvere problemi da adattatore checker",
-                "es": "mejorar el estilo de enlace en el widget de la marquee\narreglar llave y manejo de grupo\nsolucionar problemas desde el control de adaptador",
-                "pl": "poprawić stylizację łącza w widżecie marquee\nnaprawić obsługę klucza i grupy\nnaprawianie problemów z sprawdzaczem adaptera",
-                "uk": "поліпшення укладання посилань в марке віджет\nфіксувати ключ і групове обслуговування\nвиправити проблеми з перевіркою адаптера",
-                "zh-cn": "改进 marquee 部件中的链接样式\n固定密钥和分组处理\n从适配器检查器中校正问题"
-            },
-            "0.3.3": {
-                "en": "fix widgeturl from debug to productive",
-                "de": "fix widgeturl von debug bis produktiv",
-                "ru": "исправить widgeturl от отладки до продуктивного",
-                "pt": "corrigir widgeturl de depuração para produtivo",
-                "nl": "fix widgeturl van debug naar productief",
-                "fr": "fixer widgeturl de debug à productif",
-                "it": "fissare widgeturl da debug a produttivo",
-                "es": "fijar el widgeturl de la depuración a productivo",
-                "pl": "naprawić widgeturl od debug do produktywne",
-                "uk": "виправити віджети від debug до продуктивного",
-                "zh-cn": "将部件从调试到生产"
-            },
-            "0.3.1": {
-                "en": "fix widget access url",
-                "de": "widget access url",
-                "ru": "исправить виджет доступа url",
-                "pt": "corrigir o acesso do widget url",
-                "nl": "fix widget access url",
-                "fr": "réparer widget accès url",
-                "it": "correzione widget accesso url",
-                "es": "fijar acceso widget url",
-                "pl": "fix widget access url",
-                "uk": "виправити доступ до віджету url",
-                "zh-cn": "修复部件访问url"
-            },
-            "0.2.4": {
-                "en": "fix github commands to non deprecated",
-                "de": "github-befehle nicht deprecated",
-                "ru": "починить команды github для не обесцененных",
-                "pt": "corrigir comandos github para non deprecated",
-                "nl": "fix github-opdrachten op niet verouderd",
-                "fr": "fixer les commandes github à non dépréciées",
-                "it": "correggere i comandi github a non deprecato",
-                "es": "fijar comandos github a no deprecated",
-                "pl": "naprawić komendy github do nie zdepregatowane",
-                "uk": "фіксувати команди github для не депресованих",
-                "zh-cn": "将 github 命令固定为未贬值"
-            },
-            "0.2.2": {
-                "en": "remove withstyles\ntranslate some missing keys",
-                "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
-                "ru": "удалить стили\nпереводить отсутствующие ключи",
-                "pt": "remover com estilos\ntraduzir algumas chaves em falta",
-                "nl": "verwijderen withstyles\nenkele ontbrekende sleutels vertalen",
-                "fr": "enlever avec les styles\ntraduire quelques clés manquantes",
-                "it": "rimuovere con stili\ntradurre alcune chiavi mancanti",
-                "es": "quitar con estilos\ntraducir algunas teclas perdidas",
-                "pl": "usunąć ze stylów\nprzetłumaczyć brakujące klucze",
-                "uk": "видалити зачіски\nперевести деякі відсутні ключі",
-                "zh-cn": "以样式删除\n翻译一些缺失的密钥"
-            }
-        },
-        "titleLang": {
-            "en": "Vis-2 widget rssfeed",
-            "de": "Vis-2-Widget-RSSFeed",
-            "ru": "RSS-канал виджета Vis-2",
-            "pt": "Widget Vis-2 feed RSS",
-            "nl": "Vis-2 widget rssfeed",
-            "fr": "Flux RSS du widget Vis-2",
-            "it": "Widget Vis-2 RSSfeed",
-            "es": "rssfeed del widget Vis-2",
-            "pl": "Kanał RSS widżetu Vis-2",
-            "uk": "Vis-2 віджет rssfeed",
-            "zh-cn": "Vis-2 小部件 rssfeed"
-        },
-        "desc": {
-            "en": "Vis-2 widget rssfeed",
-            "de": "Vis-2-Widget-RSSFeed",
-            "ru": "RSS-канал виджета Vis-2",
-            "pt": "Widget Vis-2 feed RSS",
-            "nl": "Vis-2 widget rssfeed",
-            "fr": "Flux RSS du widget Vis-2",
-            "it": "Widget Vis-2 RSSfeed",
-            "es": "rssfeed del widget Vis-2",
-            "pl": "Kanał RSS widżetu Vis-2",
-            "uk": "Vis-2 віджет rssfeed",
-            "zh-cn": "Vis-2 小部件 rssfeed"
-        },
-        "authors": ["oweitman <oweitman@gmx.de>"],
-        "keywords": ["vis-2", "widgets", "vis-2-widgets-rssfeed"],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "tier": 3,
-        "platform": "Javascript/Node.js",
-        "icon": "vis-2-widgets-rssfeed.png",
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.vis-2-widgets-rssfeed/main/admin/vis-2-widgets-rssfeed.png",
-        "enabled": true,
-        "readme": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed/blob/main/README.md",
-        "loglevel": "info",
-        "mode": "none",
-        "nogit": true,
-        "singleton": true,
-        "onlyWWW": true,
-        "adminUI": {
-            "config": "none"
-        },
-        "type": "visualization-widgets",
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "visWidgets": {
-            "vis2rssfeedWidgets": {
-                "i18n": "component",
-                "name": "vis2rssfeedWidgets",
-                "url": "vis-2-widgets-rssfeed/customWidgets.js",
-                "urlxx": "http://localhost:4173/customWidgets.js",
-                "components": ["RSSArticleMarquee", "RSSMetaHelper", "RSSArticleHelper", "RSSWidget", "RSSMultiWidget"]
-            }
-        },
-        "restartAdapters": ["vis-2"],
-        "dependencies": [
-            {
-                "js-controller": ">=5.0.19"
-            }
-        ]
+  "common": {
+    "name": "vis-2-widgets-rssfeed",
+    "version": "1.0.0",
+    "news": {
+      "1.0.0": {
+        "en": "remove common.noConfig from io-package.json\nadd popup as opening type for marquee widget",
+        "de": "entfernen common.no Config aus io-package.json\npopup als öffnungsart für marquee widget hinzufügen",
+        "ru": "удалить общие.no io-package.json\nдобавить всплывающее окно в виде открывающего типа",
+        "pt": "remover common.no Config de io-package.json\nadicionar popup como tipo de abertura para widget de marquee",
+        "nl": "common.no verwijderen Configureren van io-package.json\npopup toevoegen als openingstype voor maquee-widget",
+        "fr": "enlever common.non Config de io-package.json\najouter popup comme type d'ouverture pour widget marquee",
+        "it": "rimuovere common.no Config da io-package.json\naggiungere popup come tipo di apertura per widget marquee",
+        "es": "eliminar común.no Config de io-package.json\nañadir popup como tipo de apertura para marquee widget",
+        "pl": "nie Konfiguracja: jo- package.json\ndodaj popup jako typ otwarcia dla widżetu marquee",
+        "uk": "видалити загальний.no Налаштування від io-package.json\nadd popup як отвір типу для marquee віджет",
+        "zh-cn": "删除常见. no 来自io-package.json的配置\n添加弹出为 marquee 部件的打开类型"
+      },
+      "0.3.6": {
+        "en": "remove 0.3.4 from io-package.json",
+        "de": "0,3.4 aus io-package entfernen. json",
+        "ru": "удалить 0.3.4 из io-package. json",
+        "pt": "remover 0.3.4 do io-package. o que foi",
+        "nl": "0.3.4 uit de verpakking verwijderen. json",
+        "fr": "retirer 0.3.4 de l'emballage. json",
+        "it": "rimuovere 0.3.4 da io-package. j",
+        "es": "retirar 0.3.4 de io-paquete. json",
+        "pl": "usunąć 0.3.4 z opakowania jo-. json",
+        "uk": "видалити 0.3.4 з io-package. свінгери",
+        "zh-cn": "从io包装中删除0.3.4。 贾森"
+      },
+      "0.3.5": {
+        "en": "improve link styling in the marquee widget\nfix key and group handling\nfix issues from adapter checker",
+        "de": "verbesserung der verbindung styling im marquee widget\nfixschlüssel und gruppenhandling\nprobleme von adapter checker beheben",
+        "ru": "улучшить укладку ссылок в widget\nфиксация ключа и групповая обработка\nпроблемы с адаптером",
+        "pt": "melhorar o estilo link no widget de marquee\ncorrigir o manuseio de chaves e grupos\ncorrigir problemas do verificador do adaptador",
+        "nl": "link styling verbeteren in de maquee widget\nfix sleutel en groep behandeling\nproblemen oplossen van adaptercontrole",
+        "fr": "améliorer le style des liens dans le widget marquee\ncorrection de la clé et manipulation de groupe\ncorrection des problèmes de l'adaptateur checker",
+        "it": "migliorare lo styling link nel widget di marquee\nfix chiave e gestione di gruppo\nrisolvere problemi da adattatore checker",
+        "es": "mejorar el estilo de enlace en el widget de la marquee\narreglar llave y manejo de grupo\nsolucionar problemas desde el control de adaptador",
+        "pl": "poprawić stylizację łącza w widżecie marquee\nnaprawić obsługę klucza i grupy\nnaprawianie problemów z sprawdzaczem adaptera",
+        "uk": "поліпшення укладання посилань в марке віджет\nфіксувати ключ і групове обслуговування\nвиправити проблеми з перевіркою адаптера",
+        "zh-cn": "改进 marquee 部件中的链接样式\n固定密钥和分组处理\n从适配器检查器中校正问题"
+      },
+      "0.3.3": {
+        "en": "fix widgeturl from debug to productive",
+        "de": "fix widgeturl von debug bis produktiv",
+        "ru": "исправить widgeturl от отладки до продуктивного",
+        "pt": "corrigir widgeturl de depuração para produtivo",
+        "nl": "fix widgeturl van debug naar productief",
+        "fr": "fixer widgeturl de debug à productif",
+        "it": "fissare widgeturl da debug a produttivo",
+        "es": "fijar el widgeturl de la depuración a productivo",
+        "pl": "naprawić widgeturl od debug do produktywne",
+        "uk": "виправити віджети від debug до продуктивного",
+        "zh-cn": "将部件从调试到生产"
+      },
+      "0.3.1": {
+        "en": "fix widget access url",
+        "de": "widget access url",
+        "ru": "исправить виджет доступа url",
+        "pt": "corrigir o acesso do widget url",
+        "nl": "fix widget access url",
+        "fr": "réparer widget accès url",
+        "it": "correzione widget accesso url",
+        "es": "fijar acceso widget url",
+        "pl": "fix widget access url",
+        "uk": "виправити доступ до віджету url",
+        "zh-cn": "修复部件访问url"
+      },
+      "0.2.4": {
+        "en": "fix github commands to non deprecated",
+        "de": "github-befehle nicht deprecated",
+        "ru": "починить команды github для не обесцененных",
+        "pt": "corrigir comandos github para non deprecated",
+        "nl": "fix github-opdrachten op niet verouderd",
+        "fr": "fixer les commandes github à non dépréciées",
+        "it": "correggere i comandi github a non deprecato",
+        "es": "fijar comandos github a no deprecated",
+        "pl": "naprawić komendy github do nie zdepregatowane",
+        "uk": "фіксувати команди github для не депресованих",
+        "zh-cn": "将 github 命令固定为未贬值"
+      },
+      "0.2.2": {
+        "en": "remove withstyles\ntranslate some missing keys",
+        "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
+        "ru": "удалить стили\nпереводить отсутствующие ключи",
+        "pt": "remover com estilos\ntraduzir algumas chaves em falta",
+        "nl": "verwijderen withstyles\nenkele ontbrekende sleutels vertalen",
+        "fr": "enlever avec les styles\ntraduire quelques clés manquantes",
+        "it": "rimuovere con stili\ntradurre alcune chiavi mancanti",
+        "es": "quitar con estilos\ntraducir algunas teclas perdidas",
+        "pl": "usunąć ze stylów\nprzetłumaczyć brakujące klucze",
+        "uk": "видалити зачіски\nперевести деякі відсутні ключі",
+        "zh-cn": "以样式删除\n翻译一些缺失的密钥"
+      }
     },
-    "native": {},
-    "objects": [],
-    "instanceObjects": []
+    "titleLang": {
+      "en": "Vis-2 widget rssfeed",
+      "de": "Vis-2-Widget-RSSFeed",
+      "ru": "RSS-канал виджета Vis-2",
+      "pt": "Widget Vis-2 feed RSS",
+      "nl": "Vis-2 widget rssfeed",
+      "fr": "Flux RSS du widget Vis-2",
+      "it": "Widget Vis-2 RSSfeed",
+      "es": "rssfeed del widget Vis-2",
+      "pl": "Kanał RSS widżetu Vis-2",
+      "uk": "Vis-2 віджет rssfeed",
+      "zh-cn": "Vis-2 小部件 rssfeed"
+    },
+    "desc": {
+      "en": "Vis-2 widget rssfeed",
+      "de": "Vis-2-Widget-RSSFeed",
+      "ru": "RSS-канал виджета Vis-2",
+      "pt": "Widget Vis-2 feed RSS",
+      "nl": "Vis-2 widget rssfeed",
+      "fr": "Flux RSS du widget Vis-2",
+      "it": "Widget Vis-2 RSSfeed",
+      "es": "rssfeed del widget Vis-2",
+      "pl": "Kanał RSS widżetu Vis-2",
+      "uk": "Vis-2 віджет rssfeed",
+      "zh-cn": "Vis-2 小部件 rssfeed"
+    },
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "keywords": [
+      "vis-2",
+      "widgets",
+      "vis-2-widgets-rssfeed"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "tier": 3,
+    "platform": "Javascript/Node.js",
+    "icon": "vis-2-widgets-rssfeed.png",
+    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.vis-2-widgets-rssfeed/main/admin/vis-2-widgets-rssfeed.png",
+    "enabled": true,
+    "readme": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "none",
+    "nogit": true,
+    "singleton": true,
+    "onlyWWW": true,
+    "adminUI": {
+      "config": "none"
+    },
+    "type": "visualization-widgets",
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "visWidgets": {
+      "vis2rssfeedWidgets": {
+        "i18n": "component",
+        "name": "vis2rssfeedWidgets",
+        "url": "vis-2-widgets-rssfeed/customWidgets.js",
+        "urlxx": "http://localhost:4173/customWidgets.js",
+        "components": [
+          "RSSArticleMarquee",
+          "RSSArticleMarqueeV5",
+          "RSSMetaHelper",
+          "RSSArticleHelper",
+          "RSSWidget",
+          "RSSMultiWidget"
+        ]
+      }
+    },
+    "restartAdapters": [
+      "vis-2"
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.19"
+      }
+    ]
+  },
+  "native": {},
+  "objects": [],
+  "instanceObjects": []
 }

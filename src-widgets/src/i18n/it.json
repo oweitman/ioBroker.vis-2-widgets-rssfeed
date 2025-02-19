@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "Filtro",
     "vis_2_widgets_rssfeed_marquee_empty": "Nessun articolo trovato. Si prega di inserire un datapoint a un feed RSS",
     "vis_2_widgets_rssfeed_widget_title": "Modifica modello",
-    "vis_2_widgets_rssfeed_widget_save": "Salva"
+    "vis_2_widgets_rssfeed_widget_save": "Salva",
+    "vis_2_widgets_rssfeed_marquee_opentype": "Tipo aperto"
 }

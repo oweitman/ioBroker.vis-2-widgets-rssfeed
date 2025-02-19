@@ -31,5 +31,6 @@
     "vis_2_widgets_rssfeed_widget_filter": "过滤器",
     "vis_2_widgets_rssfeed_marquee_empty": "未找到文章 。 请输入一个数据点到 RSS feed",
     "vis_2_widgets_rssfeed_widget_title": "模板编辑",
-    "vis_2_widgets_rssfeed_widget_save": "保存"
+    "vis_2_widgets_rssfeed_widget_save": "保存",
+    "vis_2_widgets_rssfeed_marquee_opentype": "打开类型"
 }

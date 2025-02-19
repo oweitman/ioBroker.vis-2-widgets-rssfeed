@@ -1,20 +1,25 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
-import { Link } from '@mui/material';
+import { Link, Dialog, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-//import { I18n } from '@iobroker/adapter-react-v5';
 
 const rssExample = require('./rss.json');
 
 /* globals vis */
 
 class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
+    constructor(props) {
+        super(props);
+        this.state.showDialog = false;
+        this.state.iframeSrc = '';
+    }
     static getWidgetInfo() {
         return {
-            id: 'tplRSSArticleMarquee',
+            id: 'tplRSSArticleMarquee5',
             visSet: 'vis-2-widgets-rssfeed',
-            visName: 'deprecatedRSSFeed Article Marquee V4', // Name of widget
+            visName: 'RSSFeed Article Marquee v5', // Name of widget
             visAttrs: [
                 {
                     name: 'common', // group name
@@ -57,10 +62,11 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                             label: 'vis_2_widgets_rssfeed_marquee_pauseonhover', // translated field label
                         },
                         {
-                            name: 'withlink', // name in data structure
-                            type: 'checkbox',
-                            default: false,
-                            label: 'vis_2_widgets_rssfeed_marquee_withlink', // translated field label
+                            name: 'opentype', // name in data structure
+                            type: 'select',
+                            options: ['none', 'link', 'popup'],
+                            default: 'none',
+                            label: 'vis_2_widgets_rssfeed_marquee_opentype', // translated field label
                         },
                         {
                             name: 'withtime', // name in data structure
@@ -191,13 +197,21 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
             item.title
         } `;
     }
+    handleClick(link) {
+        this.setState({ showDialog: true });
+        this.setState({ iframeSrc: link });
+    }
+    handleClose() {
+        this.setState({ showDialog: false });
+        this.setState({ iframeSrc: '' });
+    }
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
         let data = {
             speed: this.state.rxData.speed || 200,
             divider: this.state.rxData.divider || '',
             pauseonhover: this.state.rxData.pauseonhover ? true : this.state.rxData.pauseonhover,
-            withLink: this.state.rxData.withlink,
+            opentype: this.state.rxData.opentype,
             withTime: this.state.rxData.withtime ? this.state.rxData.withtime : false,
             withDate: this.state.rxData.withdate ? this.state.rxData.withdate : false,
             withYear: this.state.rxData.withyear ? this.state.rxData.withyear : false,
@@ -237,28 +251,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
         }, []);
         articles.sort((aEl, bEl) => new Date(bEl.date) - new Date(aEl.date));
 
-        // let titles = I18n.t('vis_2_widgets_rssfeed_marquee_empty');
-        /*         if (articles && articles.length > 0) {
-            titles =
-                articles.reduce((t, item) => {
-                    let time = [];
-                    if (withDate) time.push(vis.formatDate(item.date, 'DD.MM.'));
-                    if (withYear) time.push(vis.formatDate(item.date, 'YY'));
-                    time = [time.join('')];
-                    if (withTime) time.push(vis.formatDate(item.date, 'hh:mm'));
-                    if (withLink) {
-                        t += ` ${divider} ${time.join(' ')} ${
-                            withName ? `${item.meta_name || item.meta_title}: ` : ''
-                        }<a href="${item.link}" target="rssarticle">${time} ${item.title}</a>`;
-                    } else {
-                        t += ` ${divider} ${time.join(' ')} ${
-                            withName ? `${item.meta_name || item.meta_title}: ` : ''
-                        }${item.title}`;
-                    }
-                    return t;
-                }, '') + ' ';
-        } */
-        if (data.withLink) {
+        if (data.opentype === 'link') {
             return (
                 <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
                     <div>
@@ -278,6 +271,66 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                     </div>
                 </Marquee>
             );
+        } else if (data.opentype === 'popup') {
+            const classesDialog = `dialog ${this.props.id}`;
+            const classesiFrame = `iframe ${this.props.id}`;
+            return (
+                <>
+                    <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
+                        <div>
+                            {articles.map((item) => {
+                                return (
+                                    <span
+                                        key={item.key}
+                                        link={item.link}
+                                        onClick={() => {
+                                            this.handleClick(item.link);
+                                        }}
+                                    >
+                                        {this.renderTitle(data, item)}
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    </Marquee>
+                    <Dialog
+                        className={classesDialog}
+                        PaperProps={{
+                            sx: {
+                                width: '90%',
+                                height: '90%',
+                                overflow: 'hidden',
+                                maxHeight: 'inherit',
+                                maxWidth: 'inherit',
+                            },
+                        }}
+                        open={this.state.showDialog}
+                        onClose={() => {}}
+                    >
+                        <IconButton
+                            aria-label="close"
+                            onClick={() => this.handleClose()}
+                            sx={(theme) => ({
+                                position: 'absolute',
+                                right: 8,
+                                top: 8,
+                                color: 'black',
+                                backgroundColor: 'red',
+                            })}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                        <iframe
+                            className={classesiFrame}
+                            src={this.state.iframeSrc}
+                            title="popup"
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    </Dialog>
+                </>
+            );
+            /*             <Dialog open={this.state.showDialog} onClose={() => {}} />;
+            <Dialog open={true} onClose={() => {}} />; */
         } else {
             return (
                 <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>

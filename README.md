@@ -17,10 +17,10 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.0.0 (2025-02-19)
 
 - remove common.noConfig from io-package.json
+- add popup as opening type for marquee widget
 
 ### 0.3.6 (2024-09-18)
 
@@ -95,7 +95,7 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 
 The MIT License (MIT)
 
-Copyright (c) 2024 oweitman <oweitman@gmx.de>
+Copyright (c) 2025 oweitman <oweitman@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
