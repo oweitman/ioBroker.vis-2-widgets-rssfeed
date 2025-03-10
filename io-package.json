@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "news": {
+      "1.0.1": {
+        "en": "try to fix marque v5 widget",
+        "de": "versuchen marque v5 widget zu beheben",
+        "ru": "попробуйте исправить виджет marque v5",
+        "pt": "tentar corrigir widget marque v5",
+        "nl": "proberen om marque v5 widget te herstellen",
+        "fr": "essayer de réparer marque v5 widget",
+        "it": "provare a correggere marque v5 widget",
+        "es": "tratar de arreglar marque v5 widget",
+        "pl": "spróbuj naprawić marque v5 widget",
+        "uk": "спробуйте виправити marque v5 віджет",
+        "zh-cn": "尝试修正 marque v5 部件"
+      },
       "1.0.0": {
         "en": "remove common.noConfig from io-package.json\nadd popup as opening type for marquee widget",
         "de": "entfernen common.no Config aus io-package.json\npopup als öffnungsart für marquee widget hinzufügen",
@@ -80,19 +93,6 @@
         "pl": "naprawić komendy github do nie zdepregatowane",
         "uk": "фіксувати команди github для не депресованих",
         "zh-cn": "将 github 命令固定为未贬值"
-      },
-      "0.2.2": {
-        "en": "remove withstyles\ntranslate some missing keys",
-        "de": "withstyles entfernen\neinige fehlende schlüssel übersetzen",
-        "ru": "удалить стили\nпереводить отсутствующие ключи",
-        "pt": "remover com estilos\ntraduzir algumas chaves em falta",
-        "nl": "verwijderen withstyles\nenkele ontbrekende sleutels vertalen",
-        "fr": "enlever avec les styles\ntraduire quelques clés manquantes",
-        "it": "rimuovere con stili\ntradurre alcune chiavi mancanti",
-        "es": "quitar con estilos\ntraducir algunas teclas perdidas",
-        "pl": "usunąć ze stylów\nprzetłumaczyć brakujące klucze",
-        "uk": "видалити зачіски\nперевести деякі відсутні ключі",
-        "zh-cn": "以样式删除\n翻译一些缺失的密钥"
       }
     },
     "titleLang": {

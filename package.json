@@ -1,6 +1,6 @@
 {
   "name": "iobroker.vis-2-widgets-rssfeed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ioBroker vis-2 widgets for adapter rssfeed",
   "author": "oweitman <oweitman@gmx.de>",
   "contributors": [
@@ -29,8 +29,7 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.10.3",
     "gulp": "^4.0.2",
-    "mocha": "^10.2.0",
-    "@iobroker/dev-server": "^0.7.3"
+    "mocha": "^10.2.0"
   },
   "main": "widgets/vis-2-widgets-rssfeed/customWidgets.js",
   "files": [
@@ -57,6 +56,5 @@
   "bugs": {
     "url": "https://github.com/ioBroker/ioBroker.vis-2-widgets-rssfeed/issues"
   },
-  "readmeFilename": "README.md",
-  "dependencies": {}
+  "readmeFilename": "README.md"
 }
