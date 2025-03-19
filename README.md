@@ -17,6 +17,11 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+
+- add marqueeV5 widget
+
 ### 1.0.0 (2025-02-19)
 
 - remove common.noConfig from io-package.json

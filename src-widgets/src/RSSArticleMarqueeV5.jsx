@@ -281,6 +281,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
                             {articles.map((item) => {
                                 return (
                                     <span
+                                        style={{ cursor: 'pointer' }}
                                         key={item.key}
                                         link={item.link}
                                         onClick={() => {
