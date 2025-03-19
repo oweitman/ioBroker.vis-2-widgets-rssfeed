@@ -20,7 +20,7 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 
 ### **WORK IN PROGRESS**
 
-- add marqueeV5 widget
+- fix marqueeV5 widget
 
 ### 1.0.0 (2025-02-19)
 

@@ -9,7 +9,7 @@ const rssExample = require('./rss.json');
 
 /* globals vis */
 
-class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
+class RSSArticleMarqueeV5 extends (window.visRxWidget || VisRxWidget) {
     constructor(props) {
         super(props);
         this.state.showDialog = false;
@@ -17,7 +17,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
     }
     static getWidgetInfo() {
         return {
-            id: 'tplRSSArticleMarquee5',
+            id: 'tplRSSArticleMarqueeV5',
             visSet: 'vis-2-widgets-rssfeed',
             visName: 'RSSFeed Article Marquee v5', // Name of widget
             visAttrs: [
@@ -161,7 +161,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
     // Do not delete this method. It is used by vis to read the widget configuration.
     // eslint-disable-next-line class-methods-use-this
     getWidgetInfo() {
-        return RSSArticleMarquee.getWidgetInfo();
+        return RSSArticleMarqueeV5.getWidgetInfo();
     }
 
     // This function is called every time when rxData is changed
@@ -346,7 +346,7 @@ class RSSArticleMarquee extends (window.visRxWidget || VisRxWidget) {
     }
 }
 
-export default RSSArticleMarquee;
+export default RSSArticleMarqueeV5;
 
 /*
 container
