@@ -1,20 +1,20 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "news": {
-      "1.1.0": {
-        "en": "fix marqueeV5 widget",
-        "de": "marquee reparieren V5 Widget",
-        "ru": "починить марку Виджет V5",
-        "pt": "corrigir marqueia Widget V5",
-        "nl": "fix marquee V5-widget",
-        "fr": "fixer la marquee Widget V5",
-        "it": "correzione marquee widget V5",
-        "es": "arreglar marquee V5 widget",
-        "pl": "fix marquee Widżet V5",
-        "uk": "фіксувати марке V5 віджет",
-        "zh-cn": "修饰马奎 V5 部件"
+      "1.1.1": {
+        "en": "fix marqueeV5 widget\nfix build process",
+        "de": "marquee reparieren V5 Widget\nfehlerbehebung",
+        "ru": "починить марку Виджет V5\nфиксация процесса сборки",
+        "pt": "corrigir marqueia Widget V5\nprocesso de compilação de correção",
+        "nl": "fix marquee V5-widget\nfix build proces",
+        "fr": "fixer la marquee Widget V5\ncorrection du processus de construction",
+        "it": "correzione marquee widget V5\ncorretto processo di costruzione",
+        "es": "arreglar marquee V5 widget\nproceso de construcción",
+        "pl": "fix marquee Widżet V5\nnaprawić proces budowania",
+        "uk": "фіксувати марке V5 віджет\nпроцес створення фіксації",
+        "zh-cn": "修饰马奎 V5 部件\n固定构建进程"
       },
       "1.0.0": {
         "en": "remove common.noConfig from io-package.json\nadd popup as opening type for marquee widget",

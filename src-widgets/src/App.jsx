@@ -50,38 +50,6 @@ class App extends WidgetDemoApp {
                 />
             </>
         );
-        return (
-            <>
-                <RSSMetaHelper
-                    socket={this.socket}
-                    style={{
-                        width: 100,
-                        height: 100,
-                    }}
-                />
-                <RSSArticleHelper
-                    socket={this.socket}
-                    style={{
-                        width: 100,
-                        height: 100,
-                    }}
-                />
-                <RSSArticleMarquee
-                    socket={this.socket}
-                    style={{
-                        width: 100,
-                        height: 100,
-                    }}
-                />
-                <RSSArticleMarquee5
-                    socket={this.socket}
-                    style={{
-                        width: 100,
-                        height: 100,
-                    }}
-                />
-            </>
-        );
     }
 }
 

@@ -17,9 +17,10 @@ For a detailed description of the widgets and functionality see Adapter rssfeed.
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-### 1.1.0 (2025-03-20)
+### 1.1.1 (2025-03-20)
 
 - fix marqueeV5 widget
+- fix build process
 
 ### 1.0.0 (2025-02-19)
 
