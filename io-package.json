@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "news": {
+      "1.1.2": {
+        "en": "add missing build file",
+        "de": "fehlende build-datei hinzufügen",
+        "ru": "добавить недостающий файл сборки",
+        "pt": "adicionar arquivo de compilação ausente",
+        "nl": "ontbrekende bouwbestand toevoegen",
+        "fr": "ajouter un fichier de compilation manquant",
+        "it": "aggiungere file di compilazione mancante",
+        "es": "añadir archivo de construcción perdido",
+        "pl": "dodaj brakujący plik build",
+        "uk": "додати відсутній файл збірки",
+        "zh-cn": "添加缺失的构建文件"
+      },
       "1.1.1": {
         "en": "fix marqueeV5 widget\nfix build process",
         "de": "marquee reparieren V5 Widget\nfehlerbehebung",
@@ -80,19 +93,6 @@
         "pl": "fix widget access url",
         "uk": "виправити доступ до віджету url",
         "zh-cn": "修复部件访问url"
-      },
-      "0.2.4": {
-        "en": "fix github commands to non deprecated",
-        "de": "github-befehle nicht deprecated",
-        "ru": "починить команды github для не обесцененных",
-        "pt": "corrigir comandos github para non deprecated",
-        "nl": "fix github-opdrachten op niet verouderd",
-        "fr": "fixer les commandes github à non dépréciées",
-        "it": "correggere i comandi github a non deprecato",
-        "es": "fijar comandos github a no deprecated",
-        "pl": "naprawić komendy github do nie zdepregatowane",
-        "uk": "фіксувати команди github для не депресованих",
-        "zh-cn": "将 github 命令固定为未贬值"
       }
     },
     "titleLang": {

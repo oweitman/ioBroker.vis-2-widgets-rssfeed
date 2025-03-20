@@ -36,6 +36,7 @@ gulp.task('widget-3-copy', () => Promise.all([
             `${SRC}build/static/js/*ace*.*`,
             `${SRC}build/static/js/*useTheme*.*`,
             `${SRC}build/static/js/*common_js*.*`,
+            `${SRC}build/static/js/*dist_clsx_mjs*.*`,
         ],
         ...[`!${SRC}build/static/js/*.xmap`, `!${SRC}build/static/js/*.txt`],
     ]).pipe(gulp.dest(`widgets/${adapterName}/static/js`)),
