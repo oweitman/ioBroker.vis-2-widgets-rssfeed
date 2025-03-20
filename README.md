@@ -1,6 +1,6 @@
-![Logo](admin/vis-2-widgets-rssfeed.png)
-
 # Vis 2 RSS Feed widgets
+
+![Logo](admin/vis-2-widgets-rssfeed.png)
 
 ![Number of Installations](http://iobroker.live/badges/vis-2-widgets-rssfeed-installed.svg) ![Number of Installations](http://iobroker.live/badges/vis-2-widgets-rssfeed-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.vis-2-widgets-rssfeed.svg)](https://www.npmjs.com/package/iobroker.vis-2-widgets-rssfeed)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.vis-2-widgets-rssfeed.svg)](https://www.npmjs.com/package/iobroker.vis-2-widgets-rssfeed)
