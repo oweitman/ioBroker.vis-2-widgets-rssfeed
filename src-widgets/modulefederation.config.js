@@ -4,7 +4,7 @@ module.exports = makeFederation(
     'vis2rssfeedWidgets', // internal name of package - must be unique and identical with io-package.json=>common.visWidgets.vis2demoWidget
     {
         './RSSArticleMarquee': './src/RSSArticleMarquee', // List of all widgets in this package
-        './RSSArticleMarqueeV5': './src/RSSArticleMarqueeV5', // List of all widgets in this package
+        './RSSArticleMarquee5': './src/RSSArticleMarquee5', // List of all widgets in this package
         './RSSMetaHelper': './src/RSSMetaHelper', // List of all widgets in this package
         './RSSArticleHelper': './src/RSSArticleHelper', // List of all widgets in this package
         './RSSWidget': './src/RSSWidget', // List of all widgets in this package

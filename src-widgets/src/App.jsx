@@ -5,7 +5,7 @@ import { i18n as I18n } from '@iobroker/adapter-react-v5';
 
 import RSSMetaHelper from './RSSMetaHelper';
 import RSSArticleMarquee from './RSSArticleMarquee';
-import RSSArticleMarqueeV5 from './RSSArticleMarqueeV5';
+import RSSArticleMarquee5 from './RSSArticleMarquee5';
 import RSSArticleHelper from './RSSArticleHelper';
 import translations from './translations';
 
@@ -41,7 +41,7 @@ class App extends WidgetDemoApp {
                         height: 100,
                     }}
                 />
-                <RSSArticleMarqueeV5
+                <RSSArticleMarquee5
                     socket={this.socket}
                     style={{
                         width: 100,
