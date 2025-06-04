@@ -1,5 +1,4 @@
 import React from 'react';
-import {} from '@mui/material';
 import PropTypes from 'prop-types';
 
 // import { I18n } from '@iobroker/adapter-react-v5';

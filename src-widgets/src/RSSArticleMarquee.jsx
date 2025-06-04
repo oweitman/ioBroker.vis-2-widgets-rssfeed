@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from '@mui/material';
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-//import { I18n } from '@iobroker/adapter-react-v5';
+// import { I18n } from '@iobroker/adapter-react-v5';
 
-const rssExample = require('./rss.json');
+import rssExample from './rss.json';
 
 /* globals vis */
 

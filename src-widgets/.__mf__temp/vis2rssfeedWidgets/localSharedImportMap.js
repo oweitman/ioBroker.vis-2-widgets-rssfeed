@@ -8,11 +8,6 @@
           return pkg
         }
       ,
-        "react-dom": async () => {
-          let pkg = await import("__mf__virtual/vis2rssfeedWidgets__prebuild__react_mf_2_dom__prebuild__.js")
-          return pkg
-        }
-      ,
         "@mui/material": async () => {
           let pkg = await import("__mf__virtual/vis2rssfeedWidgets__prebuild___mf_0_mui_mf_1_material__prebuild__.js")
           return pkg
@@ -25,6 +20,11 @@
       ,
         "@mui/icons-material": async () => {
           let pkg = await import("__mf__virtual/vis2rssfeedWidgets__prebuild___mf_0_mui_mf_1_icons_mf_2_material__prebuild__.js")
+          return pkg
+        }
+      ,
+        "react-dom": async () => {
+          let pkg = await import("__mf__virtual/vis2rssfeedWidgets__prebuild__react_mf_2_dom__prebuild__.js")
           return pkg
         }
       
@@ -40,32 +40,6 @@
             async get () {
               usedShared["react"].loaded = true
               const {"react": pkgDynamicImport} = importMap 
-              const res = await pkgDynamicImport()
-              const exportModule = {...res}
-              // All npm packages pre-built by vite will be converted to esm
-              Object.defineProperty(exportModule, "__esModule", {
-                value: true,
-                enumerable: false
-              })
-              return function () {
-                return exportModule
-              }
-            },
-            shareConfig: {
-              singleton: true,
-              requiredVersion: "*"
-            }
-          }
-        ,
-          "react-dom": {
-            name: "react-dom",
-            version: "18.3.1",
-            scope: ["default"],
-            loaded: false,
-            from: "vis2rssfeedWidgets",
-            async get () {
-              usedShared["react-dom"].loaded = true
-              const {"react-dom": pkgDynamicImport} = importMap 
               const res = await pkgDynamicImport()
               const exportModule = {...res}
               // All npm packages pre-built by vite will be converted to esm
@@ -144,6 +118,32 @@
             async get () {
               usedShared["@mui/icons-material"].loaded = true
               const {"@mui/icons-material": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "*"
+            }
+          }
+        ,
+          "react-dom": {
+            name: "react-dom",
+            version: "18.3.1",
+            scope: ["default"],
+            loaded: false,
+            from: "vis2rssfeedWidgets",
+            async get () {
+              usedShared["react-dom"].loaded = true
+              const {"react-dom": pkgDynamicImport} = importMap 
               const res = await pkgDynamicImport()
               const exportModule = {...res}
               // All npm packages pre-built by vite will be converted to esm

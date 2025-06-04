@@ -6,7 +6,7 @@ import { I18n } from '@iobroker/adapter-react-v5';
 
 import EJSDialog from './EJSDialog';
 
-interface VisEJSAttibuteFieldProps {
+interface VisEJSAttributeFieldProps {
     field: {
         name: string;
         label: string;
@@ -18,11 +18,11 @@ interface VisEJSAttibuteFieldProps {
     data: any;
     onDataChange: (data: any) => void;
 }
-const VisEJSAttibuteField = ({
+const VisEJSAttributeField = ({
     field, // field properties: {name, label, type, set, singleName, component,...}
     data, // widget data
     onDataChange, // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
-}: VisEJSAttibuteFieldProps): JSX.Element => {
+}: VisEJSAttributeFieldProps): JSX.Element => {
     const error = '';
 
     const [idDialog, setIdDialog] = useState(false);
@@ -71,4 +71,4 @@ const VisEJSAttibuteField = ({
         </>
     );
 };
-export default VisEJSAttibuteField;
+export default VisEJSAttributeField;

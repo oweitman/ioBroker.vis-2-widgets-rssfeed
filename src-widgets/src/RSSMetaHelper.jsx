@@ -1,10 +1,9 @@
 import React from 'react';
-import {} from '@mui/material';
 
 // import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 
-const rssExample = require('./rss.json');
+import rssExample from './rss.json';
 
 class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
