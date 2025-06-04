@@ -1,0 +1,141 @@
+{
+    "name": "Default",
+    "settings": {
+        "style": {},
+        "navigationBar": false,
+        "navigation": false
+    },
+    "widgets": {
+        "w000004": {
+            "tpl": "tplRSSMultiWidget",
+            "data": {
+                "bindings": [],
+                "feedcount": 1,
+                "g_common": true,
+                "template": "\n<!--\n available variables:\n widgetid      ->  id of the widget \n rss.articles  ->  all articles as array, details see Article Helper widget \n style         ->  all style settings for the widget\n \n all variables are read only\n-->\n\n<style> \n#<%- widgetid %> img {\n    width: calc(<%- style.width || \"230px\" %> - 15px);\n    height: auto;\n}\n#<%- widgetid %> img.rssfeed  {\n    width: auto;\n    height: auto;\n}\n\n.container {\n    overflow: hidden;\n    height: 100%;\n}\n.content {\n    position: relative;\n    border: 1px solid #ccc;\n    overflow: scroll;\n    height: 90%;\n}\n\n.slide {\n    position: absolute;\n    display: none;\n}\n\n.slide.active {\n    display: contents;\n}\n\n.controls {\n    margin-top: 10px;\n}\n</style>\n\n<div class=\"container\">\n    <div class=\"content\">\n        <% rss.articles.forEach(function(item){ %>\n        <div class=\"article slide\">\n          <p><small><%- vis.formatDate(item.pubdate, \"TT.MM.JJJJ SS:mm\") %></small></p>\n          <h3><%- item.title %></h3>\n          <p><%- item.description %></p>\n          <div style=\"clear:both;\"></div>\n        </div>\n        <% }); %>\n    </div>\n    <div class=\"controls\">\n        <button onclick=\"prevSlide()\">Zurück</button>\n        <button onclick=\"nextSlide()\">Weiter</button>\n    </div>\n</div>\n\n<script>\ncurrentSlide = 0;\nslides = document.querySelectorAll('.slide');\n\nfunction showSlide(index) {\n    slides.forEach((slide, i) => {\n        if (i === index) {\n            slide.classList.add('active');\n        } else {\n            slide.classList.remove('active');\n        }\n    });\n}\n\nfunction prevSlide() {\n    currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;\n    showSlide(currentSlide);\n}\n\nfunction nextSlide() {\n    currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;\n    showSlide(currentSlide);\n}\nshowSlide(currentSlide);\n\n</script>\n                ",
+                "dpcount": 1,
+                "feed-oid1": "rssfeed.0.tagesschau",
+                "feed-name1": null,
+                "feed-maxarticles1": 5,
+                "feed-filter1": null,
+                "g_feeds-1": true
+            },
+            "style": {
+                "bindings": [],
+                "left": 82,
+                "top": 496,
+                "width": "520px",
+                "height": "518px"
+            },
+            "widgetSet": "vis-2-widgets-rssfeed"
+        },
+        "w000006": {
+            "tpl": "tplRSSMultiWidget",
+            "data": {
+                "bindings": [],
+                "feedcount": 1,
+                "g_common": true,
+                "template": "\n<!--\n available variables:\n widgetid      ->  id of the widget \n rss.articles  ->  all articles as array, details see Article Helper widget \n style         ->  all style settings for the widget\n \n all variables are read only\n-->\n\n<style> \n#<%- widgetid %> img {\n    width: calc(<%- style.width || \"230px\" %> - 30px);\n    height: auto;\n}\n#<%- widgetid %> img.rssfeed  {\n    width: auto;\n    height: auto;\n}\n</style> \n<% rss.articles.forEach(function(item){ %>\n    <p><%- item.meta_name || item.meta_title || '' %></p>\n    <p><small><%- vis.formatDate(item.pubdate, \"TT.MM.JJJJ SS:mm\") %></small></p>\n    <h3><%- item.title %></h3>\n    <p><%- item.description %></p>\n    <div style=\"clear:both;\" />\n<% }); %>\n                ",
+                "dpcount": 1,
+                "feed-oid1": "rssfeed.0.tagesschau",
+                "feed-name1": null,
+                "feed-maxarticles1": 10,
+                "feed-filter1": null,
+                "g_feeds-1": true,
+                "g_css_shadow_padding": true
+            },
+            "style": {
+                "bindings": [],
+                "left": 655,
+                "top": 533,
+                "width": "530px",
+                "height": "260px",
+                "padding-left": "10px",
+                "padding-right": "10px"
+            },
+            "widgetSet": "vis-2-widgets-rssfeed"
+        },
+        "w000007": {
+            "tpl": "tplRSSArticleMarquee",
+            "data": {
+                "bindings": [],
+                "count": "2",
+                "g_common": true,
+                "speed": 200,
+                "divider": "+++",
+                "pauseonhover": true,
+                "withlink": false,
+                "withtime": true,
+                "withdate": false,
+                "withyear": false,
+                "withname": false,
+                "g_feeds-0": true,
+                "g_feeds-1": true,
+                "g_feeds-2": true,
+                "feed-oid2": "rssfeed.0.tvspielfilm",
+                "feed-name2": null,
+                "feed-maxarticles2": 1,
+                "feed-filter2": null,
+                "feed-oid1": "rssfeed.0.tagesschau",
+                "feed-name1": null,
+                "feed-maxarticles1": 1,
+                "feed-filter1": null
+            },
+            "style": {
+                "bindings": [],
+                "left": 95,
+                "top": 73,
+                "width": "614px",
+                "height": "26px"
+            },
+            "widgetSet": "vis-2-widgets-rssfeed"
+        },
+        "w000008": {
+            "tpl": "tplRSSArticleMarquee5",
+            "data": {
+                "bindings": [],
+                "count": 1,
+                "g_common": true,
+                "speed": 200,
+                "divider": "+++",
+                "pauseonhover": true,
+                "opentype": "none",
+                "withtime": false,
+                "withdate": false,
+                "withyear": false,
+                "withname": false,
+                "feed-oid1": "rssfeed.0.tvspielfilm",
+                "feed-name1": null,
+                "feed-maxarticles1": 1,
+                "feed-filter1": null,
+                "g_feeds-1": true
+            },
+            "style": {
+                "bindings": [],
+                "left": 96,
+                "top": 170,
+                "width": "579px",
+                "height": "26px"
+            },
+            "widgetSet": "vis-2-widgets-rssfeed"
+        },
+        "w000009": {
+            "tpl": "tplHtml",
+            "data": {
+                "bindings": [],
+                "html": "<style>\n .xw000008  {\n    xleft:300px;\n    width:90%;\n    background-color:red;\n}\n.xw000008 .MuiPaper-root {\n    margin:0px;\n    width:90%;\n}\n</style>\n",
+                "refreshInterval": null,
+                "g_common": true
+            },
+            "style": {
+                "bindings": [],
+                "left": "212.64999389648438px",
+                "top": "314px",
+                "width": 200,
+                "height": 130
+            },
+            "widgetSet": "basic"
+        }
+    },
+    "activeWidgets": {}
+}

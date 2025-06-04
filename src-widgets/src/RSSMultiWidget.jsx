@@ -168,7 +168,12 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
             visPrev: '',
         };
     }
-
+    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
+    // If true, the adapter name + _ is used.
+    // If string, then this function must return exactly that string
+    static getI18nPrefix() {
+        return `${DemoWidget.adapter}_`;
+    }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
         // Widget has 3 important states

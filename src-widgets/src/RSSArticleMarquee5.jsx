@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import { Link, Dialog, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+//import CloseIcon from '@mui/icons-material/Close';
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 
@@ -139,7 +139,12 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             visPrev: '',
         };
     }
-
+    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
+    // If true, the adapter name + _ is used.
+    // If string, then this function must return exactly that string
+    static getI18nPrefix() {
+        return `${DemoWidget.adapter}_`;
+    }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
         // Widget has 3 important states
@@ -218,7 +223,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             withName: this.state.rxData.withname ? this.state.rxData.withname : false,
         };
 
-        const keys = Object.keys(this.state.data).filter((key) => /g_feeds-(\d+)/gm.test(key));
+        const keys = Object.keys(this.state.data).filter(key => /g_feeds-(\d+)/gm.test(key));
         const articles = keys.reduce((acc, key) => {
             if (key === 'g_feeds-0') return acc;
             const id = /g_feeds-(\d+)/gm.exec(key)[1];
@@ -231,7 +236,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             const name = this.state.data[`feed-name${id}`];
             if (rss && rss.articles && rss.articles.length > maxarticles)
                 rss.articles = rss.articles.slice(0, maxarticles);
-            rss.articles = rss.articles.map((item) => ({
+            rss.articles = rss.articles.map(item => ({
                 title: item.title,
                 description: item.description,
                 categories: item.categories,
@@ -243,7 +248,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                 key: key + item.title,
             }));
             if (filter) {
-                rss.articles = rss.articles.filter((item) =>
+                rss.articles = rss.articles.filter(item =>
                     this.checkFilter(item.title + item.description + item.categories.toString(), filter),
                 );
             }
@@ -253,9 +258,12 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
 
         if (data.opentype === 'link') {
             return (
-                <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
+                <Marquee
+                    pauseOnHover={data.pauseonhover}
+                    speed={data.speed}
+                >
                     <div>
-                        {articles.map((item) => {
+                        {articles.map(item => {
                             return (
                                 <Link
                                     key={item.title}
@@ -276,9 +284,12 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             const classesiFrame = `iframe ${this.props.id}`;
             return (
                 <>
-                    <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
+                    <Marquee
+                        pauseOnHover={data.pauseonhover}
+                        speed={data.speed}
+                    >
                         <div>
-                            {articles.map((item) => {
+                            {articles.map(item => {
                                 return (
                                     <span
                                         style={{ cursor: 'pointer' }}
@@ -311,7 +322,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                         <IconButton
                             aria-label="close"
                             onClick={() => this.handleClose()}
-                            sx={(theme) => ({
+                            sx={theme => ({
                                 position: 'absolute',
                                 right: 8,
                                 top: 8,
@@ -319,7 +330,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                                 backgroundColor: 'red',
                             })}
                         >
-                            <CloseIcon />
+                            {/*  <CloseIcon /> */}
                         </IconButton>
                         <iframe
                             className={classesiFrame}
@@ -334,9 +345,12 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             <Dialog open={true} onClose={() => {}} />; */
         } else {
             return (
-                <Marquee pauseOnHover={data.pauseonhover} speed={data.speed}>
+                <Marquee
+                    pauseOnHover={data.pauseonhover}
+                    speed={data.speed}
+                >
                     <div>
-                        {articles.map((item) => {
+                        {articles.map(item => {
                             return <span key={item.key}>{this.renderTitle(data, item)}</span>;
                         })}
                     </div>
