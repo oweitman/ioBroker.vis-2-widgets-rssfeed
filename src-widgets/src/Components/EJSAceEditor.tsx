@@ -1,5 +1,5 @@
 // CustomAceEditor
-import React, { useEffect, useRef } from 'react';
+import React, { type RefObject, useEffect, useRef } from 'react';
 import AceEditor from 'react-ace';
 //import Ace from 'ace-builds';
 
@@ -42,7 +42,7 @@ interface EJSAceEditorProps {
 }
 
 export const EJSAceEditor = (props: EJSAceEditorProps): JSX.Element => {
-    const refEditor = useRef();
+    const refEditor: RefObject<HTMLDivElement | null> = useRef(null);
     useEffect(() => {
         let content: HTMLInputElement | null = null;
         let timer: ReturnType<typeof setTimeout>;
@@ -120,7 +120,6 @@ export const EJSAceEditor = (props: EJSAceEditorProps): JSX.Element => {
                 height: props.height || '100%',
                 border: props.error ? '1px solid #800' : '1px solid transparent',
             }}
-            // @ts-expect-error
             ref={refEditor}
         >
             <AceEditor

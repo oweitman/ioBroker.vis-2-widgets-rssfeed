@@ -1,18 +1,17 @@
 import React from 'react';
-import {} from '@mui/material';
 import PropTypes from 'prop-types';
 
-// import { I18n } from '@iobroker/adapter-react-v5';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-import VisEJSAttibuteField from './Components/VisEJSAttibuteField.tsx';
-import InnerHtml from './Components/InnerHTML.jsx';
 
-const ejs = require('ejs');
-const rssExample = require('./rss.json');
+import VisEJSAttributeField from './Components/VisEJSAttributeField';
+import InnerHtml from './Components/InnerHTML';
+
+import ejs from 'ejs';
+import rssExample from './rss.json';
 
 class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
     static getWidgetInfo() {
-        const defaulttemplate = `
+        const defaultTemplate = `
 <!--
  available variables:
  widgetid      ->  id of the widget 
@@ -68,7 +67,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                             name: 'template', // name in data structure
                             type: 'custom',
                             label: 'vis_2_widgets_rssfeed_widget_template', // translated field label
-                            default: defaulttemplate,
+                            default: defaultTemplate,
                             component: (
                                 // important
                                 field, // field properties: {name, label, type, set, singleName, component,...}
@@ -80,7 +79,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                                 // view,        // view name
                                 // project,      // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
                             ) => (
-                                <VisEJSAttibuteField
+                                <VisEJSAttributeField
                                     visSocket={props.context.socket}
                                     field={field}
                                     data={data}
@@ -241,13 +240,17 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
         let articles = [];
         if (keys.length > 0) {
             articles = keys.reduce((acc, key) => {
-                if (key === 'g_feeds-0') return acc;
+                if (key === 'g_feeds-0') {
+                    return acc;
+                }
                 const id = /g_feeds-(\d+)/gm.exec(key)[1];
                 const rss = JSON.parse(
                     this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample),
                 );
-                if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) return acc;
-                const maxarticles = this.state.data[`feed-maxarticles${id}`] || 999;
+                if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) {
+                    return acc;
+                }
+                const maxArticles = this.state.data[`feed-maxarticles${id}`] || 999;
                 const filter = this.state.data[`feed-filter${id}`];
                 const name = this.state.data[`feed-name${id}`];
                 if (filter) {
@@ -255,8 +258,9 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                         this.checkFilter(item.title + item.description + item.categories.toString(), filter),
                     );
                 }
-                if (rss && rss.articles && rss.articles.length > maxarticles)
-                    rss.articles = rss.articles.slice(0, maxarticles);
+                if (rss?.articles && rss.articles.length > maxArticles) {
+                    rss.articles = rss.articles.slice(0, maxArticles);
+                }
                 rss.articles = rss.articles.map((item) => ({
                     title: item.title,
                     description: item.description,

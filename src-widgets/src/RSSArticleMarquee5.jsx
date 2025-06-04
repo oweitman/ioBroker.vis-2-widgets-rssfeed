@@ -5,7 +5,7 @@ import { Link, Dialog, IconButton } from '@mui/material';
 import Marquee from 'react-fast-marquee';
 import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 
-const rssExample = require('./rss.json');
+import rssExample from './rss.json';
 
 /* globals vis */
 

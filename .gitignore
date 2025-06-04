@@ -12,3 +12,4 @@ tmp/
 .vscode/info.txt
 .gitignore
 .vscode/secrets.txt
+/src-widgets/.__mf__temp/
