@@ -26,6 +26,7 @@ export default [
             'src/Components/BlocklyEditorTS.tsx',
             'src/index.js',
             'src/translations.js',
+            'src/empty.js',
             'devutil/translate.js',
         ],
     },

@@ -18,7 +18,7 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'oid', // name in data structure
                             type: 'id',
-                            label: 'vis_2_widgets_rssfeed_helper_oid', // translated field label
+                            label: 'helper_oid', // translated field label
                         },
                     ],
                 },
@@ -31,7 +31,7 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     // If true, the adapter name + _ is used.
     // If string, then this function must return exactly that string
     static getI18nPrefix() {
-        return `${DemoWidget.adapter}_`;
+        return `${RSSMetaHelper.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {

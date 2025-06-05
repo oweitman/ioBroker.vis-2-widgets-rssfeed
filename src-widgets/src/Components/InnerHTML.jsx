@@ -16,6 +16,11 @@ function InnerHTML({ html, dangerouslySetInnerHTML, allowRerender, ...rest }) {
         divRef.current.appendChild(slotHtml); // Append the new content
     }, [html, divRef, allowRerender]);
 
-    return <div { ...rest} ref={divRef } />;
+    return (
+        <div
+            {...rest}
+            ref={divRef}
+        />
+    );
 }
 export default InnerHTML;

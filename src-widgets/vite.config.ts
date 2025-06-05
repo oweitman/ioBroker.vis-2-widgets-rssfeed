@@ -14,7 +14,6 @@ const config = {
             name: 'vis2rssfeedWidgets',
             filename: 'customWidgets.js',
             exposes: {
-                './RSSArticleMarquee': './src/RSSArticleMarquee', // List of all widgets in this package
                 './RSSArticleMarquee5': './src/RSSArticleMarquee5', // List of all widgets in this package
                 './RSSMetaHelper': './src/RSSMetaHelper', // List of all widgets in this package
                 './RSSArticleHelper': './src/RSSArticleHelper', // List of all widgets in this package

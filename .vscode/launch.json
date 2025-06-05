@@ -8,15 +8,15 @@
             "type": "chrome",
             "request": "launch",
             "name": "vis-2 editor",
-            "url": "http://localhost:8082/vis-2/edit.html#default",
-            "webRoot": "${workspaceFolder}"
+            "url": "http://localhost:3000/#default",
+            "webRoot": "${workspaceFolder}/src-widgets"
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "vis-2 runtime",
-            "url": "http://localhost:8082/vis-2/?test#default",
-            "webRoot": "${workspaceFolder}"
+            "url": "http://localhost:3000/?main#default",
+            "webRoot": "${workspaceFolder}/src-widgets"
         },
         {
             "name": "Mocha: Current File",

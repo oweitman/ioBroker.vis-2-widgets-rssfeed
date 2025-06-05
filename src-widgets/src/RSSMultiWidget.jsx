@@ -54,7 +54,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: Number.MAX_VALUE,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_multi_feedcount', // translated field label
+                            label: 'multi_feedcount', // translated field label
                             onChange: async (field, data, changeData) => {
                                 const { count } = data;
                                 for (let i = 0; i <= count; i++) {
@@ -66,7 +66,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'template', // name in data structure
                             type: 'custom',
-                            label: 'vis_2_widgets_rssfeed_widget_template', // translated field label
+                            label: 'widget_template', // translated field label
                             default: defaultTemplate,
                             component: (
                                 // important
@@ -95,7 +95,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: Number.MAX_VALUE,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_multi_dpcount', // translated field label
+                            label: 'multi_dpcount', // translated field label
                             onChange: async (field, data, changeData) => {
                                 const { dpcount } = data;
                                 for (let i = 0; i <= dpcount; i++) {
@@ -108,7 +108,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                 },
                 {
                     name: 'feeds', // group name
-                    label: 'vis_2_widgets_rssfeed_multi_feedsgroup', // translated group label
+                    label: 'multi_feedsgroup', // translated group label
                     indexFrom: 1,
                     indexTo: 'feedcount',
                     onChange: async (field, data, changeData) => {
@@ -118,12 +118,12 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'feed-oid', // name in data structure
                             type: 'id',
-                            label: 'vis_2_widgets_rssfeed_multi_oid', // translated field label
+                            label: 'multi_oid', // translated field label
                         },
                         {
                             name: 'feed-name', // name in data structure
                             type: 'text',
-                            label: 'vis_2_widgets_rssfeed_multi_name', // translated field label
+                            label: 'multi_name', // translated field label
                         },
                         {
                             name: 'feed-maxarticles', // name in data structure
@@ -132,18 +132,18 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: Number.MAX_VALUE,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_multi_maxarticles', // translated field label
+                            label: 'multi_maxarticles', // translated field label
                         },
                         {
                             name: 'feed-filter', // name in data structure
                             type: 'text',
-                            label: 'vis_2_widgets_rssfeed_multi_filter', // translated field label
+                            label: 'multi_filter', // translated field label
                         },
                     ],
                 },
                 {
                     name: 'datapoints', // group name
-                    label: 'vis_2_widgets_rssfeed_multi_datapointsgroup', // translated group label
+                    label: 'multi_datapointsgroup', // translated group label
                     indexFrom: 1,
                     indexTo: 'dpcount',
                     onChange: async (field, data, changeData) => {
@@ -152,7 +152,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                     fields: [
                         {
                             name: 'datapoint_oid',
-                            label: 'vis_2_widgets_rssfeed_multi_datapoints_oid',
+                            label: 'multi_datapoints_oid',
                             type: 'text',
                         },
                     ],
@@ -171,7 +171,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
     // If true, the adapter name + _ is used.
     // If string, then this function must return exactly that string
     static getI18nPrefix() {
-        return `${DemoWidget.adapter}_`;
+        return `${RSSMultiWidget.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
@@ -236,7 +236,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
         No Object ID set
         `;
         const template = data.template;
-        const keys = Object.keys(this.state.data).filter((key) => /g_feeds-(\d+)/gm.test(key));
+        const keys = Object.keys(this.state.data).filter(key => /g_feeds-(\d+)/gm.test(key));
         let articles = [];
         if (keys.length > 0) {
             articles = keys.reduce((acc, key) => {
@@ -254,14 +254,14 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                 const filter = this.state.data[`feed-filter${id}`];
                 const name = this.state.data[`feed-name${id}`];
                 if (filter) {
-                    rss.articles = rss.articles.filter((item) =>
+                    rss.articles = rss.articles.filter(item =>
                         this.checkFilter(item.title + item.description + item.categories.toString(), filter),
                     );
                 }
                 if (rss?.articles && rss.articles.length > maxArticles) {
                     rss.articles = rss.articles.slice(0, maxArticles);
                 }
-                rss.articles = rss.articles.map((item) => ({
+                rss.articles = rss.articles.map(item => ({
                     title: item.title,
                     description: item.description,
                     categories: item.categories,
@@ -293,7 +293,10 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
         }
 
         return (
-            <InnerHtml style={{ width: '100%', height: '100%', position: 'relative', overflow: 'auto' }} html={text} />
+            <InnerHtml
+                style={{ width: '100%', height: '100%', position: 'relative', overflow: 'auto' }}
+                html={text}
+            />
         );
     }
 }

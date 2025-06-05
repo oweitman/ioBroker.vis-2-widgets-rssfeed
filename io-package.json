@@ -151,14 +151,7 @@
                 "url": "vis-2-widgets-rssfeed/customWidgets.js",
                 "urlxx": "http://localhost:4173/customWidgets.js",
                 "bundlerType": "module",
-                "components": [
-                    "RSSArticleMarquee",
-                    "RSSArticleMarquee5",
-                    "RSSMetaHelper",
-                    "RSSArticleHelper",
-                    "RSSWidget",
-                    "RSSMultiWidget"
-                ]
+                "components": ["RSSArticleMarquee5", "RSSMetaHelper", "RSSArticleHelper", "RSSWidget", "RSSMultiWidget"]
             }
         },
         "restartAdapters": ["vis-2"],

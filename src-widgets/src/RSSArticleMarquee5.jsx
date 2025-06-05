@@ -31,7 +31,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: Number.MAX_VALUE,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_marquee_count', // translated field label
+                            label: 'marquee_count', // translated field label
                             onChange: async (field, data, changeData) => {
                                 const { count } = data;
                                 for (let i = 0; i <= count; i++) {
@@ -47,56 +47,56 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: Number.MAX_VALUE,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_marquee_speed', // translated field label
+                            label: 'marquee_speed', // translated field label
                         },
                         {
                             name: 'divider', // name in data structure
                             type: 'text',
                             default: '+++',
-                            label: 'vis_2_widgets_rssfeed_marquee_divider', // translated field label
+                            label: 'marquee_divider', // translated field label
                         },
                         {
                             name: 'pauseonhover', // name in data structure
                             type: 'checkbox',
                             default: true,
-                            label: 'vis_2_widgets_rssfeed_marquee_pauseonhover', // translated field label
+                            label: 'marquee_pauseonhover', // translated field label
                         },
                         {
                             name: 'opentype', // name in data structure
                             type: 'select',
                             options: ['none', 'link', 'popup'],
                             default: 'none',
-                            label: 'vis_2_widgets_rssfeed_marquee_opentype', // translated field label
+                            label: 'marquee_opentype', // translated field label
                         },
                         {
                             name: 'withtime', // name in data structure
                             type: 'checkbox',
                             default: false,
-                            label: 'vis_2_widgets_rssfeed_marquee_withtime', // translated field label
+                            label: 'marquee_withtime', // translated field label
                         },
                         {
                             name: 'withdate', // name in data structure
                             type: 'checkbox',
                             default: false,
-                            label: 'vis_2_widgets_rssfeed_marquee_withdate', // translated field label
+                            label: 'marquee_withdate', // translated field label
                         },
                         {
                             name: 'withyear', // name in data structure
                             type: 'checkbox',
                             default: false,
-                            label: 'vis_2_widgets_rssfeed_marquee_withyear', // translated field label
+                            label: 'marquee_withyear', // translated field label
                         },
                         {
                             name: 'withname', // name in data structure
                             type: 'checkbox',
                             default: false,
-                            label: 'vis_2_widgets_rssfeed_marquee_withname', // translated field label
+                            label: 'marquee_withname', // translated field label
                         },
                     ],
                 },
                 {
                     name: 'feeds', // group name
-                    label: 'vis_2_widgets_rssfeed_marquee_feedsgroup', // translated group label
+                    label: 'marquee_feedsgroup', // translated group label
                     indexFrom: 1,
                     indexTo: 'count',
                     onChange: async (field, data, changeData) => {
@@ -106,12 +106,12 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'feed-oid', // name in data structure
                             type: 'id',
-                            label: 'vis_2_widgets_rssfeed_marquee_oid', // translated field label
+                            label: 'marquee_oid', // translated field label
                         },
                         {
                             name: 'feed-name', // name in data structure
                             type: 'text',
-                            label: 'vis_2_widgets_rssfeed_marquee_name', // translated field label
+                            label: 'marquee_name', // translated field label
                         },
                         {
                             name: 'feed-maxarticles', // name in data structure
@@ -120,12 +120,12 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: Number.MAX_VALUE,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_marquee_maxarticles', // translated field label
+                            label: 'marquee_maxarticles', // translated field label
                         },
                         {
                             name: 'feed-filter', // name in data structure
                             type: 'text',
-                            label: 'vis_2_widgets_rssfeed_marquee_filter', // translated field label
+                            label: 'marquee_filter', // translated field label
                         },
                     ],
                 },
@@ -143,7 +143,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
     // If true, the adapter name + _ is used.
     // If string, then this function must return exactly that string
     static getI18nPrefix() {
-        return `${DemoWidget.adapter}_`;
+        return `${RSSArticleMarquee5.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {

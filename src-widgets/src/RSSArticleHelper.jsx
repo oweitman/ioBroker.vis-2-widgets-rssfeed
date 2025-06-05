@@ -17,13 +17,13 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
                         {
                             name: 'oid', // name in data structure
                             type: 'id',
-                            label: 'vis_2_widgets_rssfeed_helper_oid', // translated field label
+                            label: 'helper_oid', // translated field label
                         },
                         {
                             name: 'prefix', // name in data structure
                             type: 'text',
                             default: 'item',
-                            label: 'vis_2_widgets_rssfeed_helper_prefix', // translated field label
+                            label: 'helper_prefix', // translated field label
                         },
                         {
                             name: 'article', // name in data structure
@@ -32,7 +32,7 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
                             min: 1,
                             max: 9999,
                             step: 1,
-                            label: 'vis_2_widgets_rssfeed_helper_number', // translated field label
+                            label: 'helper_number', // translated field label
                         },
                     ],
                 },
@@ -45,7 +45,7 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
     // If true, the adapter name + _ is used.
     // If string, then this function must return exactly that string
     static getI18nPrefix() {
-        return `${DemoWidget.adapter}_`;
+        return `${RSSArticleHelper.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {

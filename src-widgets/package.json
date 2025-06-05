@@ -28,7 +28,7 @@
     "scripts": {
         "start": "vite --port 4173",
         "build": "tsc && vite build",
-        "preview": "vite preview",
+        "preview": "vite preview --port 4173",
         "lint": "eslint -c eslint.config.mjs",
         "i18n": "node node_modules/@iobroker/vis-2-widgets-react-dev/searchI18n vis-2-widgets-rssfeed",
         "update-browsers": "npx browserslist@latest --update-db"
