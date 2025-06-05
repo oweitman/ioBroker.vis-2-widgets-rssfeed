@@ -17,8 +17,7 @@ For a detailed description of the widgets and functionality, see Adapter rssfeed
 	Placeholder for next versions:
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.2.0 (2025-06-05)
 
 - switch build framework from CRA to vite
 - Remove deprecated RSSMarquee widget. RSSMarquee5 is already available
