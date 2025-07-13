@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "news": {
+      "1.2.2": {
+        "en": "upgrade dependencies",
+        "de": "abhängigkeiten des upgrades",
+        "ru": "обновление зависимостей",
+        "pt": "atualizar dependências",
+        "nl": "upgrade afhankelijkheden",
+        "fr": "dépendances de mise à niveau",
+        "it": "potenziare le dipendenze",
+        "es": "dependencias de actualización",
+        "pl": "aktualizacje zależności",
+        "uk": "модернізація залежностей",
+        "zh-cn": "升级依赖关系"
+      },
       "1.2.1": {
         "en": "fix some type refs\nactivate dependabot",
         "de": "einige typ-refs beheben\nwählen sie abhängigabot",
@@ -80,19 +93,6 @@
         "pl": "usunąć 0.3.4 z opakowania jo-. json",
         "uk": "видалити 0.3.4 з io-package. свінгери",
         "zh-cn": "从io包装中删除0.3.4。 贾森"
-      },
-      "0.3.5": {
-        "en": "improve link styling in the marquee widget\nfix key and group handling\nfix issues from adapter checker",
-        "de": "verbesserung der verbindung styling im marquee widget\nfixschlüssel und gruppenhandling\nprobleme von adapter checker beheben",
-        "ru": "улучшить укладку ссылок в widget\nфиксация ключа и групповая обработка\nпроблемы с адаптером",
-        "pt": "melhorar o estilo link no widget de marquee\ncorrigir o manuseio de chaves e grupos\ncorrigir problemas do verificador do adaptador",
-        "nl": "link styling verbeteren in de maquee widget\nfix sleutel en groep behandeling\nproblemen oplossen van adaptercontrole",
-        "fr": "améliorer le style des liens dans le widget marquee\ncorrection de la clé et manipulation de groupe\ncorrection des problèmes de l'adaptateur checker",
-        "it": "migliorare lo styling link nel widget di marquee\nfix chiave e gestione di gruppo\nrisolvere problemi da adattatore checker",
-        "es": "mejorar el estilo de enlace en el widget de la marquee\narreglar llave y manejo de grupo\nsolucionar problemas desde el control de adaptador",
-        "pl": "poprawić stylizację łącza w widżecie marquee\nnaprawić obsługę klucza i grupy\nnaprawianie problemów z sprawdzaczem adaptera",
-        "uk": "поліпшення укладання посилань в марке віджет\nфіксувати ключ і групове обслуговування\nвиправити проблеми з перевіркою адаптера",
-        "zh-cn": "改进 marquee 部件中的链接样式\n固定密钥和分组处理\n从适配器检查器中校正问题"
       }
     },
     "titleLang": {
