@@ -12,7 +12,7 @@ interface EJSDialogProps {
     value: string;
 }
 
-const EJSDialog = (props: EJSDialogProps): JSX.Element | null => {
+const EJSDialog = (props: EJSDialogProps): React.JSX.Element | null => {
     const [value, changeValue] = useState('');
 
     useEffect(() => {

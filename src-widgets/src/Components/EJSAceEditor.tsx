@@ -41,7 +41,7 @@ interface EJSAceEditorProps {
     focus?: boolean;
 }
 
-export const EJSAceEditor = (props: EJSAceEditorProps): JSX.Element => {
+export const EJSAceEditor = (props: EJSAceEditorProps): React.JSX.Element => {
     const refEditor: RefObject<HTMLDivElement | null> = useRef(null);
     useEffect(() => {
         let content: HTMLInputElement | null = null;
@@ -120,7 +120,7 @@ export const EJSAceEditor = (props: EJSAceEditorProps): JSX.Element => {
                 height: props.height || '100%',
                 border: props.error ? '1px solid #800' : '1px solid transparent',
             }}
-            ref={refEditor}
+            ref={refEditor as React.Ref<HTMLDivElement> | null}
         >
             <AceEditor
                 mode="ejs"

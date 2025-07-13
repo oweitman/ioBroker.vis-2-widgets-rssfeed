@@ -28,7 +28,7 @@ interface RSSDialogProps {
     noTranslation?: boolean;
 }
 
-const RSSDialog = (props: RSSDialogProps): JSX.Element | null =>
+const RSSDialog = (props: RSSDialogProps): React.JSX.Element | null =>
     props.open ? (
         <Dialog
             // @ts-expect-error

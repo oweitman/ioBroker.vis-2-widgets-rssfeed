@@ -22,7 +22,7 @@ const VisEJSAttributeField = ({
     field, // field properties: {name, label, type, set, singleName, component,...}
     data, // widget data
     onDataChange, // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
-}: VisEJSAttributeFieldProps): JSX.Element => {
+}: VisEJSAttributeFieldProps): React.JSX.Element => {
     const error = '';
 
     const [idDialog, setIdDialog] = useState(false);
