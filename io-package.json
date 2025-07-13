@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "vis-2-widgets-rssfeed",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "news": {
+      "1.2.1": {
+        "en": "fix some type refs\nactivate dependabot",
+        "de": "einige typ-refs beheben\nwählen sie abhängigabot",
+        "ru": "определить тип refs\nактивировать dependabot",
+        "pt": "corrigir alguns tipos de refs\nactivar dependebot",
+        "nl": "fix sommige type refs\nafhankelijkabot activeren",
+        "fr": "correction de certains types de réfs\nactive dependabot",
+        "it": "fissare alcuni refs tipo\nattivare dipendeabot",
+        "es": "arreglar algunos refs tipo\nactivar dependeabot",
+        "pl": "naprawić niektóre typu refs\naktywować zależny",
+        "uk": "фіксувати деякі рефи\nактивувати залежності",
+        "zh-cn": "修补一些类型参考\n激活关联保护"
+      },
       "1.2.0": {
         "en": "switch build framework from CRA to vite\nRemove deprecated RSSMarquee widget. RSSMarquee5 is already available",
         "de": "schaltet Build Framework von CRA zu vite\nEntfernen Sie deprecated RSSMarquee Widget. RSSMarquee5 ist bereits verfügbar",
@@ -80,19 +93,6 @@
         "pl": "poprawić stylizację łącza w widżecie marquee\nnaprawić obsługę klucza i grupy\nnaprawianie problemów z sprawdzaczem adaptera",
         "uk": "поліпшення укладання посилань в марке віджет\nфіксувати ключ і групове обслуговування\nвиправити проблеми з перевіркою адаптера",
         "zh-cn": "改进 marquee 部件中的链接样式\n固定密钥和分组处理\n从适配器检查器中校正问题"
-      },
-      "0.3.3": {
-        "en": "fix widgeturl from debug to productive",
-        "de": "fix widgeturl von debug bis produktiv",
-        "ru": "исправить widgeturl от отладки до продуктивного",
-        "pt": "corrigir widgeturl de depuração para produtivo",
-        "nl": "fix widgeturl van debug naar productief",
-        "fr": "fixer widgeturl de debug à productif",
-        "it": "fissare widgeturl da debug a produttivo",
-        "es": "fijar el widgeturl de la depuración a productivo",
-        "pl": "naprawić widgeturl od debug do produktywne",
-        "uk": "виправити віджети від debug до продуктивного",
-        "zh-cn": "将部件从调试到生产"
       }
     },
     "titleLang": {
