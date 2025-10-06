@@ -1,61 +1,59 @@
 {
-  "name": "iobroker.vis-2-widgets-rssfeed",
-  "version": "1.2.2",
-  "description": "ioBroker vis-2 widgets for adapter rssfeed",
-  "author": "oweitman <oweitman@gmx.de>",
-  "contributors": [
-    "oweitman <oweitman@gmx.de>"
-  ],
-  "homepage": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed.git"
-  },
-  "keywords": [
-    "ioBroker",
-    "visualization"
-  ],
-  "devDependencies": {
-    "@alcalzone/release-script": "^3.8.0",
-    "@alcalzone/release-script-plugin-iobroker": "^3.7.2",
-    "@alcalzone/release-script-plugin-license": "^3.7.0",
-    "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
-    "@iobroker/build-tools": "^2.0.15",
-    "@iobroker/eslint-config": "^2.2.0",
-    "@iobroker/vis-2-widgets-react-dev": "^4.0.4",
-    "@iobroker/vis-2-widgets-testing": "^1.0.6",
-    "@iobroker/adapter-dev": "^1.5.0",
-    "@iobroker/testing": "^5.1.1",
-    "@types/gulp": "^4.0.17",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^24.6.1",
-    "mocha": "^11.7.3"
-  },
-  "main": "widgets/vis-2-widgets-rssfeed/customWidgets.js",
-  "files": [
-    "admin/",
-    "widgets/",
-    "io-package.json",
-    "LICENSE"
-  ],
-  "scripts": {
-    "prepublishOnly": "node tasks --javascript-vite",
-    "lint": "cd src-widgets && npm run lint",
-    "build": "node tasks --javascript-vite",
-    "release": "release-script --all",
-    "release-patch": "release-script patch --yes",
-    "release-minor": "release-script minor --yes",
-    "release-major": "release-script major --yes",
-    "test": "mocha ./test/*.test.js",
-    "update-packages": "ncu --upgrade && cd src-widgets && ncu --upgrade && cd ..",
-    "npm": "npm i -f && cd src-widgets && npm i -f && cd ..",
-    "debug": "npx dev-server watch --noStart",
-    "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed --local",
-    "translatewidgets": "node ./src-widgets/devutil/translate.js"
-  },
-  "bugs": {
-    "url": "https://github.com/ioBroker/ioBroker.vis-2-widgets-rssfeed/issues"
-  },
-  "readmeFilename": "README.md"
+    "name": "iobroker.vis-2-widgets-rssfeed",
+    "version": "1.2.2",
+    "description": "ioBroker vis-2 widgets for adapter rssfeed",
+    "author": "oweitman <oweitman@gmx.de>",
+    "contributors": [
+        "oweitman <oweitman@gmx.de>"
+    ],
+    "homepage": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed.git"
+    },
+    "keywords": [
+        "ioBroker",
+        "visualization"
+    ],
+    "devDependencies": {
+        "@alcalzone/release-script": "^3.8.0",
+        "@alcalzone/release-script-plugin-iobroker": "^3.7.2",
+        "@alcalzone/release-script-plugin-license": "^3.7.0",
+        "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
+        "@iobroker/build-tools": "^2.0.15",
+        "@iobroker/eslint-config": "^2.2.0",
+        "@iobroker/vis-2-widgets-react-dev": "^4.0.4",
+        "@iobroker/vis-2-widgets-testing": "^1.0.6",
+        "@iobroker/adapter-dev": "^1.5.0",
+        "@iobroker/testing": "^5.1.1",
+        "@types/gulp": "^4.0.17",
+        "@types/node": "^24.6.1"
+    },
+    "main": "widgets/vis-2-widgets-rssfeed/customWidgets.js",
+    "files": [
+        "admin/",
+        "widgets/",
+        "io-package.json",
+        "LICENSE"
+    ],
+    "scripts": {
+        "prepublishOnly": "node tasks --javascript-vite",
+        "lint": "cd src-widgets && npm run lint",
+        "build": "node tasks --javascript-vite",
+        "release": "release-script --all",
+        "release-patch": "release-script patch --yes",
+        "release-minor": "release-script minor --yes",
+        "release-major": "release-script major --yes",
+        "test": "mocha ./test/*.test.js",
+        "update-packages": "ncu --upgrade && cd src-widgets && ncu --upgrade && cd ..",
+        "npm": "npm i -f && cd src-widgets && npm i -f && cd ..",
+        "debug": "npx dev-server watch --noStart",
+        "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed --local",
+        "translatewidgets": "node ./src-widgets/devutil/translate.js"
+    },
+    "bugs": {
+        "url": "https://github.com/ioBroker/ioBroker.vis-2-widgets-rssfeed/issues"
+    },
+    "readmeFilename": "README.md"
 }
