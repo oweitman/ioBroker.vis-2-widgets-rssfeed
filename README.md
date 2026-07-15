@@ -114,6 +114,8 @@ For a detailed description of the widgets and functionality, see Adapter rssfeed
 
 - Erstes Testrelease
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 The MIT License (MIT)
