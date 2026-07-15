@@ -8,22 +8,20 @@ import EJSDialog from './EJSDialog';
 
 interface VisEJSAttributeFieldProps {
     field: {
-        name: string;
-        label: string;
-        type: string;
-        set: any;
-        singleName: string;
-        component: any;
+        name?: string;
     };
     data: any;
     onDataChange: (data: any) => void;
+    props: any;
 }
 const VisEJSAttributeField = ({
     field, // field properties: {name, label, type, set, singleName, component,...}
     data, // widget data
     onDataChange, // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
+    props,
 }: VisEJSAttributeFieldProps): React.JSX.Element => {
     const error = '';
+    const fieldName = field.name || '';
 
     const [idDialog, setIdDialog] = useState(false);
 
@@ -38,13 +36,13 @@ const VisEJSAttributeField = ({
                 size="small"
                 // placeholder={isDifferent ? t('different') : null}
                 variant="standard"
-                value={data && data[field.name]}
+                value={data && data[fieldName]}
                 fullWidth
                 error={!!error}
                 helperText={typeof error === 'string' ? I18n.t(error) : null}
                 onChange={e => {
                     onDataChange({
-                        [field.name]: e.target.value,
+                        [fieldName]: e.target.value,
                     }); // returns all changed field as object.
                     // If some propertiy is null, so it will be deleted from data
                 }}
@@ -63,9 +61,10 @@ const VisEJSAttributeField = ({
             {idDialog ? (
                 <EJSDialog
                     open={!0}
-                    value={data[field.name]}
-                    onChange={newValue => onDataChange({ [field.name]: newValue })}
+                    value={data[fieldName]}
+                    onChange={newValue => onDataChange({ [fieldName]: newValue })}
                     onClose={() => setIdDialog(false)}
+                    themeType={props.context.theme.name}
                 />
             ) : null}
         </>

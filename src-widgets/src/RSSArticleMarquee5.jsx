@@ -3,18 +3,20 @@ import React from 'react';
 import { Link, Dialog, IconButton } from '@mui/material';
 //import CloseIcon from '@mui/icons-material/Close';
 import Marquee from 'react-fast-marquee';
-import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-
+import Generic from './Generic';
 import rssExample from './rss.json';
 
-/* globals vis */
+const vis = /** @type {any} */ (window).vis;
 
-class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
+/** @typedef {import('@iobroker/types-vis-2').VisRxWidgetState & { showDialog: boolean, iframeSrc: string }} RSSArticleMarqueeState */
+
+/** @extends {Generic<Record<string, any>, RSSArticleMarqueeState>} */
+class RSSArticleMarquee5 extends Generic {
     constructor(props) {
         super(props);
-        this.state.showDialog = false;
-        this.state.iframeSrc = '';
+        Object.assign(this.state, { showDialog: false, iframeSrc: '' });
     }
+    /** @returns {import('@iobroker/types-vis-2').RxWidgetInfo} */
     static getWidgetInfo() {
         return {
             id: 'tplRSSArticleMarquee5',
@@ -99,6 +101,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                     label: 'marquee_feedsgroup', // translated group label
                     indexFrom: 1,
                     indexTo: 'count',
+                    // @ts-expect-error Supported by vis at runtime but missing in the RxWidgetInfoGroup type.
                     onChange: async (field, data, changeData) => {
                         changeData(data);
                     },
@@ -138,12 +141,6 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             },
             visPrev: '',
         };
-    }
-    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
-    // If true, the adapter name + _ is used.
-    // If string, then this function must return exactly that string
-    static getI18nPrefix() {
-        return `${RSSArticleMarquee5.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
@@ -226,7 +223,8 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
         const keys = Object.keys(this.state.data).filter(key => /g_feeds-(\d+)/gm.test(key));
         const articles = keys.reduce((acc, key) => {
             if (key === 'g_feeds-0') return acc;
-            const id = /g_feeds-(\d+)/gm.exec(key)[1];
+            const id = /g_feeds-(\d+)/.exec(key)?.[1];
+            if (!id) return acc;
             const rss = JSON.parse(
                 this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample),
             );
@@ -254,7 +252,7 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
             }
             return acc.concat(rss.articles);
         }, []);
-        articles.sort((aEl, bEl) => new Date(bEl.date) - new Date(aEl.date));
+        articles.sort((aEl, bEl) => new Date(bEl.date).getTime() - new Date(aEl.date).getTime());
 
         if (data.opentype === 'link') {
             return (
@@ -294,7 +292,6 @@ class RSSArticleMarquee5 extends (window.visRxWidget || VisRxWidget) {
                                     <span
                                         style={{ cursor: 'pointer' }}
                                         key={item.key}
-                                        link={item.link}
                                         onClick={() => {
                                             this.handleClick(item.link);
                                         }}

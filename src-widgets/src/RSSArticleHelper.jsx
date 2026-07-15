@@ -1,10 +1,18 @@
 import React from 'react';
 
-import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-
+import Generic from './Generic';
 import rssExample from './rss.json';
 
-class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
+/**
+ * @typedef {Object} RSSArticleHelperRxData
+ * @property {string} oid
+ * @property {number | string} article
+ * @property {string} prefix
+ */
+
+/** @extends {Generic<RSSArticleHelperRxData>} */
+class RSSArticleHelper extends Generic {
+    /** @returns {import('@iobroker/types-vis-2').RxWidgetInfo} */
     static getWidgetInfo() {
         return {
             id: 'tplRSSArticleHelper',
@@ -40,12 +48,6 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
             ],
             visPrev: '',
         };
-    }
-    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
-    // If true, the adapter name + _ is used.
-    // If string, then this function must return exactly that string
-    static getI18nPrefix() {
-        return `${RSSArticleHelper.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
@@ -91,9 +93,10 @@ class RSSArticleHelper extends (window.visRxWidget || VisRxWidget) {
             return null;
         } */
 
+        /** @type {React.CSSProperties} */
         const thStyle = { whiteSpace: 'nowrap', textAlign: 'left', verticalAlign: 'top' };
-        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
-        const article = parseInt(this.state.rxData.article) || 1;
+        const rss = JSON.parse(this.getPropertyValue('oid') || JSON.stringify(rssExample));
+        const article = parseInt(String(this.state.rxData.article), 10) || 1;
         const prefix = this.state.rxData.prefix || 'item';
         const item = rss.articles[article - 1];
         let result;

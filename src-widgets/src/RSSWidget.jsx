@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { I18n } from '@iobroker/adapter-react-v5';
-import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
 import VisEJSAttributeField from './Components/VisEJSAttributeField';
 import InnerHtml from './Components/InnerHTML';
+import Generic from './Generic';
 import ejs from 'ejs';
 import rssExample from './rss.json';
 
-class RSSWidget extends (window.visRxWidget || VisRxWidget) {
+/** @extends {Generic<Record<string, any>>} */
+class RSSWidget extends Generic {
+    /** @returns {import('@iobroker/types-vis-2').RxWidgetInfo} */
     static getWidgetInfo() {
         const defaulttemplate = `
 <!--
@@ -72,11 +74,10 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                                 // project,      // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
                             ) => (
                                 <VisEJSAttributeField
-                                    visSocket={props.context.socket}
                                     field={field}
                                     data={data}
                                     onDataChange={onDataChange}
-                                    props
+                                    props={props}
                                 />
                             ),
                         },
@@ -106,12 +107,6 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
             },
             visPrev: '',
         };
-    }
-    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
-    // If true, the adapter name + _ is used.
-    // If string, then this function must return exactly that string
-    static getI18nPrefix() {
-        return `${RSSWidget.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
@@ -162,16 +157,15 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
 
     // // eslint-disable-next-line class-methods-use-this
     escapeHTML(html) {
-        let escapeEl = document.createElement('textarea');
+        const escapeEl = document.createElement('textarea');
         escapeEl.textContent = html;
         const ret = escapeEl.innerHTML;
-        escapeEl = null;
         return ret;
     }
 
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
-        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
+        const rss = JSON.parse(this.getPropertyValue('oid') || JSON.stringify(rssExample));
         const data = props.widget.data;
 
         const errortemplate = `
@@ -196,7 +190,7 @@ class RSSWidget extends (window.visRxWidget || VisRxWidget) {
                 text = ejs.render(template, { rss, widgetid: props.id, style: props.style });
             }
         } catch (e) {
-            text = this.escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
+            text = this.escapeHTML(e instanceof Error ? e.message : String(e)).replace(/(?:\r\n|\r|\n)/g, '<br>');
             text = text.replace(/ /gm, '&nbsp;');
             text = `<code style="color:red;">${text}</code>`;
         }

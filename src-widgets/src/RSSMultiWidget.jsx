@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-
 import VisEJSAttributeField from './Components/VisEJSAttributeField';
 import InnerHtml from './Components/InnerHTML';
+import Generic from './Generic';
 
 import ejs from 'ejs';
 import rssExample from './rss.json';
 
-class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
+/** @extends {Generic<Record<string, any>>} */
+class RSSMultiWidget extends Generic {
+    /** @returns {import('@iobroker/types-vis-2').RxWidgetInfo} */
     static getWidgetInfo() {
         const defaultTemplate = `
 <!--
@@ -80,11 +81,10 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                                 // project,      // project object: {VIEWS..., [view]: {widgets: {[widgetID]: {tpl, data, style}}, settings, parentId, rerender, filterList, activeWidgets}, __settings: {}}
                             ) => (
                                 <VisEJSAttributeField
-                                    visSocket={props.context.socket}
                                     field={field}
                                     data={data}
                                     onDataChange={onDataChange}
-                                    props
+                                    props={props}
                                 />
                             ),
                         },
@@ -111,6 +111,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                     label: 'multi_feedsgroup', // translated group label
                     indexFrom: 1,
                     indexTo: 'feedcount',
+                    // @ts-expect-error Supported by vis at runtime but missing in the RxWidgetInfoGroup type.
                     onChange: async (field, data, changeData) => {
                         changeData(data);
                     },
@@ -146,6 +147,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                     label: 'multi_datapointsgroup', // translated group label
                     indexFrom: 1,
                     indexTo: 'dpcount',
+                    // @ts-expect-error Supported by vis at runtime but missing in the RxWidgetInfoGroup type.
                     onChange: async (field, data, changeData) => {
                         changeData(data);
                     },
@@ -166,12 +168,6 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
             },
             visPrev: '',
         };
-    }
-    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
-    // If true, the adapter name + _ is used.
-    // If string, then this function must return exactly that string
-    static getI18nPrefix() {
-        return `${RSSMultiWidget.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
@@ -220,14 +216,13 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
         }, false);
     }
 
-    /*     // eslint-disable-next-line class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this
     escapeHTML(html) {
-        let escapeEl = document.createElement('textarea');
+        const escapeEl = document.createElement('textarea');
         escapeEl.textContent = html;
         const ret = escapeEl.innerHTML;
-        escapeEl = null;
         return ret;
-    } */
+    }
 
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
@@ -243,7 +238,10 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                 if (key === 'g_feeds-0') {
                     return acc;
                 }
-                const id = /g_feeds-(\d+)/gm.exec(key)[1];
+                const id = /g_feeds-(\d+)/.exec(key)?.[1];
+                if (!id) {
+                    return acc;
+                }
                 const rss = JSON.parse(
                     this.state.values[`${this.state.data[`feed-oid${id}`]}.val`] || JSON.stringify(rssExample),
                 );
@@ -278,7 +276,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
             const rss = JSON.parse(JSON.stringify(rssExample));
             articles = rss.articles;
         }
-        articles.sort((aEl, bEl) => new Date(bEl.date) - new Date(aEl.date));
+        articles.sort((aEl, bEl) => new Date(bEl.date).getTime() - new Date(aEl.date).getTime());
         let text = '';
         try {
             if (articles.length === 0) {
@@ -287,7 +285,7 @@ class RSSMultiWidget extends (window.visRxWidget || VisRxWidget) {
                 text = ejs.render(template, { rss: { articles }, widgetid: props.id, style: props.style });
             }
         } catch (e) {
-            text = this.escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
+            text = this.escapeHTML(e instanceof Error ? e.message : String(e)).replace(/(?:\r\n|\r|\n)/g, '<br>');
             text = text.replace(/ /gm, '&nbsp;');
             text = `<code style="color:red;">${text}</code>`;
         }

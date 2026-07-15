@@ -1,11 +1,26 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import commonjs from 'vite-plugin-commonjs';
 import vitetsConfigPaths from 'vite-tsconfig-paths';
 import { federation } from '@module-federation/vite';
-import { moduleFederationShared } from '@iobroker/types-vis-2/modulefederation.vis.config';
-import { readFileSync } from 'node:fs';
-const pack = JSON.parse(readFileSync('./package.json').toString());
+import topLevelAwait from 'vite-plugin-top-level-await';
+import { fileURLToPath } from 'node:url';
+
+const configDir = path.dirname(fileURLToPath(import.meta.url));
+
+const singleton = (): { singleton: true; requiredVersion: '*' } => ({
+    singleton: true,
+    requiredVersion: '*',
+});
+
+const sharedModules = {
+    react: singleton(),
+    'react-dom': singleton(),
+    'react-dom/client': singleton(),
+    '@mui/material': singleton(),
+    '@mui/icons-material': singleton(),
+    'prop-types': singleton(),
+    '@iobroker/adapter-react-v5': singleton(),
+};
 
 const config = {
     plugins: [
@@ -22,11 +37,15 @@ const config = {
                 './translations': './src/translations',
             },
             remotes: {},
-            shared: moduleFederationShared(pack),
+            shared: sharedModules,
+            dts: false,
+        }),
+        topLevelAwait({
+            promiseExportName: '__tla',
+            promiseImportName: (index: number): string => `__tla_${index}`,
         }),
         react(),
         vitetsConfigPaths(),
-        commonjs(),
     ],
     server: {
         port: 3000,
@@ -44,7 +63,7 @@ const config = {
     },
     base: './',
     build: {
-        target: 'chrome89',
+        target: 'chrome81',
         outDir: './build',
         rollupOptions: {
             onwarn(warning: { code: string }, warn: (warning: { code: string }) => void): void {
@@ -57,9 +76,18 @@ const config = {
         },
     },
     resolve: {
+        dedupe: [
+            'react',
+            'react-dom',
+            'prop-types',
+            '@mui/material',
+            '@mui/icons-material',
+            '@iobroker/adapter-react-v5',
+        ],
         alias: {
-            fs: path.resolve(__dirname, 'src/empty.js'),
-            path: path.resolve(__dirname, 'src/empty.js'),
+            'react-ace': path.resolve(configDir, 'node_modules/react-ace/lib/ace.js'),
+            fs: path.resolve(configDir, 'src/empty.js'),
+            path: path.resolve(configDir, 'src/empty.js'),
         },
     },
 };
