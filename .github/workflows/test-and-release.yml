@@ -50,6 +50,7 @@ jobs:
                   install-command: 'npm ci && cd src-widgets && npm ci'
                   os: 'ubuntu-latest'
                   node-version: 24.15.0
+                  screenshots-path: tmp/screenshots/**/*.png
 
     # Deploys the final package to NPM
     deploy:

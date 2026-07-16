@@ -11,8 +11,7 @@
 
         "module": "Node16",
         "moduleResolution": "Node16",
-        "types": ["node"],
-        // this is necessary for the automatic typing of the adapter config
+        "types": ["node", "mocha"],
         "resolveJsonModule": true,
 
         // Set this to false if you want to disable the very strict rules (not recommended)
@@ -28,6 +27,5 @@
         "target": "es2022",
         "sourceMap": true
     },
-    "include": ["lib/**/*.js", "lib/**/*.d.ts", "main.js"],
-    "exclude": ["lib\rrule.js"]
+    "include": ["test/**/*.js"]
 }
