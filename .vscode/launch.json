@@ -7,7 +7,14 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "vis-2 editor",
+            "name": "vis-2 editor normal",
+            "url": "http://localhost:8082/vis-2/edit.html#default",
+            "webRoot": "${workspaceFolder}/src-widgets"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "vis-2 editor vis2dev",
             "url": "http://localhost:3000/edit.html#default",
             "webRoot": "${workspaceFolder}/src-widgets"
         },

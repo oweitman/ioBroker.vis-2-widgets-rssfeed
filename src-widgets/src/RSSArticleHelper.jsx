@@ -1,3 +1,4 @@
+import '@vitejs/plugin-react/preamble';
 import React from 'react';
 
 import Generic from './Generic';

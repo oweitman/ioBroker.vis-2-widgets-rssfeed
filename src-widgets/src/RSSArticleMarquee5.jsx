@@ -1,4 +1,5 @@
 /* eslint-disable class-methods-use-this */
+import '@vitejs/plugin-react/preamble';
 import React from 'react';
 import { Link, Dialog, IconButton } from '@mui/material';
 //import CloseIcon from '@mui/icons-material/Close';
@@ -221,6 +222,8 @@ class RSSArticleMarquee5 extends Generic {
         };
 
         const keys = Object.keys(this.state.data).filter(key => /g_feeds-(\d+)/gm.test(key));
+        if (keys.length === 0) keys.push('g_feeds-1');
+
         const articles = keys.reduce((acc, key) => {
             if (key === 'g_feeds-0') return acc;
             const id = /g_feeds-(\d+)/.exec(key)?.[1];
