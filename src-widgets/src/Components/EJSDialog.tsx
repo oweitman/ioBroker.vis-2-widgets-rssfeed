@@ -1,5 +1,5 @@
 // TextDialog
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { I18n } from '@iobroker/adapter-react-v5';
 import RSSDialog from './RSSDialog';
@@ -10,15 +10,11 @@ interface EJSDialogProps {
     onClose: () => void;
     open: boolean;
     value: string;
+    themeType: string;
 }
 
 const EJSDialog = (props: EJSDialogProps): React.JSX.Element | null => {
-    const [value, changeValue] = useState('');
-
-    useEffect(() => {
-        changeValue(props.value);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.open]);
+    const [value, changeValue] = useState(props.value);
 
     return props.open ? (
         <RSSDialog
@@ -36,6 +32,7 @@ const EJSDialog = (props: EJSDialogProps): React.JSX.Element | null => {
                 focus
                 height={400}
                 onChange={newValue => changeValue(newValue)}
+                themeType={props.themeType}
             />
         </RSSDialog>
     ) : null;

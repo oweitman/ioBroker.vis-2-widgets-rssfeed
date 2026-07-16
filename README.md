@@ -23,6 +23,11 @@ For a detailed description of the widgets and functionality, see Adapter rssfeed
 - update dependencies
 - fix repochecker
 
+### **WORK IN PROGRESS**
+
+- update dependencies
+- fix repochecker
+
 ### 1.2.2 (2025-07-13)
 
 - upgrade dependencies

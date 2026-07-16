@@ -1,11 +1,12 @@
 import React from 'react';
 
-// import { I18n } from '@iobroker/adapter-react-v5';
-import { VisRxWidget } from '@iobroker/vis-2-widgets-react-dev';
-
+import Generic from './Generic';
 import rssExample from './rss.json';
 
-class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
+/** @typedef {{ oid: string }} RSSMetaHelperRxData */
+
+/** @extends {Generic<RSSMetaHelperRxData>} */
+class RSSMetaHelper extends Generic {
     static getWidgetInfo() {
         return {
             id: 'tplRSSMetaHelper',
@@ -26,12 +27,6 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
             ],
             visPrev: '',
         };
-    }
-    // If the "prefix" attribute in translations.ts is true or string, you must implement this function.
-    // If true, the adapter name + _ is used.
-    // If string, then this function must return exactly that string
-    static getI18nPrefix() {
-        return `${RSSMetaHelper.adapter}_`;
     }
     // eslint-disable-next-line class-methods-use-this
     propertiesUpdate() {
@@ -73,8 +68,9 @@ class RSSMetaHelper extends (window.visRxWidget || VisRxWidget) {
     renderWidgetBody(props) {
         super.renderWidgetBody(props);
 
+        /** @type {React.CSSProperties} */
         const thStyle = { whiteSpace: 'nowrap', textAlign: 'left', verticalAlign: 'top' };
-        const rss = JSON.parse(this.state.values[`${this.state.rxData.oid}.val`] || JSON.stringify(rssExample));
+        const rss = JSON.parse(this.getPropertyValue('oid') || JSON.stringify(rssExample));
 
         return (
             <table style={{ whiteSpace: 'nowrap' }}>

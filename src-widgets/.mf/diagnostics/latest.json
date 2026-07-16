@@ -1,0 +1,10 @@
+{
+  "latestErrorEvent": {
+    "code": "TYPE-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"npx tsc --project C:\\\\Users\\\\oweit\\\\vscode\\\\iobroker\\\\ioBroker.vis-2-widgets-rssfeed\\\\src-widgets\\\\node_modules\\\\.federation\\\\tsconfig.fbe73970db8b50de9af9b792058c227d.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "args": {
+      "cmd": "npx tsc --project C:\\Users\\oweit\\vscode\\iobroker\\ioBroker.vis-2-widgets-rssfeed\\src-widgets\\node_modules\\.federation\\tsconfig.fbe73970db8b50de9af9b792058c227d.json"
+    },
+    "timestamp": 1784129079543
+  }
+}

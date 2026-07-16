@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "vis-2 editor",
-            "url": "http://localhost:3000/#default",
+            "url": "http://localhost:3000/edit.html#default",
             "webRoot": "${workspaceFolder}/src-widgets"
         },
         {
@@ -37,6 +37,15 @@
             "stopOnEntry": true,
             "args": [],
             "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "repochecker local",
+            "program": "../iobroker.repochecker/index.js",
+            "args": ["https://github.com/oweitman/ioBroker.mytime", "--local"],
+            "request": "launch",
+            "stopOnEntry": false,
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node"
         }
     ]
 }
