@@ -4,40 +4,39 @@
 # Reference: https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
 version: 2
 updates:
+    - package-ecosystem: 'github-actions'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+          time: '09:00'
+          timezone: 'Europe/Berlin'
 
-  - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      interval: 'monthly'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
+    - package-ecosystem: 'npm'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+          time: '08:00'
+          timezone: 'Europe/Berlin'
+      open-pull-requests-limit: 5
+      versioning-strategy: 'increase'
+      cooldown:
+          default-days: 7
+      ignore:
+          - dependency-name: '@types/node'
+            update-types:
+                - 'version-update:semver-major'
 
-  - package-ecosystem: 'npm'
-    directory: '/'
-    schedule:
-      interval: 'monthly'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 5
-    versioning-strategy: 'increase'
-    cooldown:
-      default-days: 7
-    ignore:
-      - dependency-name: '@types/node'
-        update-types:
-          - 'version-update:semver-major'
-
-  - package-ecosystem: 'npm'
-    directory: '/src-widgets'
-    schedule:
-      interval: 'monthly'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 5
-    versioning-strategy: 'increase'
-    cooldown:
-      default-days: 7
-    ignore:
-      - dependency-name: '@types/node'
-        update-types:
-          - 'version-update:semver-major'
+    - package-ecosystem: 'npm'
+      directory: '/src-widgets'
+      schedule:
+          interval: 'weekly'
+          time: '09:00'
+          timezone: 'Europe/Berlin'
+      open-pull-requests-limit: 5
+      versioning-strategy: 'increase'
+      cooldown:
+          default-days: 7
+      ignore:
+          - dependency-name: '@types/node'
+            update-types:
+                - 'version-update:semver-major'
