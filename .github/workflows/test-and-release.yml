@@ -50,9 +50,23 @@ jobs:
               # if: failure()
               uses: actions/upload-artifact@v7
               with:
+                  path: tmp/screenshots/**/*.png
+                  retention-days: 3
+
+    adapter-tests:
+        if: contains(github.event.head_commit.message, '[skip ci]') == false
+
+        needs: [check-and-lint]
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: ioBroker/testing-action-adapter@v1
+              with:
                   build: true
+                  install-command: 'npm ci && cd src-widgets && npm ci'
                   os: 'ubuntu-latest'
-                  node-version: ${{ matrix.node-version }}
+                  node-version: 24.15.0
 
     # Deploys the final package to NPM
     deploy:
