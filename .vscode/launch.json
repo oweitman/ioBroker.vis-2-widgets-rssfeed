@@ -41,7 +41,7 @@
         {
             "name": "repochecker local",
             "program": "../iobroker.repochecker/index.js",
-            "args": ["https://github.com/oweitman/ioBroker.mytime", "--local"],
+            "args": ["https://github.com/oweitman/ioBroker.vis-2-widgets-rssfeed", "--local"],
             "request": "launch",
             "stopOnEntry": false,
             "skipFiles": ["<node_internals>/**"],
