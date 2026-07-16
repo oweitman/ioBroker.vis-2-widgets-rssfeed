@@ -28,6 +28,7 @@
         "@iobroker/adapter-dev": "^1.5.0",
         "@iobroker/testing": "^5.3.0",
         "@types/gulp": "^4.0.18",
+        "@tsconfig/node22": "^22.0.5",
         "@types/node": "^22"
     },
     "main": "widgets/vis-2-widgets-rssfeed/customWidgets.js",
@@ -45,7 +46,8 @@
         "release-patch": "release-script patch --yes",
         "release-minor": "release-script minor --yes",
         "release-major": "release-script major --yes",
-        "test": "mocha ./test/*.test.js",
+        "test": "npm run test:package",
+        "test:package": "mocha test/package --exit",
         "update-packages": "ncu --upgrade && cd src-widgets && ncu --upgrade && cd ..",
         "npm": "npm i -f && cd src-widgets && npm i -f && cd ..",
         "debug": "npx dev-server watch --noStart",
